@@ -1,0 +1,71 @@
+\begin{thebibliography}{10}
+
+\bibitem{Huang:2008:UHC:1496046.1496064}
+C.~Huang, A.~Wang, J.~Li, and K.W. Ross, ``Understanding hybrid cdn-p2p: why
+  limelight needs its own red swoosh,'' Proceedings of the 18th International
+  Workshop on Network and Operating Systems Support for Digital Audio and
+  Video, NOSSDAV '08, New York, NY, USA, pp.75--80, ACM, 2008.
+
+\bibitem{4772628}
+H.~Jiang, J.~Li, Z.~Li, and J.~Liu, ``Efficient hierarchical content
+  distribution using p2p technology,'' Networks, 2008. ICON 2008. 16th IEEE
+  International Conference on, pp.1 --6, dec.\ 2008.
+
+\bibitem{Yin:2009:DDH:1631272.1631279}
+H.~Yin, X.~Liu, T.~Zhan, V.~Sekar, F.~Qiu, C.~Lin, H.~Zhang, and B.~Li,
+  ``Design and deployment of a hybrid cdn-p2p system for live video streaming:
+  experiences with livesky,'' Proceedings of the 17th ACM international
+  conference on Multimedia, MM '09, New York, NY, USA, pp.25--34, ACM, 2009.
+
+\bibitem{Misra:2010:IPS:1811099.1811064}
+V.~Misra, S.~Ioannidis, A.~Chaintreau, and L.~Massouli{\'e}, ``Incentivizing
+  peer-assisted services: a fluid shapley value approach,'' SIGMETRICS Perform.
+  Eval. Rev., vol.38, no.1, pp.215--226, June\ 2010.
+
+\bibitem{Cha:2008:NTP:1855641.1855646}
+M.~Cha, P.~Rodriguez, S.~Moon, and J.~Crowcroft, ``On next-generation
+  telco-managed p2p tv architectures,'' Proceedings of the 7th international
+  conference on Peer-to-peer systems, IPTPS'08, Berkeley, CA, USA, pp.5--5,
+  USENIX Association, 2008.
+
+\bibitem{Labovitz:2010:IIT:2043164.1851194}
+C.~Labovitz, S.~Iekel-Johnson, D.~McPherson, J.~Oberheide, and F.~Jahanian,
+  ``Internet inter-domain traffic,'' SIGCOMM Comput. Commun. Rev., vol.41,
+  no.4, pp.--, Aug.\ 2010.
+
+\bibitem{cdni}
+IETF, ``Cdn interconnect ietf working group,'' 2013.
+\newblock Available on \url{https://datatracker.ietf.org/wg/cdni/}.
+
+\bibitem{oceanproject}
+O.~Project, ``Open content aware networks,'' 2013.
+\newblock Available on \url{http://www.itc-ocean.eu}.
+
+\bibitem{Krishnan:2009:MBE:1644893.1644917}
+R.~Krishnan, H.V. Madhyastha, S.~Srinivasan, S.~Jain, A.~Krishnamurthy,
+  T.~Anderson, and J.~Gao, ``Moving beyond end-to-end path information to
+  optimize cdn performance,'' Proceedings of the 9th ACM SIGCOMM conference on
+  Internet measurement conference, IMC '09, New York, NY, USA, pp.190--201,
+  ACM, 2009.
+
+\bibitem{federation}
+Cisco, ``Cdn federation,'' 10\ 2012.
+\newblock Available on
+  \url{http://www.cisco.com/web/about/ac79/docs/sp/CDN-Federation_Phase-2-Pilot.pdf}.
+
+\bibitem{4215694}
+R.~Kumar, Y.~Liu, and K.~Ross, ``Stochastic fluid theory for p2p streaming
+  systems,'' INFOCOM 2007. 26th IEEE International Conference on Computer
+  Communications. IEEE, pp.919 --927, may\ 2007.
+
+\bibitem{Qiu:2004:MPA:1030194.1015508}
+D.~Qiu and R.~Srikant, ``Modeling and performance analysis of bittorrent-like
+  peer-to-peer networks,'' SIGCOMM Comput. Commun. Rev., vol.34, no.4,
+  pp.367--378, Aug.\ 2004.
+
+\bibitem{4199285}
+S.~Tewari and L.~Kleinrock, ``Analytical model for bittorrent-based live video
+  streaming,'' Consumer Communications and Networking Conference, 2007. CCNC
+  2007. 4th IEEE, pp.976 --980, jan.\ 2007.
+
+\end{thebibliography}
