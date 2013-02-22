@@ -209,9 +209,9 @@ The CDN proxy maintained by ISP. ISP also has CDN node. CDN node can exchange co
 \label{fig:twotier}
 \vspace{-2mm}
 \end{figure}
-
+ 
 \section{System Model}\label{systemmodel}
-We present a cooperative model between P2P and CDN using simple a single bitrate as shown in fig \ref{fig:twotier2}. 
+We present a cooperative model between P2P and CDN using simple a single bitrate for video streaming as shown in Fig.\ref{fig:twotier2}. 
 The model is a stochastic fluid model similar to \cite{4215694}.
 While the authors in \cite{4215694} focus on probabiity of degraded service on small and large systems, our work focus on lower bound of peers that can support intended bit rate.
 The knowledge of lower bound is very import for ISP to estimate number of customers that can join to P2P.
@@ -329,19 +329,19 @@ It means that the higher peer arrival rates and the longer peers stay in the sys
 Lower $\delta$ mean a smaller interval in inequality which yiedls a higher guarantee that the number of peers given by above interval will be sufficient for supporting the bitrate $r$. 
 
 \begin{figure*}[ht]
-	\begin{minipage}[b]{0.4\linewidth}
-	\centering
-	\includegraphics[width=2.7in]{graphs/constrained.eps}
-	\caption{Constrained system with churn, 95\% confidence}
-	\label{fig:cons}
-	\end{minipage}
-	\hspace{0.5cm}
-	\begin{minipage}[b]{0.5\linewidth}
-	\centering
-	\includegraphics[width=2.7in]{graphs/unconstrained.eps}
-	\caption{Unconstrained system with churn, 95\% confidence}
-	\label{fig:uncons}
-	\end{minipage}
+\begin{minipage}[b]{0.4\linewidth}
+\centering
+\includegraphics[width=2.7in]{graphs/constrained.eps}
+\caption{Constrained system with churn, 95\% confidence}
+\label{fig:cons}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=2.7in]{graphs/unconstrained.eps}
+\caption{Unconstrained system with churn, 95\% confidence}
+\label{fig:uncons}
+\end{minipage}
 \end{figure*}
 
 Figure \ref{fig:cons} shows numerical results of lower bound for seeders againts $\rho$ for constrained system with churn and Fig.\ref{fig:uncons} shows numerical results of lower bound for seeders againts $\rho$ for unconstrained system with churn.  
@@ -350,6 +350,17 @@ We use $1/\gamma = 0.5$ hour thus we suppose that peers sojourn in the system on
 We increase arrival rate $\lambda$ until $160$ per hour. 
 We can see that the difference in the number of seeder sufficient to support different bitrates is not large.  
 We also see that that lower bound number for seeders is very easy to fullfil by ISP to employ system because ISP's customer number much higher that that lower bound.
+
+\subsection{Game Formulation}
+
+\begin{figure}[tb]
+\begin{center}
+\includegraphics[scale=0.35]{graphs/game-tree.eps}
+\end{center}
+\caption{Strategic game between ISP and users}
+\label{fig:gametree}
+\vspace{-2mm}
+\end{figure}
 
 
 
