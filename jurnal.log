@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  22 FEB 2013 13:41
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  25 FEB 2013 19:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -376,10 +376,10 @@ Overfull \hbox (1.02696pt too wide) detected at line 325
 File: graphs/constrained.eps Graphic file (type eps)
 <graphs/constrained.eps>
 File: graphs/unconstrained.eps Graphic file (type eps)
- <graphs/unconstrained.eps>
+ <graphs/unconstrained.eps> [4]
 File: graphs/game-tree.eps Graphic file (type eps)
  <graphs/game-tree.eps>
-(./jurnal.bbl [4]
+(./jurnal.bbl [5]
 LaTeX Font Info:    Try loading font information for OT1+txtt on input line 38.
 
 
@@ -399,7 +399,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.386 }
+l.449 }
        
 ? 
 
@@ -409,7 +409,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.386 }
+l.449 }
        
 ? 
 
@@ -419,7 +419,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.392 }
+l.455 }
        
 ? 
 
@@ -429,7 +429,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.392 }
+l.455 }
        
 ? 
 
@@ -439,7 +439,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.413 }
+l.476 }
        
 ? 
 
@@ -449,17 +449,17 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.413 }
+l.476 }
        
 ? 
-[5] (./jurnal.aux) ) 
+[6] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
- 3467 strings out of 493489
- 47654 string characters out of 3141350
- 116154 words of memory out of 3000000
- 6741 multiletter control sequences out of 15000+200000
+ 3469 strings out of 493489
+ 47690 string characters out of 3141350
+ 117154 words of memory out of 3000000
+ 6743 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (5 pages, 37708 bytes).
+Output written on jurnal.dvi (6 pages, 44088 bytes).

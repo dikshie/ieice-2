@@ -218,7 +218,7 @@ The knowledge of lower bound is very import for ISP to estimate number of custom
 We aim to find out how many peers will be sufficient to provide a stream to a certain number of leechers.
 Throughout the rest of this section we assume that CDN proxy has bit rate $r$  and the upload capacity of the CDN proxy is $C_{proxy}$.
 
-\begin{figure}[tb]
+\begin{figure}[tb] 
 \begin{center}
 \includegraphics[scale=0.35]{graphs/two-tier-cdn-topology-2.eps}
 \end{center}
@@ -351,20 +351,83 @@ We increase arrival rate $\lambda$ until $160$ per hour.
 We can see that the difference in the number of seeder sufficient to support different bitrates is not large.  
 We also see that that lower bound number for seeders is very easy to fullfil by ISP to employ system because ISP's customer number much higher that that lower bound.
 
-\subsection{Game Formulation}
+\subsection{ISP Strategies: Game Theory Approach}
+In this section, we present simple game theory approach for analysis of ISP strategies. 
+We define the pure strategy space $S_{isp}$ to include two strategies combination choice $s \in \{No, P2P\}$ and corresponding subscription free $P^{s}$.
+Futhermore, we denote the strategies as:
+\begin{itemize}
+	\item $s_1 = (No, P^{s_1})$ : the ISP decides to do nothing (use CDN only) and thus keeps charging the initial subscription free $P^{s_1}$.
+	\item $s_2 = (P2P, P^{s_2})$ : the ISP decides recommends P2P and offers a subscription fee $P^{s_2} \le P^{s_1}$.
+\end{itemize}
+Where the ISP strategy space $S_{isp} = \{s1,s2\}$.
+After defined the strategy space of ISP, now we will describe user reaction.
+One obvious user action is to accept ISP strategy.
+When user receives offer from ISP whether user want to join P2P strategy or not to join P2P strategy, user can only accept one of that strategy.  
+If user decides to join P2P strategy from ISP then it means user accept $s_2$ of ISP.
+If user decides not to join P2P strategy from ISP then it means user accept $s_1$ of ISP.
+Therefore whatever strategy offered by ISP, the user can only accept one of the ISP strategy.
+We describe that situation as extensive form in Fig.\ref{fig:gametree}.
 
-\begin{figure}[tb]
+\begin{figure}[tb] 
 \begin{center}
 \includegraphics[scale=0.35]{graphs/game-tree.eps}
 \end{center}
-\caption{Strategic game between ISP and users}
+\caption{Extensive form of game between ISP and users}
 \label{fig:gametree}
 \vspace{-2mm}
 \end{figure}
 
+\subsubsection{ISP Payoff}
+Next, we describe payoff function for ISP in our model.  
+We assume a profit maximaxing ISP that gains higher utility proportionally with increasing profits. 
+A simplified business model that determining ISP payfoff are mainly: user generated revenue, traffif cost from inter ISP traffic (transit and peering), and ISP preferences.
+
+For revenue model, we assume that the ISP collects revenue solely by charging an initial flat rate subscription fee $P^{s_1}$ to its $N$ homogeneous users who are purchasing internet access with equal and fixed quality of service.
+ISPs are often price discriminatory towards its customers and thus operates with different price levels for different speed or QoS.
+ISPs are also get revenue from other business area such as email hosting, web hosting, etc. 
+In our model, we do not include such that revenue. 
+In order to keep simple, we found it reasonable only to focus on users that buy the same internet access product. 
+Given above simplifications, the ISP collects a total revenue (when deciding on a strategy $s$) of $R = N P^{(s)}$.
 
 
- 
+For cost model, we identified that traffic costs including (transit traffic and paid peering) are the most relevant aspect. 
+We define the transit cost $\tau^{(s)}$ for a given ISP strategy $s$ to be denoted as 
+\begin{equation}\label{eq:transitcost}
+	\tau^{(s)}_t = \alpha^{(s)} \beta T^{(s_1)} p_t
+\end{equation}
+where:
+\begin{itemize}
+	\item $T^{(s_1)}$ represent the average inter-ISP traffic volume in Mbps.
+	\item $\alpha^{(s)}$ represent the expected reduction factor of inter-ISP traffic for strategy $s$ such that: $\alpha^{(s)} \in [0,1]$ for $s \in \{s2\}$;  $\alpha^{(s_1)} = 1$.
+	\item $\beta$ represent the ratio of inter-ISP traffic volume $T^{(s)}$ that traverse transit links such that: $\beta \in [0,1]$.
+	\item $p_t$ represent the price of transit traffic.
+\end{itemize}
+We define the paid peering traffic cost $\tau^{(s)}$ in a similar way to transit traffic. 
+Paid peering costs are subject to a peering traffic price $p_p$.
+Futhermore, as $\beta$ is the ratio of the inter-ISP traffic $T^{(s)}$ that traverses transit links, $(1-\beta)$ express the ratio that traverses paid peering links.
+We can denote the paid peering traffic cost as:
+\begin{equation}\label{eq:paidpeeringcost}
+	\tau^{(s)}_p = \alpha^{(s)} (1-\beta) T^{(s_1)} p_p
+\end{equation}
+Given transit cost and paid peering cost in Eq.\ref{eq:transitcost} and Eq.\ref{eq:paidpeeringcost}, we can define total inter-ISP traffic cost $\tau^{(s)}$ as:
+\begin{align}
+	\tau^{(s)} &= \tau^{(s)}_t + \tau^{(s)}_p \\
+	\tau^{(s)} &= \alpha^{(s)} \beta T^{(s_1)} p_t + \alpha^{(s)} (1-\beta) T^{(s_1)} p_p
+\end{align}
+In addition to the traffic costs, we also assume that ISP needs investment cost for peer-assisted CDN.
+More specifically refer to Fig.\ref{fig:twotier2} ISP required to setup their L0 or CDN proxy.
+We define the investment cost $C^{(s)}_i$ to be a monthly amortization of a larger implementation related cost for the case when the ISP decides to implement P2P. 
+We denote:
+\begin{align}
+	C^{(s)}_i &> 0; \text{ for } s = s_2 \\
+	          &= 0; \text{ for } s \in \{s_1\}
+\end{align}
+
+
+\section{Result and Discussion}
+
+\section{Related Work}
+
 \section{Conclusion and Future Work}\label{conclude}
 This section conclude the papers. 
 
