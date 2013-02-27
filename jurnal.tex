@@ -209,14 +209,16 @@ The CDN proxy maintained by ISP. ISP also has CDN node. CDN node can exchange co
 \label{fig:twotier}
 \vspace{-2mm}
 \end{figure}
- 
+  
 \section{System Model}\label{systemmodel}
-We present a cooperative model between P2P and CDN using simple a single bitrate for video streaming as shown in Fig.\ref{fig:twotier2}. 
+We present a model between P2P and CDN using simple a single bitrate for video streaming as shown in Fig.\ref{fig:twotier2}. 
 The model is a stochastic fluid model similar to \cite{4215694}.
 While the authors in \cite{4215694} focus on probabiity of degraded service on small and large systems, our work focus on lower bound of peers that can support intended bit rate.
 The knowledge of lower bound is very import for ISP to estimate number of customers that can join to P2P.
 We aim to find out how many peers will be sufficient to provide a stream to a certain number of leechers.
 Throughout the rest of this section we assume that CDN proxy has bit rate $r$  and the upload capacity of the CDN proxy is $C_{proxy}$.
+On next subsection we also present a model of simple game theory between ISP who operate P2P-CDN and users.
+We aim to find out the indifferent utility function between ISP and users.
 
 \begin{figure}[tb] 
 \begin{center}
@@ -225,7 +227,7 @@ Throughout the rest of this section we assume that CDN proxy has bit rate $r$  a
 \caption{System architecture on L0. P2P nodes that run on user homegateway communicates to CDN proxy.}
 \label{fig:twotier2}
 \vspace{-2mm}
-\end{figure}
+ \end{figure}
 
 
 We analyze the system for the theoretical unconstrained case when peers can have unlimited number of connections with other peers.
@@ -419,12 +421,48 @@ More specifically refer to Fig.\ref{fig:twotier2} ISP required to setup their L0
 We define the investment cost $C^{(s)}_i$ to be a monthly amortization of a larger implementation related cost for the case when the ISP decides to implement P2P. 
 We denote:
 \begin{align}
-	C^{(s)}_i &> 0; \text{ for } s = s_2 \\
+	C^{(s)}_i &\ge 0; \text{ for } s = s_2 \\
 	          &= 0; \text{ for } s \in \{s_1\}
 \end{align}
+Next, we explore what possible preference an ISP might have when presented with a choice between doing nothing (CDN only) and implementing P2P.
+We assume that ISP prefer implementing of P2P in order to increase quality of service for customers and also decreasing unwanted inter-ISP traffic.
+For the ISP strategies defined, we assume that:
+\begin{itemize}
+	\item $\lambda_c^{(s_3)} > 0$ (when ISP implements peer assisted).
+	\item $\lambda_c^{(s)} = 0$ for $s \in \{s1\}$.
+\end{itemize}
+Finally after we defined all ISP cost, we can define ISP payoff funtion that will be used to model ISP utility.  
+We define the ISP payoff function $\pi_{isp}$ as:
+\begin{align}
+	\pi_{isp}^{(s)} &= N P^{(s)} - \tau^{(s)} - C_i^{(s)} + \lambda_c^{(S)} \\
+	\nonumber       &= N P^{(s)} - \alpha^{(s)} \beta T^{(s_1)} p_t + \alpha^{(s)} (1-\beta) T^{(s_1)} p_p \\ 
+	                &- C_i^{(s)} + \lambda_c^{(S)}
+\end{align}
+
+\subsubsection{User Payoff}
+In this subsection, we we analyzed how the utility of user that purchases internet access at a fixed subscription fee $P^{(s)}$ can be described and derived. 
+We assume that all users pay a fixed flat rate subscription fee $P$ for internet access with equal speed or QoS parameters.
+Since users are rational player and subject to budget constraint, there must be a set of feature of internet access that valuable to users.
+We assume one important parameter that describes the quality of an internet access product as perceived by customer is the perceived performance of internet applications.  
+Moreover, the implementation of peer assisted mainly to reveal improvements of download speed as the performance metric that can be observed by customers.
+Consequently, we make assumption that the user perceived quality of internet access increases proportionally with increases in peer assisted implementation. 
+In relation to this, we define the user perceived quality $Q^{(s)}$ of the internet access given an ISP strategy $s$ to be a function of the experimental derived peer assisted performance improvement $d^{(s)}$ that corresponds to $s$. 
+Moreover it is assume that the user initially perceived quality $Q^{(s_1)}$ is known. 
+We formally denote $Q^{(s)}$ as:
+\begin{equation}
+	Q^{(s)} = Q^{(s_1)} (1 + d^{(s)})
+\end{equation}
+Therefore, given the assumption of proportional utility contribution from quality and price, we define basic utility $U^{(s)}$ a customer receives from buying internet access, given asn ISP strategy decision $s$ as:
+\begin{equation}
+	U^{(s)} = Q^{(s)} - P^{(s)}
+\end{equation}
+Where $Q^{(s)} > P^{(s)}$
 
 
-\section{Result and Discussion}
+\section{Analysis and Discussion}
+
+
+
 
 \section{Related Work}
 

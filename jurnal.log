@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  25 FEB 2013 19:09
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  28 FEB 2013 00:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -379,7 +379,7 @@ File: graphs/unconstrained.eps Graphic file (type eps)
  <graphs/unconstrained.eps> [4]
 File: graphs/game-tree.eps Graphic file (type eps)
  <graphs/game-tree.eps>
-(./jurnal.bbl [5]
+[5] (./jurnal.bbl
 LaTeX Font Info:    Try loading font information for OT1+txtt on input line 38.
 
 
@@ -399,7 +399,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.449 }
+l.482 }
        
 ? 
 
@@ -409,7 +409,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.449 }
+l.482 }
        
 ? 
 
@@ -419,7 +419,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.455 }
+l.488 }
        
 ? 
 
@@ -429,9 +429,10 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.455 }
+l.488 }
        
 ? 
+[6]
 
 ! LaTeX Error: File `' not found.
 
@@ -439,7 +440,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.476 }
+l.509 }
        
 ? 
 
@@ -449,10 +450,12 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.476 }
+l.509 }
        
 ? 
-[6] (./jurnal.aux) ) 
+[7
+
+] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
  3469 strings out of 493489
  47690 string characters out of 3141350
@@ -462,4 +465,4 @@ Here is how much of TeX's memory you used:
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (6 pages, 44088 bytes).
+Output written on jurnal.dvi (7 pages, 47752 bytes).
