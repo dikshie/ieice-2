@@ -411,35 +411,13 @@ For the ISP strategies defined, we assume that:
 \end{itemize}
 Finally after we defined all ISP cost, we can define ISP payoff funtion that will be used to model ISP utility.  
 We define the ISP payoff function $\pi_{isp}$ as:
-\begin{align}
-	\pi_{isp}^{(s)} &= N P^{(s)} - \tau^{(s)} - C_i^{(s)} + \lambda_c^{(S)} \\
+\begin{align}\label{eq:isppayoff}
+	\pi_{isp}^{(s)} &= N P^{(s)} - \tau^{(s)} - C_i^{(s)} + \lambda_c^{(s)} \\
 	\nonumber       &= N P^{(s)} - \alpha^{(s)} \beta T^{(s_1)} p_t + \alpha^{(s)} (1-\beta) T^{(s_1)} p_p \\ 
 	                &- C_i^{(s)} + \lambda_c^{(S)}
 \end{align}
 
-\subsubsection{User Payoff}
-In this subsection, we we analyzed how the utility of user that purchases internet access at a fixed subscription fee $P^{(s)}$ can be described and derived. 
-We assume that all users pay a fixed flat rate subscription fee $P$ for internet access with equal speed or QoS parameters.
-Since users are rational player and subject to budget constraint, there must be a set of feature of internet access that valuable to users.
-We assume one important parameter that describes the quality of an internet access product as perceived by customer is the perceived performance of internet applications.  
-Moreover, the implementation of peer assisted mainly to reveal improvements of download speed as the performance metric that can be observed by customers.
-Consequently, we make assumption that the user perceived quality of internet access increases proportionally with increases in peer assisted implementation. 
-In relation to this, we define the user perceived quality $Q^{(s)}$ of the internet access given an ISP strategy $s$ to be a function of the experimental derived peer assisted performance improvement $d^{(s)}$ that corresponds to $s$. 
-Moreover it is assume that the user initially perceived quality $Q^{(s_1)}$ is known. 
-We formally denote $Q^{(s)}$ as:
-\begin{equation}
-	Q^{(s)} = Q^{(s_1)} (1 + d^{(s)})
-\end{equation}
-Therefore, given the assumption of proportional utility contribution from quality and price, we define basic utility $U^{(s)}$ a customer receives from buying internet access, given asn ISP strategy decision $s$ as:
-\begin{equation}
-	U^{(s)} = Q^{(s)} - P^{(s)}
-\end{equation}
-Where $Q^{(s)} > P^{(s)}$
-
-
-\section{Analysis and Discussion}
-
-\begin{figure*}[ht]
+\begin{figure*}[tb]
 \begin{minipage}[b]{0.4\linewidth}
 \centering
 \includegraphics[width=2.7in]{graphs/constrained.eps}
@@ -455,6 +433,39 @@ Where $Q^{(s)} > P^{(s)}$
 \end{minipage}
 \end{figure*}
 
+\subsubsection{User Payoff}
+In this subsection, we  analyzed how the utility of user that purchases internet access at a fixed subscription fee $P^{(s)}$ can be described and derived. 
+We assume that all users pay a fixed flat rate subscription fee $P$ for internet access with equal speed or QoS parameters.
+Since users are rational player and subject to budget constraint, there must be a set of feature of internet access that valuable to users.
+We assume one important parameter that describes the quality of an internet access product as perceived by customer is the perceived performance of internet applications.  
+Moreover, the implementation of peer assisted mainly to reveal improvements of download speed as the performance metric that can be observed by customers.
+Consequently, we make assumption that the user perceived quality of internet access increases proportionally with increases in peer assisted implementation. 
+In relation to this, we define the user perceived quality $Q^{(s)}$ of the internet access given an ISP strategy $s$ to be a function of the experimental derived peer assisted performance improvement $d^{(s)}$ that corresponds to $s$. 
+Moreover it is assume that the user initially perceived quality $Q^{(s_1)}$ is known. 
+We formally denote $Q^{(s)}$ as:
+\begin{equation}\label{eq:basicuserutility}
+	Q^{(s)} = Q^{(s_1)} (1 + d^{(s)})
+\end{equation}
+Therefore, given the assumption of proportional utility contribution from quality and price, we define basic utility $U^{(s)}$ a customer receives from buying internet access, given asn ISP strategy decision $s$ as:
+\begin{equation}
+	U^{(s)} = Q^{(s)} - P^{(s)}
+\end{equation}
+Where $Q^{(s)} > P^{(s)}$.
+Finally, General form user payoff function (user accepts ISP strategy $s$):
+\begin{equation}
+	\pi^{(s_a | s)}_u = U^{(s)}
+\end{equation}
+by subtitution basic user utility in Eq.\ref{eq:basicuserutility}, we can get general user payoff function:
+\begin{equation}
+	\pi^{(s_a | s)}_u  = Q^{(s_1)} ( 1 + d^{(s)}) - P^{(s)}	
+\end{equation}
+
+
+
+\section{Analysis and Discussion}
+
+\subsection{Constrained and Unconstrained System}
+
 Figure \ref{fig:cons} shows numerical results of lower bound for seeders againts $\rho$ for constrained system with churn and Fig.\ref{fig:uncons} shows numerical results of lower bound for seeders againts $\rho$ for unconstrained system with churn.  
 Both numerical results have 95\% confidence interval on the number of seeders sufficient to support bitrate $r$.  
 We use $1/\gamma = 0.5$ hour thus we suppose that peers sojourn in the system on average for 30 minutes and we fix the arrival rate of the peers to $\lambda=100$ per hour.
@@ -462,13 +473,96 @@ We increase arrival rate $\lambda$ until $160$ per hour.
 We can see that the difference in the number of seeder sufficient to support different bitrates is not large.  
 We also see that that lower bound number for seeders is very easy to fullfil by ISP to employ system because ISP's customer number much higher that that lower bound.
 
+\subsection{Analytical Equilibrium Analysis}
+As defined in previous section, both users and ISP are modeled as selfish players that maximize their utility (payoff) defined in the payoff functions.
+As a consequence, an incentivizing strategy for both users and ISPs is a strategy that yields higher payoff then the other available strategies.
+The ISP cacting as a leader and initiator of the decision making, decides, on strategy $s$ that includes both a choice of technology as well as price offer $P^{(s)}$ which affect both ISP and user payoff.
+
+From the user payoff function, we observe that a user receives higher payoff as price decreases and will prefer lower prices.
+The ISP on the other hand will naturally have a minimum limit for the subscription price as it, in our model, represents the only source of revenue.
+Moreoverm we say that the minimum price $P^{(s)}_min$ that makes an ISP indifferrent between strategy $s \in \{s2\}$ and strategy $s_1$ can be found by identifying where the payoff of strategy $s$ equal the payoff of strategy $s_1$. 
+That is expressed formally as:
+\begin{equation}\label{ispminprice}
+	\pi^{(s)}_{isp} = \pi^{(s_1)}_{isp}
+\end{equation}
+Where $s \in \{s2\}$. 
+Later Eq.\ref{ispminprice} can be written as: 
+
+\begin{equation}\label{eq:ispminprice2}
+	N P^{(s)}_{min} - \tau^{(s)} - C^{(s)}_i + \lambda^{(s)}_c = N P^{(s_1)} - \tau^{(s1)}  
+\end{equation}
+When subtituting payoffs with Eq.\ref{eq:isppayoff}, by furthermore solving Eq.\ref{eq:ispminprice2} for $P^{(s)}_{min}$ we can get:
+\begin{equation}\label{eq:ispminprice3}
+	P^{(s)}_{min} = P^{(s_1)} - \frac{1}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i \lambda^{(s)}_c )
+\end{equation}
+Given the above equations, we have found an expression for $P^{(s)}$ that express the point at which the ISP is indifferent to strategy $s$ over $s_1$ and thus represent the lower boundary for where both the users that ISP might have incentives for strategy $s$. 
+Above equation also express that ISP at maximum are willing to reduce its initial price $P^{(s_1)}$ by the expression $\frac{1}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i \lambda^{(s)}_c )$.
+Moreover it can be interpreted as a combination of the reduction in ISP total costs plus its utility increase due to preferences for increased control.
+Naturally, the implementation of peer assisted is assumed to reduce traffic cost.  
+Futhermore, we can make following observations:
+\begin{itemize}
+	\item If $\lambda^{(s)}_c \ge C^{(s)}_i$ the the maximum price reduction will be greater than of equal the reduction in traffic costs.
+	\item If the investment cost for strategy $s$ approach the expected reduction in traffic cost, $C^{(s)}_i \to (\tau^{(s1)} - \tau^{(s)})$.
+	\item As $\frac{1}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i \lambda^{(s)}_c )$ represents the maximum price reduction that an ISP might give, we can futhermore express how greedy an ISP is by introducing an parameter $\gamma$ that tells us what percentage of the maximum price reduction above an ISP is willing to share.  
+\end{itemize}
+Given observations above we can define the ISP price reduction $\theta^{(s)}$ when choosing strategy $s$ to be:
+\begin{equation}
+ \theta^{(s)} = \frac{\gamma}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i \lambda^{(s)}_c )
+\end{equation}
+Where $\gamma \in [0,1]$ is a ratio that express how much of the ISP expected utility increase it wants to share with its users.   
+We can also say that $\gamma$ represents the greediness of the ISP.
+
+We have expressed a lower boundary for the price $P^{(s)}$ on behalf of the ISP, we now turn to the users perspective.  
+Although, we assume that the ISP will offer a reduced subscription free when deciding to use peer-assisted, we will examine the more general maximum limit for $P^{(s)}$ from the user perspective.
+We examine the case strategy $s \neq s_1$.
+The maximum limit of $P^{(s)}$ can be expressed by:
+\begin{equation}\label{eq:usermaxprice}
+	\tau^{(s_a|s)}_u = \tau^{(s_a|s_1)}_u
+\end{equation}
+Where $s \in \{s_2\}$. Later Eq.\ref{eq:usermaxprice} can be written as:
+\begin{equation}
+	Q^{(s_1)} ( 1 + d^{(s)} ) - P^{(s)}_max = Q^{(s_1)} - P^{(s_1)}
+\end{equation}
+Futhermore we can get $P^{(s)}_{max}$:  
+\begin{equation}\label{eq:usermaxprice2}
+	P^{(s)}_{max} = P^{(s_1)} + Q^{(s_1)} d^{(s)}
+\end{equation}
+
+We found that the maximum value of the subscription free $P^{(s)}$ depends on the perceived performance increase $Q^{(s_1)} d^{(s)}$.
+Next, we define minimum-maximum interval of the subscription fee $P^{(s)}$ as a value space of the subscription free where both ISP and users are expected to have incentives to adopt strategy $s$ as follows:
+\begin{equation}
+	P^{(s)}_{min} < P^{(s)} < P^{(s)}_{max}
+\end{equation}
+later by subtitution Eq.\ref{eq:ispminprice3} and \ref{eq:usermaxprice2} we can get:
+\begin{equation}\label{eq:min-max-interval}
+	P^{(s_1)} - \frac{1}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i \lambda^{(s)}_c ) < P^{(s)} <  P^{(s_1)} + Q^{(s_1)} d^{(s)} 
+\end{equation}
+
+We analyze ISP level strategy among its strategies.
+The ISP is indifferent between peer-assisted $(s_2)$ and CDN $(s_1)$ when $\pi^{(s_2)}_{isp} = \pi^{(s_1)}_{isp}$
+which by using ISP payoff function in Eq.\ref{eq:isppayoff} can be written as: 
+\begin{equation}
+	N P^{(s_2)} - \tau^{(s_2)} = N P^{(s_1)} - \tau^{(s_1)}
+\end{equation}
+When we assume that the ISP will provide a lower subscription free when recommending peer-assisted such that $P^{(s_2)} < P^{(s_1)}$, we can use our findings on the ISP price reduction to present $P^{(s_2)}$ as:
+\begin{align}
+	\nonumber P^{(s_2)} = P^{(s_1)} - \theta^{(s_2)} \\
+	P^{(s_2)} = P^{(s_1)} - \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i - \lambda^{(s_2)}_c)
+\end{align}
+The strategy restrictions as follows:
+\begin{itemize}
+	\item Choose strategy $s=s_2$ if $ P^{(s_2)} + \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i - \lambda^{(s_2)}_c) > P^{(s_1)}$
+	\item Choose strategy $s=s_1$ if $ P^{(s_1)} > P^{(s_2)} + \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i - \lambda^{(s_2)}_c)$ 
+\end{itemize}
 
 
-\section{Related Work}
+
+
+\section{Related Work} 
 
 \section{Conclusion and Future Work}\label{conclude}
 This section conclude the papers. 
-
+ 
 \section*{Acknowledgements}
 We thank Joe Touch for suggestions.
 

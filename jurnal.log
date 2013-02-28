@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  28 FEB 2013 00:35
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  28 FEB 2013 15:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,17 +369,17 @@ File: graphs/two-tier-cdn-topology.eps Graphic file (type eps)
 File: graphs/two-tier-cdn-topology-2.eps Graphic file (type eps)
 
 <graphs/two-tier-cdn-topology-2.eps> [3]
-Overfull \hbox (1.02696pt too wide) detected at line 325
+Overfull \hbox (1.02696pt too wide) detected at line 327
  $[] \OMS/txsy/m/n/10 ^^T \OML/txmi/m/it/10 n[] \OMS/txsy/m/n/10 ^^T []$ 
  []
 
-File: graphs/constrained.eps Graphic file (type eps)
-<graphs/constrained.eps>
-File: graphs/unconstrained.eps Graphic file (type eps)
- <graphs/unconstrained.eps> [4]
 File: graphs/game-tree.eps Graphic file (type eps)
- <graphs/game-tree.eps>
-[5] (./jurnal.bbl
+<graphs/game-tree.eps> [4]
+File: graphs/constrained.eps Graphic file (type eps)
+ <graphs/constrained.eps>
+File: graphs/unconstrained.eps Graphic file (type eps)
+ <graphs/unconstrained.eps>
+[5] [6] (./jurnal.bbl
 LaTeX Font Info:    Try loading font information for OT1+txtt on input line 38.
 
 
@@ -399,7 +399,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.482 }
+l.581 }
        
 ? 
 
@@ -409,7 +409,28 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.482 }
+l.581 }
+       
+? 
+[7]
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.587 }
+       
+? 
+
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.587 }
        
 ? 
 
@@ -419,7 +440,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.488 }
+l.608 }
        
 ? 
 
@@ -429,40 +450,19 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.488 }
+l.608 }
        
 ? 
-[6]
-
-! LaTeX Error: File `' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.509 }
-       
-? 
-
-! Package graphics Error: Division by 0.
-
-See the graphics package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.509 }
-       
-? 
-[7
+[8
 
 ] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
- 3469 strings out of 493489
- 47690 string characters out of 3141350
+ 3477 strings out of 493489
+ 47828 string characters out of 3141350
  117154 words of memory out of 3000000
- 6743 multiletter control sequences out of 15000+200000
+ 6751 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (7 pages, 47752 bytes).
+Output written on jurnal.dvi (8 pages, 57800 bytes).
