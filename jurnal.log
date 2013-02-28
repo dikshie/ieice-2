@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  28 FEB 2013 17:19
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  28 FEB 2013 18:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -459,10 +459,10 @@ l.599 }
 Here is how much of TeX's memory you used:
  3477 strings out of 493489
  47828 string characters out of 3141350
- 116154 words of memory out of 3000000
+ 117154 words of memory out of 3000000
  6751 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (8 pages, 56540 bytes).
+Output written on jurnal.dvi (8 pages, 56544 bytes).
