@@ -339,7 +339,7 @@ Futhermore, we denote the strategies as:
 	\item $s_1 = (No, P^{s_1})$ : the ISP decides to do nothing (use CDN only) and thus keeps charging the initial subscription free $P^{s_1}$.
 	\item $s_2 = (P2P, P^{s_2})$ : the ISP decides recommends P2P and offers a subscription fee $P^{s_2} \le P^{s_1}$.
 \end{itemize}
-Where the ISP strategy space $S_{isp} = \{s1,s2\}$.
+Where the ISP strategy space $S_{isp} = \{s_1,s_2\}$.
 After defined the strategy space of ISP, now we will describe user reaction.
 One obvious user action is to accept ISP strategy.
 When user receives offer from ISP whether user want to join P2P strategy or not to join P2P strategy, user can only accept one of that strategy.  
@@ -360,9 +360,9 @@ We describe that situation as extensive form in Fig.\ref{fig:gametree}.
 \subsubsection{ISP Payoff}
 Next, we describe payoff function for ISP in our model.  
 We assume a profit maximaxing ISP that gains higher utility proportionally with increasing profits. 
-A simplified business model that determining ISP payfoff are mainly: user generated revenue, traffif cost from inter ISP traffic (transit and peering), and ISP preferences.
+A simplified business model that determining ISP payoff are mainly: user generated revenue and traffic cost from inter ISP traffic (transit and peering).
 
-For revenue model, we assume that the ISP collects revenue solely by charging an initial flat rate subscription fee $P^{s_1}$ to its $N$ homogeneous users who are purchasing internet access with equal and fixed quality of service.
+For revenue model, we assume that the ISP collects revenue solely by charging an initial flat rate subscription fee $P^{(s_1)}$ to its $N$ homogeneous users who are purchasing internet access with equal and fixed quality of service.
 ISPs are often price discriminatory towards its customers and thus operates with different price levels for different speed or QoS.
 ISPs are also get revenue from other business area such as email hosting, web hosting, etc. 
 In our model, we do not include such that revenue. 
@@ -432,7 +432,7 @@ We define the ISP payoff function $\pi_{isp}$ as:
 \label{fig:uncons}
 \end{minipage}
 \end{figure*}
-
+ 
 \subsubsection{User Payoff}
 In this subsection, we  analyzed how the utility of user that purchases internet access at a fixed subscription fee $P^{(s)}$ can be described and derived. 
 We assume that all users pay a fixed flat rate subscription fee $P$ for internet access with equal speed or QoS parameters.
