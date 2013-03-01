@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  28 FEB 2013 18:02
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  1 MAR 2013 14:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,12 +369,13 @@ File: graphs/two-tier-cdn-topology.eps Graphic file (type eps)
 File: graphs/two-tier-cdn-topology-2.eps Graphic file (type eps)
 
 <graphs/two-tier-cdn-topology-2.eps> [3]
-Overfull \hbox (1.02696pt too wide) detected at line 327
+Overfull \hbox (1.02696pt too wide) detected at line 333
  $[] \OMS/txsy/m/n/10 ^^T \OML/txmi/m/it/10 n[] \OMS/txsy/m/n/10 ^^T []$ 
  []
 
+[4]
 File: graphs/game-tree.eps Graphic file (type eps)
-<graphs/game-tree.eps> [4]
+ <graphs/game-tree.eps>
 File: graphs/constrained.eps Graphic file (type eps)
  <graphs/constrained.eps>
 File: graphs/unconstrained.eps Graphic file (type eps)
@@ -391,7 +392,7 @@ Overfull \hbox (44.94092pt too wide) in paragraph at lines 52--55
  _ Phase-[]2-[]Pilot .
  []
 
-)
+[7])
 
 ! LaTeX Error: File `' not found.
 
@@ -399,7 +400,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.572 }
+l.596 }
        
 ? 
 
@@ -409,7 +410,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.572 }
+l.596 }
        
 ? 
 
@@ -419,7 +420,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 }
+l.602 }
        
 ? 
 
@@ -429,10 +430,9 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 }
+l.602 }
        
 ? 
-[7]
 
 ! LaTeX Error: File `' not found.
 
@@ -440,7 +440,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.599 }
+l.623 }
        
 ? 
 
@@ -450,19 +450,19 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.599 }
+l.623 }
        
 ? 
 [8
 
 ] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
- 3477 strings out of 493489
- 47828 string characters out of 3141350
- 117154 words of memory out of 3000000
- 6751 multiletter control sequences out of 15000+200000
+ 3478 strings out of 493489
+ 47840 string characters out of 3141350
+ 116154 words of memory out of 3000000
+ 6752 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (8 pages, 56544 bytes).
+Output written on jurnal.dvi (8 pages, 58188 bytes).

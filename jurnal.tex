@@ -338,7 +338,17 @@ Lower $\delta$ mean a smaller interval in inequality which yiedls a higher guara
 
 
 \subsection{ISP Strategies: Game Theory Approach}
-In this section, we present simple game theory approach for analysis of ISP strategies. 
+In this section, we present simple game theory approach for analysis of ISP strategies.
+Game theory as described in \cite{gametheory} is a mathematical framework to study and analysis of situation where decisions made by a set of two or more rational players.
+Basic element of game are: rational players, strategies, and payoff or utility.  
+Rational players choose a strategy for maximizing its payoff or utility. 
+Extensive-form game is representation of corresponding decision nodes in a directed tree.
+Later, we will use extensive-form game to represent our game.
+In our model, ISP has already attempted to implement solution for peer-assisted CDN.
+Moreover, it is reasonable to assume that ISP is naturally initiators.  
+Stackelberg game also known as a leader-follower game is a class of game that concerns with situation where one player, the leader, initiates the decision making and where the second player, the follower, responds to the actions by the leader.  
+Moreover in our model, ISP can be modeled as leader who decided to implement peer-assisted or not according to their expected payoff, while users can be modeled as followers that evaluate the decision of the ISP and responds according to their available actions and payoffs.
+
 We define the pure strategy space $S_{isp}$ to include two strategies combination choice $s \in \{No, P2P\}$ and corresponding subscription free $P^{s}$.
 Futhermore, we denote the strategies as:
 \begin{itemize}
@@ -495,7 +505,7 @@ When subtituting payoffs with Eq.\ref{eq:isppayoff}, by furthermore solving Eq.\
 \end{equation}
 Given the above equations, we have found an expression for $P^{(s)}$ that express the point at which the ISP is indifferent to strategy $s$ over $s_1$ and thus represent the lower boundary for where both the users that ISP might have incentives for strategy $s$. 
 Above equation also express that ISP at maximum are willing to reduce its initial price $P^{(s_1)}$ by the expression $\frac{1}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i  )$.
-Moreover it can be interpreted as a combination of the reduction in ISP total costs plus its utility increase due to preferences for increased control.
+Moreover it can be interpreted as a combination of the reduction in ISP total costs and investment.
 Naturally, the implementation of peer assisted is assumed to reduce traffic cost.  
 Futhermore, we can make following observations:
 \begin{itemize}
@@ -542,10 +552,10 @@ which by using ISP payoff function in Eq.\ref{eq:isppayoff} can be written as:
 	N P^{(s_2)} - \tau^{(s_2)} = N P^{(s_1)} - \tau^{(s_1)}
 \end{equation}
 When we assume that the ISP will provide a lower subscription free when recommending peer-assisted such that $P^{(s_2)} < P^{(s_1)}$, we can use our findings on the ISP price reduction to present $P^{(s_2)}$ as:
-\begin{align}
-	\nonumber P^{(s_2)} = P^{(s_1)} - \theta^{(s_2)} \\
-	P^{(s_2)} = P^{(s_1)} - \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i )
-\end{align}
+\begin{eqnarray}
+	\nonumber P^{(s_2)} &=& P^{(s_1)} - \theta^{(s_2)} \\
+	P^{(s_2)} &=& P^{(s_1)} - \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i )
+\end{eqnarray}
 The strategy restrictions as follows:
 \begin{itemize}
 	\item Choose strategy $s=s_2$ if $ P^{(s_2)} + \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i ) > P^{(s_1)}$
