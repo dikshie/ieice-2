@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  1 MAR 2013 15:01
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  1 MAR 2013 15:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -378,6 +378,10 @@ Overfull \hbox (1.02696pt too wide) detected at line 333
 \c@theorem2=\count115
 File: graphs/game-tree.eps Graphic file (type eps)
  <graphs/game-tree.eps>
+\c@theorem3=\count116
+\c@theorem4=\count117
+\c@theorem6=\count118
+\c@theorem7=\count119
 File: graphs/constrained.eps Graphic file (type eps)
  <graphs/constrained.eps>
 File: graphs/unconstrained.eps Graphic file (type eps)
@@ -402,7 +406,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.607 }
+l.627 }
        
 ? 
 
@@ -412,7 +416,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.607 }
+l.627 }
        
 ? 
 
@@ -422,7 +426,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.613 }
+l.633 }
        
 ? 
 
@@ -432,7 +436,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.613 }
+l.633 }
        
 ? 
 
@@ -442,7 +446,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.634 }
+l.654 }
        
 ? 
 
@@ -452,19 +456,19 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.634 }
+l.654 }
        
 ? 
 [8
 
 ] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
- 3490 strings out of 493489
- 47956 string characters out of 3141350
- 116154 words of memory out of 3000000
- 6764 multiletter control sequences out of 15000+200000
+ 3514 strings out of 493489
+ 48200 string characters out of 3141350
+ 117154 words of memory out of 3000000
+ 6788 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (8 pages, 58484 bytes).
+Output written on jurnal.dvi (8 pages, 58616 bytes).

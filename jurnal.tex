@@ -396,9 +396,10 @@ In our model, we do not include such that revenue.
 In order to keep simple, we found it reasonable only to focus on users that buy the same internet access product. 
 Given above simplifications, the ISP collects a total revenue (when deciding on a strategy $s$) of $R = N P^{(s)}$.
 
-
 For cost model, we identified that traffic costs including (transit traffic and paid peering) are the most relevant aspect. 
-We define the transit cost $\tau^{(s)}$ for a given ISP strategy $s$ to be denoted as 
+\newtheorem{theorem3}{Definition}
+\begin{theorem}[Transit cost]
+we define the transit cost $\tau^{(s)}$ for a given ISP strategy $s$ to be denoted as 
 \begin{equation}\label{eq:transitcost}
 	\tau^{(s)}_t = \alpha^{(s)} \beta T^{(s_1)} p_t
 \end{equation}
@@ -409,32 +410,51 @@ where:
 	\item $\beta$ represent the ratio of inter-ISP traffic volume $T^{(s)}$ that traverse transit links such that: $\beta \in [0,1]$.
 	\item $p_t$ represent the price of transit traffic.
 \end{itemize}
-We define the paid peering traffic cost $\tau^{(s)}$ in a similar way to transit traffic. 
+\end{theorem}
+
+\newtheorem{theorem4}{Definition}
+\begin{theorem}
+We define the paid peering traffic cost $\tau^{(s)}$. 
 Paid peering costs are subject to a peering traffic price $p_p$.
 Futhermore, as $\beta$ is the ratio of the inter-ISP traffic $T^{(s)}$ that traverses transit links, $(1-\beta)$ express the ratio that traverses paid peering links.
 We can denote the paid peering traffic cost as:
 \begin{equation}\label{eq:paidpeeringcost}
 	\tau^{(s)}_p = \alpha^{(s)} (1-\beta) T^{(s_1)} p_p
 \end{equation}
+\end{theorem}
+
+newtheorem{theorem5}{Definition}
+\begin{theorem}
 Given transit cost and paid peering cost in Eq.\ref{eq:transitcost} and Eq.\ref{eq:paidpeeringcost}, we can define total inter-ISP traffic cost $\tau^{(s)}$ as:
 \begin{align}
 	\tau^{(s)} &= \tau^{(s)}_t + \tau^{(s)}_p \\
 	\tau^{(s)} &= \alpha^{(s)} \beta T^{(s_1)} p_t + \alpha^{(s)} (1-\beta) T^{(s_1)} p_p
 \end{align}
+\end{theorem}
+
 In addition to the traffic costs, we also assume that ISP needs investment cost for peer-assisted CDN.
 More specifically refer to Fig.\ref{fig:twotier2} ISP required to setup their L0 or CDN proxy.
+
+\newtheorem{theorem6}{Definition}
+\begin{theorem}
 We define the investment cost $C^{(s)}_i$ to be a monthly amortization of a larger implementation related cost for the case when the ISP decides to implement P2P. 
 We denote:
 \begin{align}
 	C^{(s)}_i &\ge 0; \text{ for } s = s_2 \\
 	          &= 0; \text{ for } s \in \{s_1\}
 \end{align}
+\end{theorem}
+
 Finally after we defined all ISP cost, we can define ISP payoff funtion that will be used to model ISP utility.  
+
+\newtheorem{theorem7}{Definition}
+\begin{theorem}
 We define the ISP payoff function $\pi_{isp}$ as:
 \begin{align}\label{eq:isppayoff}
 	\pi_{isp}^{(s)} &= N P^{(s)} - \tau^{(s)} - C_i^{(s)} \\
 	 &= N P^{(s)} - \alpha^{(s)} \beta T^{(s_1)} p_t + \alpha^{(s)} (1-\beta) T^{(s_1)} p_p - C_i^{(s)} 
 \end{align}
+\end{theorem}
 
 \begin{figure*}[tb]
 \begin{minipage}[b]{0.4\linewidth}
