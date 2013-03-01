@@ -349,6 +349,8 @@ Moreover, it is reasonable to assume that ISP is naturally initiators.
 Stackelberg game also known as a leader-follower game is a class of game that concerns with situation where one player, the leader, initiates the decision making and where the second player, the follower, responds to the actions by the leader.  
 Moreover in our model, ISP can be modeled as leader who decided to implement peer-assisted or not according to their expected payoff, while users can be modeled as followers that evaluate the decision of the ISP and responds according to their available actions and payoffs.
 
+\newtheorem{theorem}{Definition}
+\begin{theorem}[ISP Strategies]
 We define the pure strategy space $S_{isp}$ to include two strategies combination choice $s \in \{No, P2P\}$ and corresponding subscription free $P^{s}$.
 Futhermore, we denote the strategies as:
 \begin{itemize}
@@ -356,13 +358,22 @@ Futhermore, we denote the strategies as:
 	\item $s_2 = (P2P, P^{s_2})$ : the ISP decides recommends P2P and offers a subscription fee $P^{s_2} \le P^{s_1}$.
 \end{itemize}
 Where the ISP strategy space $S_{isp} = \{s_1,s_2\}$.
+\end{theorem}
+
 After defined the strategy space of ISP, now we will describe user reaction.
 One obvious user action is to accept ISP strategy.
-When user receives offer from ISP whether user want to join P2P strategy or not to join P2P strategy, user can only accept one of that strategy.  
+When user receives offer from ISP whether user want to join peer-assisted strategy or not to join peer-assisted strategy, user can only accept one of that strategy.  
 If user decides to join P2P strategy from ISP then it means user accept $s_2$ of ISP.
 If user decides not to join P2P strategy from ISP then it means user accept $s_1$ of ISP.
 Therefore whatever strategy offered by ISP, the user can only accept one of the ISP strategy.
+
+\newtheorem{theorem2}{Definition}
+\begin{theorem}[User Strategies]
+Given a ISP strategy decision $s$, we define the user action as $s_a$ where user accepts ISP strategy $s \in S_{isp}$.
+\end{theorem}
 We describe that situation as extensive form in Fig.\ref{fig:gametree}.
+
+
 
 \begin{figure}[tb] 
 \begin{center}
