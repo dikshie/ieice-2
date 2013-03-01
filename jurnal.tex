@@ -413,7 +413,7 @@ where:
 \end{theorem}
 
 \newtheorem{theorem4}{Definition}
-\begin{theorem}
+\begin{theorem}[Paid peering cost]
 We define the paid peering traffic cost $\tau^{(s)}$. 
 Paid peering costs are subject to a peering traffic price $p_p$.
 Futhermore, as $\beta$ is the ratio of the inter-ISP traffic $T^{(s)}$ that traverses transit links, $(1-\beta)$ express the ratio that traverses paid peering links.
@@ -423,8 +423,8 @@ We can denote the paid peering traffic cost as:
 \end{equation}
 \end{theorem}
 
-newtheorem{theorem5}{Definition}
-\begin{theorem}
+\newtheorem{theorem5}{Definition}
+\begin{theorem}[Total traffic cost]
 Given transit cost and paid peering cost in Eq.\ref{eq:transitcost} and Eq.\ref{eq:paidpeeringcost}, we can define total inter-ISP traffic cost $\tau^{(s)}$ as:
 \begin{align}
 	\tau^{(s)} &= \tau^{(s)}_t + \tau^{(s)}_p \\
@@ -436,7 +436,7 @@ In addition to the traffic costs, we also assume that ISP needs investment cost 
 More specifically refer to Fig.\ref{fig:twotier2} ISP required to setup their L0 or CDN proxy.
 
 \newtheorem{theorem6}{Definition}
-\begin{theorem}
+\begin{theorem}[Investment cost]
 We define the investment cost $C^{(s)}_i$ to be a monthly amortization of a larger implementation related cost for the case when the ISP decides to implement P2P. 
 We denote:
 \begin{align}
@@ -448,7 +448,7 @@ We denote:
 Finally after we defined all ISP cost, we can define ISP payoff funtion that will be used to model ISP utility.  
 
 \newtheorem{theorem7}{Definition}
-\begin{theorem}
+\begin{theorem}[ISP payoff]
 We define the ISP payoff function $\pi_{isp}$ as:
 \begin{align}\label{eq:isppayoff}
 	\pi_{isp}^{(s)} &= N P^{(s)} - \tau^{(s)} - C_i^{(s)} \\
@@ -481,7 +481,7 @@ Moreover, the implementation of peer assisted mainly to reveal improvements of d
 Consequently, we make assumption that the user perceived quality of internet access increases proportionally with increases in peer assisted implementation. 
 
 \newtheorem{theorem8}{Definition}
-\begin{theorem}
+\begin{theorem}[User perceived quality]
 we define the user perceived quality $Q^{(s)}$ of the internet access given an ISP strategy $s$ to be a function of the experimental derived peer assisted performance improvement $d^{(s)}$ that corresponds to $s$. 
 Moreover it is assume that the user initially perceived quality $Q^{(s_1)}$ is known. 
 We formally denote $Q^{(s)}$ as:
@@ -493,7 +493,7 @@ We formally denote $Q^{(s)}$ as:
 Therefore, given the assumption of proportional utility contribution from quality and price, we can define basic utility $U^{(s)}$. 
 
 \newtheorem{theorem9}{Definition}
-\begin{theorem}
+\begin{theorem}[Basic user utility]
 We define basic utility $U^{(s)}$ a customer receives from buying internet access, given asn ISP strategy decision $s$ as:
 \begin{equation}
 	U^{(s)} = Q^{(s)} - P^{(s)}
