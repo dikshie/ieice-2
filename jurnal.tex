@@ -554,12 +554,15 @@ Futhermore, we can make following observations:
 	\item If the investment cost for strategy $s$ approach the expected reduction in traffic cost, $C^{(s)}_i \to (\tau^{(s1)} - \tau^{(s)})$.
 	\item As $\frac{1}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i )$ represents the maximum price reduction that an ISP might give, we can futhermore express how greedy an ISP is by introducing an parameter $\gamma$ that tells us what percentage of the maximum price reduction above an ISP is willing to share.  
 \end{itemize}
+\newtheorem{theorem10}{Definition}
+\begin{theorem}[ISP price reduction]
 Given observations above we can define the ISP price reduction $\theta^{(s)}$ when choosing strategy $s$ to be:
 \begin{equation}
  \theta^{(s)} = \frac{\gamma}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i  )
 \end{equation}
 Where $\gamma \in [0,1]$ is a ratio that express how much of the ISP expected utility increase it wants to share with its users.   
 We can also say that $\gamma$ represents the greediness of the ISP.
+\end{theorem}
 
 We have expressed a lower boundary for the price $P^{(s)}$ on behalf of the ISP, we now turn to the users perspective.  
 Although, we assume that the ISP will offer a reduced subscription free when deciding to use peer-assisted, we will examine the more general maximum limit for $P^{(s)}$ from the user perspective.
@@ -576,8 +579,10 @@ Futhermore we can get $P^{(s)}_{max}$:
 \begin{equation}\label{eq:usermaxprice2}
 	P^{(s)}_{max} = P^{(s_1)} + Q^{(s_1)} d^{(s)}
 \end{equation}
-
 We found that the maximum value of the subscription free $P^{(s)}$ depends on the perceived performance increase $Q^{(s_1)} d^{(s)}$.
+
+\newtheorem{theorem11}{Definition}
+\begin{theorem}[Minimum-maximum subscription fee interval]
 Next, we define minimum-maximum interval of the subscription fee $P^{(s)}$ as a value space of the subscription free where both ISP and users are expected to have incentives to adopt strategy $s$ as follows:
 \begin{equation}
 	P^{(s)}_{min} < P^{(s)} < P^{(s)}_{max}
@@ -586,6 +591,8 @@ later by subtitution Eq.\ref{eq:ispminprice3} and \ref{eq:usermaxprice2} we can 
 \begin{equation}\label{eq:min-max-interval}
 	P^{(s_1)} - \frac{1}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i  ) < P^{(s)} <  P^{(s_1)} + Q^{(s_1)} d^{(s)} 
 \end{equation}
+\end{theorem}
+
 
 We analyze ISP level strategy among its strategies.
 The ISP is indifferent between peer-assisted $(s_2)$ and CDN $(s_1)$ when $\pi^{(s_2)}_{isp} = \pi^{(s_1)}_{isp}$
