@@ -624,14 +624,41 @@ Simplyfing limitations that we use:
 
 %%%%%%%%%%%%%%%%% RELATED WORK %%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related Work} 
-Content distribution network with peer-assisted have been successfully deployed on the Internet an example Akamai \cite{Huang:2008:UHC:1496046.1496064}.
-On the otherhand, 
+Content distribution network with peer-assisted have been successfully deployed on the Internet an example Akamai \cite{Huang:2008:UHC:1496046.1496064} and LiveSky \cite{Yin:2010:LEC:1823746.1823750}.
+The Authors of \cite{Huang:2008:UHC:1496046.1496064} from two real world traces conclude that hybrid CDN-P2P can significantly reduce the cost of content distribution and can scale to cope with exponential growth of Internet video content.
+Yin et al., \cite{Yin:2010:LEC:1823746.1823750} described commercial operation of CDN with peer-assisted in China.   
+LiveSky solved several challanges in the system design such as dynamic resources scaling of P2P, low startup latency of P2P, ease of P2P integration with existing CDN infrastructure, and network friendliness and upload fairness in the P2P operation. 
+http://www.edinburghbicycle.com/products/shimano-freewheel-mf-tz20
+Xu et al.,\cite{DBLP:journals/corr/abs-1212-4915} using game theory shows that right cooperative profit distribution of P2P can help ISP to maximize the utility. 
+Their model can easily implemented to current Internet economic settlement.
+Misra et al.,\cite{Misra:2010:IPS:1811099.1811064} also mentioned the important of P2P architecture to support content delivery networks. 
+The author uses cooperative game theory to formulate simple compensation rules for users who run P2P to support content delivery networks.  
 
+The idea telco or ISP managed CDN has been soared in recent years.  
+The complexity of CDN business leads telco and ISP want to managed their own ISP.
+It has been shown that it is cost effective \cite{federation}\cite{norton2011internet}. 
+Kamiyama et al., \cite{NoriakiKAMIYAMA2013} proposed optimally ISP operated CDN. 
+Kamiyama et al., mentioned that to deliver large and rich Internet content to users, ISP needs to put their CDN in data center.
+The locations are limited while the storage is large, makes this solution become effective, using optimum placement algorithm based on real ISP network topologies.
+The authors found that inserting CDN to ISP's ladder-type networks is effective to reduce the hops length thus reduce total link cost. 
+On the other hand, an effort for telco or ISP managed CDN to be connected each other has been also initiated by Cisco to form CDN federation \cite{federation} using open standard \cite{cdni}.
+They argue that current CDN architecture is not enough closer to the users and ISP can fill this position.   
 
+The idea to utilize users computation power to support ISP operation is not new.  
+European via Figaro project \cite{figaro} proposed residential gateway as integrator of different networks and services and become Internet-wide distributed content management for future Internet architecture \cite{figaro}. 
+Cha, et al.,\cite{Cha:2008:NTP:1855641.1855646} did trace analysis and found that IPTV architecture powered by P2P can handle much larger number of channels with limited demand for infrastructure compare to IP multicast. 
+Jiang et al., \cite{Jiang:2012:OMD:2413176.2413193} proposed scalable and adaptive for content replication and request routing for CDN servers that located in users home gateway. 
+Our work close to Maki et al.,\cite{NaoyaMAKI2012} work.  
+Maki et al.,\cite{NaoyaMAKI2012} propose traffic engineering for peer-assited CDN to control the behavior of clients and presents a solution for optimizing the selection of content files.
+Our work is a little bit same in system model architecture which uses different level of topologies which L0 and L1 where is Maki et al., \cite{NaoyaMAKI2012} the authors uses different name which is local domain and global domain. 
+While our work focus on fluid limit for number of peers needed to support intended bit rate in single bit rate system and modeling simple economic incentive for ISP, Maki et al., \cite{NaoyaMAKI2012} work focus on algorithm of traffic enginering for optimizing selection of content files and controling behavior of clients.
 
 %%%%%%%%%%%%%%%%% CONCLUSION %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion and Future Work}\label{conclude}
-This section conclude the papers. 
+This paper presents scheme for peer-assisted ISP managed CDN model that estimate lower bound of peers based on stochastic fluid model and estimate the economic incentive for ISP based on game theory.  
+Our numerical result shows that peer-assited CDN managed by ISP or telco is feasible to deploy and does not harm to ISP business. 
+Our future work will include energy efficient trade off this peer-assisted ISP managed CDN. 
+We are very interested to know how much energy saving by ISP and how much increase of energy at users home gateway side in this architecture. 
 
 
 

@@ -72,4 +72,37 @@ S.~Tewari and L.~Kleinrock, ``Analytical model for bittorrent-based live video
 M.J. Osborne and A.~Rubinstein, A Course in Game Theory, MIT Press Books,
   vol.1, MIT Press, 1994.
 
+\bibitem{Yin:2010:LEC:1823746.1823750}
+H.~Yin, X.~Liu, T.~Zhan, V.~Sekar, F.~Qiu, C.~Lin, H.~Zhang, and B.~Li,
+  ``Livesky: Enhancing cdn with p2p,'' ACM Trans. Multimedia Comput. Commun.
+  Appl., vol.6, no.3, pp.16:1--16:19, Aug.\ 2010.
+
+\bibitem{DBLP:journals/corr/abs-1212-4915}
+K.~Xu, Y.~Zhong, and H.~He, ``Can p2p technology benefit eyeball isps? a
+  cooperative profit distribution answer,'' CoRR, vol.abs/1212.4915, 2012.
+
+\bibitem{norton2011internet}
+W.B. Norton, The Internet Peering Playbook: Connecting to the Core of the
+  Internet, 2nd~ed., DrPeering Press, December\ 2012.
+
+\bibitem{NoriakiKAMIYAMA2013}
+N.~KAMIYAMA, T.~MORI, R.~KAWAHARA, and H.~HASEGAWA, ``Optimally designing
+  isp-operated cdn,'' IEICE Transactions on Communications, vol.E96.B, no.3,
+  pp.790--801, March\ 2013.
+
+\bibitem{figaro}
+``Figaro project.'' http://www.ict-figaro.eu/, 2012.
+
+\bibitem{Jiang:2012:OMD:2413176.2413193}
+W.~Jiang, S.~Ioannidis, L.~Massouli{\'e}, and F.~Picconi, ``Orchestrating
+  massively distributed cdns,'' Proceedings of the 8th international conference
+  on Emerging networking experiments and technologies, CoNEXT '12, New York,
+  NY, USA, pp.133--144, ACM, 2012.
+
+\bibitem{NaoyaMAKI2012}
+N.~MAKI, T.~NISHIO, R.~SHINKUMA, T.~MORI, N.~KAMIYAMA, R.~KAWAHARA, and
+  T.~TAKAHASHI, ``Traffic engineering of peer-assisted content delivery network
+  with content-oriented incentive mechanism,'' IEICE Transactions on
+  Information and Systems, vol.E95.D, no.12, pp.2860--2869, December\ 2012.
+
 \end{thebibliography}
