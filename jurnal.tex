@@ -88,7 +88,7 @@ Apart from P2P protocols, video contents can be efficiently distributed leveragi
 The major issue of CDN are high deployment cost and limited scalability in the long term.
 Given the complementary features of P2P and CDN, in the last years some hybrid solutions have been proposed \cite{Huang:2008:UHC:1496046.1496064,4772628,Yin:2009:DDH:1631272.1631279} to take the best of both approaches.
 
-Nowadays, xDSL networks are deployed worldwide and broadband acess network helps the P2P application to perform better.
+In recent year, xDSL networks are deployed worldwide and broadband acess network helps the P2P application to perform better.
 In the coming years, FTTH will be massively deployed by network operators in order to offer to their customers and even larger acces bandwidth.
 As bandwidth increase, more the P2P systems is efficient since a peer can contribute much more. 
 
@@ -183,21 +183,22 @@ Therefore, the future of CDN business is likely to live deeper into ISP networks
 
 
 
-%%%%%%%%%%%%%%%%%%%%%% SYSTEM DESCRIPTION %%%%%%%%%%%%%%%%%%%%%%%
-\section{System Description}\label{description}
+%%%%%%%%%%%%%%%% %%%%%% SYSTEM DESCRIPTION %%%%%%%%%%%%%%%%%%%%%%%
+\section{System D escription}\label{description}
 
 Fig.\ref{fig:twotier} shows the model of system archictecture.
 That's model offers the opportunity to connect the P2P swarm not directly but through an intermediate later of proxies.
 This function has potential benefit: boosting download performances (by exposing through proxy devices higher upload bandwidth than end users) and increasing privacy (by reducing swarm exposure for end users).
 In Fig.\ref{fig:twotier} two level CDN is defined.
-The first level L1 consists high capacity servers strategically placed to increase network backbone capacity.
-L1 is more like current CDN network.
-In L1 level, CDN node can communicate each other by using common interconnect interface eventhough the CDN node are owned by different companies or different ISPs \cite{cdni}.
-L0 consists CDN proxies are owned or to be managed by ISP.
+The first level Level1 consists high capacity servers strategically placed to increase network backbone capacity.
+Level1 is more like current CDN network.
+In Level1, CDN node can communicate each other by using common interconnect interface eventhough the CDN node are owned by different companies or different ISPs \cite{cdni}.
+Level0 consists CDN proxies are owned or to be managed by ISP.
+For big ISP different CDN proxies in level0 can be put on different cities or different geographically areas.
 These nodes are placed closer to end users. 
 CDN proxies can communicate each other to react to the content requests from users.
-L0 are the natural service points for the users and they can offer the best quality of service if the are able to efficiently cache the requested content.
-The state of the L0 and L1 caches is stored in DHT. 
+Level0 are the natural service points for the users and they can offer the best quality of service if the are able to efficiently cache the requested content.
+The state of the Level0 and Level1 caches is stored in DHT. 
 The DHT is used to keep an updated record for each content in scalable manner. 
 This different caching levels are used to offer an adaptive, flexible, and scalable service to the users.
 
@@ -222,7 +223,7 @@ The model is a stochastic fluid model similar to \cite{4215694}.
 While the authors in \cite{4215694} focus on probabiity of degraded service on small and large systems, our work focus on lower bound of peers that can support intended bit rate.
 The knowledge of lower bound is very import for ISP to estimate number of customers that can join to P2P.
 We aim to find out how many peers will be sufficient to provide a stream to a certain number of leechers.
-Throughout the rest of this section we assume that CDN proxy has bit rate $r$  and the upload capacity of the CDN proxy is $C_{proxy}$.
+Throughout the rest of this section we assume that CDN proxy has bit rate $r$  and the total capacity of the CDN proxy is $C_{proxy}$.
 On next subsection we also present a model of simple game theory between ISP who operate P2P-CDN and users.
 We aim to find out the indifferent utility function between ISP and users.
 
@@ -235,10 +236,6 @@ We aim to find out the indifferent utility function between ISP and users.
 \vspace{-2mm}
  \end{figure}
 
-
-We analyze the system for the theoretical unconstrained case when peers can have unlimited number of connections with other peers.
-We also present the analysis more realistic case for constrained case when peers can only have a limited number of incoming and outgoing connections.
-Moreover, for both case above we also present the analysis for churnless and churn systems.
 
 For churn case, we assume peers join and leave at random times, stay in for a random period, then leave the system.
 Assuming poisson process with rate $\lambda$.
