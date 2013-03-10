@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  10 MAR 2013 22:50
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  11 MAR 2013 00:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,37 +369,44 @@ File: graphs/two-tier-cdn-topology.eps Graphic file (type eps)
 File: graphs/two-tier-cdn-topology-2.eps Graphic file (type eps)
 
 <graphs/two-tier-cdn-topology-2.eps>
+Overfull \hbox (17.33667pt too wide) in alignment at lines 277--280
+ [][][] []
+ []
+
+[3]
 \c@theorem=\count114
- [3]
 \c@theorem2=\count115
 File: graphs/game-tree.eps Graphic file (type eps)
  <graphs/game-tree.eps>
 \c@theorem3=\count116
 \c@theorem4=\count117
 \c@theorem5=\count118
+ [4]
 \c@theorem6=\count119
 \c@theorem7=\count120
-File: graphs/constrained.eps Graphic file (type eps)
+File: graphs/stable-steady-state.eps Graphic file (type eps)
+ <graphs/stable-steady-state.eps>
+File: graphs/U_p_n_1000.eps Graphic file (type eps)
 
-<graphs/constrained.eps>
-File: graphs/unconstrained.eps Graphic file (type eps)
- <graphs/unconstrained.eps> [4]
+<graphs/U_p_n_1000.eps>
+File: graphs/U_p_n_10000.eps Graphic file (type eps)
+ <graphs/U_p_n_10000.eps>
 \c@theorem8=\count121
 \c@theorem9=\count122
  [5]
 \c@theorem10=\count123
 
-Overfull \hbox (14.48111pt too wide) in paragraph at lines 490--491
+Overfull \hbox (14.48111pt too wide) in paragraph at lines 518--519
 []\OT1/txr/m/n/10 Given ob-ser-va-tions above
  []
 
 \c@theorem11=\count124
 
-Overfull \hbox (18.3511pt too wide) in paragraph at lines 517--518
+Overfull \hbox (18.3511pt too wide) in paragraph at lines 545--546
 []
  []
 
-[6] (./jurnal.bbl
+[6] (./jurnal.bbl [7]
 LaTeX Font Info:    Try loading font information for OT1+txtt on input line 38.
 
 
@@ -411,8 +418,8 @@ Overfull \hbox (48.30508pt too wide) in paragraph at lines 52--55
 om/2010/12/02/peering-
  []
 
-[7]
-Overfull \hbox (44.94092pt too wide) in paragraph at lines 85--88
+
+Overfull \hbox (44.94092pt too wide) in paragraph at lines 75--78
 \OT1/txtt/m/n/8 cisco . com / web / about / ac79 / docs / sp / CDN-[]Federation
  _ Phase-[]2-[]Pilot .
  []
@@ -425,7 +432,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.614 }
+l.642 }
        
 ? 
 
@@ -435,7 +442,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.614 }
+l.642 }
        
 ? 
 
@@ -445,7 +452,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.620 }
+l.648 }
        
 ? 
 
@@ -455,7 +462,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.620 }
+l.648 }
        
 ? 
 
@@ -465,7 +472,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.641 }
+l.669 }
        
 ? 
 
@@ -475,17 +482,17 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.641 }
+l.669 }
        
 ? 
 [8] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
- 3552 strings out of 493489
- 48686 string characters out of 3141350
- 117154 words of memory out of 3000000
+ 3553 strings out of 493489
+ 48711 string characters out of 3141350
+ 115154 words of memory out of 3000000
  6826 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 36i,13n,38p,453b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (8 pages, 57496 bytes).
+Output written on jurnal.dvi (8 pages, 59904 bytes).

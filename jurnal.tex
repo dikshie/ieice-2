@@ -30,7 +30,7 @@
 %\SpecialIssue{}
 \SpecialSection{on XXXYYYZZZ}
 %\theme{}
-\title{P2PCDN}
+\title{Towards Sustainable Content Delivery with Peer-Assisted CDN}
 %
 %\title[title for header]{title}
 \authorlist{% fill arguments of \authorentry, otherwise error will be caused. 
@@ -186,7 +186,7 @@ Therefore, the future of CDN business is likely to live deeper into ISP networks
 %%%%%%%%%%%%%%%% %%%%%% SYSTEM DESCRIPTION %%%%%%%%%%%%%%%%%%%%%%%
 \section{System Description}\label{description}
 
-Figure \ref{fig:twotier} shows the model of system archictecture.
+Figure \ref{fig:twotier} shows the model of system architecture.
 That's model offers the opportunity to connect the P2P swarm not directly but through an intermediate later of proxies.
 This function has potential benefit: boosting download performances (by exposing through proxy devices higher upload bandwidth than end users) and increasing privacy (by reducing swarm exposure for end users).
 In Fig.\ref{fig:twotier} two level CDN is defined.
@@ -238,7 +238,7 @@ We aim to find out the indifferent utility function between ISP and users.
 \begin{center}
 \includegraphics[scale=0.35]{graphs/two-tier-cdn-topology-2.eps}
 \end{center}
-\caption{System architecture on L0. P2P nodes that run on user homegateway communicates to CDN proxy.}
+\caption{System architecture on L0. P2P nodes that run on user home gateway communicates to CDN proxy.}
 \label{fig:twotier2}
 \vspace{-2mm}
  \end{figure}
@@ -254,9 +254,9 @@ We can derive that minimum CDN proxy capacity to support the system is:
 \end{equation}
 Based on leecher and seeder definition on Sec.\ref{description}, seeder already enjoyed direct streaming from CDN proxy but upload rate of seeder to leecher might not same as streaming bitrate. 
 Same case in leecher mode, where upload rate leecher to other leecher might no same as streaming rate. 
-Moreover, we define $RR\frac{n_l}{n_s}$, we can get:
+Moreover, we define $X=\frac{n_l}{n_s}$, we can get:
 \begin{equation}
-	\frac{U_p}{n_s} = (1 + RR - min (u_s,RR))
+	\frac{U_p}{n_s} = (1 + X - min (u_s,X))
 \end{equation}
 Where RR is ratio number of leechers to number of seeders.
 Therefore we have constraint that is $n_s.u_s \ge n_l.r$.
@@ -266,11 +266,20 @@ This constraint will be used in churn situation by CDN proxy to decide whether n
 
 \subsection{Stable System with Churn}
 For churn case, we assume peers join and leave at random times, stay in for a random period, then leave the system.
-Assuming poisson process with rate $\lambda$.
+Assuming poisson process with rate $\lambda$. 
 Peers stay in the system for a period of time that follows a general probability distribution with mean $\frac{1}{\gamma}$.
 Define $N(t)$ as the number of peers in the system at time $t$, $N(t)$ can be represented as the number of peers in a $M/G/\infty$ queue.
-In order CDN proxy able to do that following simple admission policy can be used: 1) the system starts admitting new arrivals as seeders until $n_s.u_s < n_l.r$. 2) all arrivals after that point are admitted as leechers. 3) when a seeder leaves the system, CDN proxy can calculate $n_s.u_s < n_l.r$ again, depends on the result if $n_s.u_s < n_l.r$ then one of the leechers is randomly selected to become a seeder.
+In poisson process, the time that these events occur in a given time interval. The time between each pair of consecutive events has an exponential distribution.
+On the other hand, the number of events in time interval follows poisson distribution with rate $\rho = \frac{\lambda}{\gamma}$.
 
+In order CDN proxy handle the churn, CDN proxy can follow simple admission policy: 1) the system starts admitting new arrivals as seeders until $(n_s.u_s < n_l.r)$. 2) all arrivals after that point are admitted as leechers. 3) when a seeder leaves the system, CDN proxy can calculate $(n_s.u_s < n_l.r)$ again, depends on the result if $(n_s.u_s < n_l.r)$ then one of the leechers is randomly selected to become a seeder.
+Now we can compute the probability of the probability of minimum capacity as following:
+\begin{eqnarray*}
+P(\text{support min capacity}) &=& P(\frac{U_p}{n_s} = 1+RR-min(u_s,RR))\\
+&=&F(1+RR-min(u_s,RR))\\
+\end{eqnarray*}
+where $F=\sum_{x=0}^{w} \frac{e^{-\rho} \rho^{x}}{x!}$.
+We know that for large $\rho$ we can approximate the poisson distribution with gaussian distribution with mean $\mu=\rho$ and standard deviation $\sigma = \sqrt{\rho}$.
 
 
 \subsection{ISP Strategies: Game Theory Approach}
@@ -392,18 +401,30 @@ We define the ISP payoff function $\pi_{isp}$ as:
 \end{align}
 \end{theorem}
 
+
+\begin{figure}[tb] 
+\begin{center}
+\includegraphics[scale=0.5]{graphs/stable-steady-state.eps}
+\end{center}
+\caption{System with steady state.}
+\label{fig:steadystate}
+\vspace{-2mm}
+ \end{figure}
+
+
+
 \begin{figure*}[tb]
 \begin{minipage}[b]{0.4\linewidth}
 \centering
-\includegraphics[width=2.7in]{graphs/constrained.eps}
-\caption{Constrained system with churn, 95\% confidence}
+\includegraphics[width=2.7in]{graphs/U_p_n_1000.eps}
+\caption{$U_p$ for n=1000}
 \label{fig:cons}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[b]{0.5\linewidth}
 \centering
-\includegraphics[width=2.7in]{graphs/unconstrained.eps}
-\caption{Unconstrained system with churn, 95\% confidence}
+\includegraphics[width=2.7in]{graphs/U_p_n_10000.eps}
+\caption{$U_p$ for n=10000}
 \label{fig:uncons}
 \end{minipage}
 \end{figure*}
@@ -450,7 +471,9 @@ by subtitution basic user utility in Eq.\ref{eq:basicuserutility}, we can get ge
 %%%%%%%%%%%%% %%%% SECTION ANALYSIS & DISCUSSION %%%%%%%%%%%%%%%%%
 \section{Analysis and Discussion}
 
-\subsection{Constrained and Unconstrained System}
+\subsection{Minimum Capacity of CDN Proxy}
+
+Figure \ref{fig:steadystate} shows steady state of the system .
 
 Figure \ref{fig:cons} shows numerical results of lower bound for seeders againts $\rho$ for constrained system with churn and Fig.\ref{fig:uncons} shows numerical results of lower bound for seeders againts $\rho$ for unconstrained system with churn.  
 Both numerical results have 95\% confidence interval on the number of seeders sufficient to support bitrate $r$.  
