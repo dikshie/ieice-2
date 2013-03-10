@@ -269,7 +269,7 @@ For churn case, we assume peers join and leave at random times, stay in for a ra
 Assuming poisson process with rate $\lambda$.
 Peers stay in the system for a period of time that follows a general probability distribution with mean $\frac{1}{\gamma}$.
 Define $N(t)$ as the number of peers in the system at time $t$, $N(t)$ can be represented as the number of peers in a $M/G/\infty$ queue.
-
+In order CDN proxy able to do that following simple admission policy can be used: 1) the system starts admitting new arrivals as seeders until $n_s.u_s < n_l.r$. 2) all arrivals after that point are admitted as leechers. 3) when a seeder leaves the system, CDN proxy can calculate $n_s.u_s < n_l.r$ again, depends on the result if $n_s.u_s < n_l.r$ then one of the leechers is randomly selected to become a seeder.
 
 
 
