@@ -53,11 +53,6 @@ R.~Krishnan, H.V. Madhyastha, S.~Srinivasan, S.~Jain, A.~Krishnamurthy,
   http://www.internap.com/2010/12/02/peering-disputes-comcast-level-3-and-you/,
   12\ 2010.
 
-\bibitem{federation}
-Cisco, ``Cdn federation,'' 10\ 2012.
-\newblock Available on
-  \url{http://www.cisco.com/web/about/ac79/docs/sp/CDN-Federation_Phase-2-Pilot.pdf}.
-
 \bibitem{4215694}
 R.~Kumar, Y.~Liu, and K.~Ross, ``Stochastic fluid theory for p2p streaming
   systems,'' INFOCOM 2007. 26th IEEE International Conference on Computer
@@ -85,6 +80,11 @@ H.~Yin, X.~Liu, T.~Zhan, V.~Sekar, F.~Qiu, C.~Lin, H.~Zhang, and B.~Li,
 \bibitem{DBLP:journals/corr/abs-1212-4915}
 K.~Xu, Y.~Zhong, and H.~He, ``Can p2p technology benefit eyeball isps? a
   cooperative profit distribution answer,'' CoRR, vol.abs/1212.4915, 2012.
+
+\bibitem{federation}
+Cisco, ``Cdn federation,'' 10\ 2012.
+\newblock Available on
+  \url{http://www.cisco.com/web/about/ac79/docs/sp/CDN-Federation_Phase-2-Pilot.pdf}.
 
 \bibitem{norton2011internet}
 W.B. Norton, The Internet Peering Playbook: Connecting to the Core of the

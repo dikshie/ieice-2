@@ -1,4 +1,5 @@
 /usr/local/texlive/2012/bin/x86_64-darwin/bibtex jurnal
+/usr/local/texlive/2012/bin/x86_64-darwin/bibtex jurnal
 /usr/local/texlive/2012/bin/x86_64-darwin/latex jurnal 
 /usr/local/texlive/2012/bin/x86_64-darwin/latex jurnal 
 /usr/local/texlive/2012/bin/x86_64-darwin/dvips -t a4 -G0 -o jurnal.ps jurnal.dvi

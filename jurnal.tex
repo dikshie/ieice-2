@@ -203,14 +203,16 @@ We noted that CDN proxy has a limited capacity and it may not be able to satisfy
 A peer-assisted CDN introduced peer coordination mechanism into CDN system. 
 In this case CDN proxy is responsible to make peer coordination.  
 For any new streaming request, the CDN proxy will have to make two decisions.
-The CDN proxy will make a arrival node as seeder or as leecher based as adaptation strategy.  
+The CDN proxy will make a arrival node as seeder or as leecher based on adaptation strategy or a capacity constraint.  
 We define a seeder is a node or a peer that receive stream from CDN proxy and a leecher is a node or a peer that receive stream from a seeder or other a leecher.  
 It is very important for ISP to make sure CDN proxy capacity is enough while maintaining minimum capacity requirement. 
+Although peer selection strategy is out of scope of this paper, we assume that peers form random mesh networks. 
+In the next sections we will show how CDN proxy can make such decision in a way to optimize system.
 
-Other architecture, CDN federation proposed by Cisco and some ISPs to interconnect the ISP's CDN \cite{federation}.
-The goal CDN federation architecture is to interconnect ISPs owned CDN thus reduce Capex and Opex for content delivery. 
-This architecture does not involved P2P. 
-Some peering or transit might be needed by ISP to join this architecture. 
+%Other architecture, CDN federation proposed by Cisco and some ISPs to interconnect the ISP's CDN \cite{federation}.
+%The goal CDN federation architecture is to interconnect ISPs owned CDN thus reduce Capex and Opex for content delivery. 
+%This architecture does not involved P2P. 
+%Some peering or transit might be needed by ISP to join this architecture. 
  
 \begin{figure}[tb]
 \begin{center}
