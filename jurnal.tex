@@ -254,9 +254,14 @@ We can derive that minimum CDN proxy capacity to support the system is:
 \end{equation}
 Based on leecher and seeder definition on Sec.\ref{description}, seeder already enjoyed direct streaming from CDN proxy but upload rate of seeder to leecher might not same as streaming bitrate. 
 Same case in leecher mode, where upload rate leecher to other leecher might no same as streaming rate. 
+Moreover, we define $RR\frac{n_l}{n_s}$, we can get:
+\begin{equation}
+	\frac{U_p}{n_s} = (1 + RR - min (u_s,RR))
+\end{equation}
+Where RR is ratio number of leechers to number of seeders.
 Therefore we have constraint that is $n_s.u_s \ge n_l.r$.
 This constraint tell us that seeders supply should be larger than leechers bitrate.  
-This constraint will be user in churn situation by CDN proxy to decide whether new arrival peers should be seeder or leecher.
+This constraint will be used in churn situation by CDN proxy to decide whether new arrival peers should be seeder or leecher.
 
 
 \subsection{Stable System with Churn}

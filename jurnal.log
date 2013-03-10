@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  10 MAR 2013 22:40
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  10 MAR 2013 22:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -368,43 +368,38 @@ File: graphs/two-tier-cdn-topology.eps Graphic file (type eps)
  <graphs/two-tier-cdn-topology.eps>
 File: graphs/two-tier-cdn-topology-2.eps Graphic file (type eps)
 
-<graphs/two-tier-cdn-topology-2.eps> [3]
-Overfull \hbox (1.02696pt too wide) detected at line 353
- $[] \OMS/txsy/m/n/10 ^^T \OML/txmi/m/it/10 n[] \OMS/txsy/m/n/10 ^^T []$ 
- []
-
-[4]
+<graphs/two-tier-cdn-topology-2.eps>
 \c@theorem=\count114
+ [3]
 \c@theorem2=\count115
 File: graphs/game-tree.eps Graphic file (type eps)
  <graphs/game-tree.eps>
 \c@theorem3=\count116
 \c@theorem4=\count117
 \c@theorem5=\count118
- [5]
 \c@theorem6=\count119
 \c@theorem7=\count120
 File: graphs/constrained.eps Graphic file (type eps)
- <graphs/constrained.eps>
-File: graphs/unconstrained.eps Graphic file (type eps)
 
-<graphs/unconstrained.eps>
+<graphs/constrained.eps>
+File: graphs/unconstrained.eps Graphic file (type eps)
+ <graphs/unconstrained.eps> [4]
 \c@theorem8=\count121
 \c@theorem9=\count122
- [6]
+ [5]
 \c@theorem10=\count123
 
-Overfull \hbox (14.48111pt too wide) in paragraph at lines 579--580
+Overfull \hbox (14.48111pt too wide) in paragraph at lines 490--491
 []\OT1/txr/m/n/10 Given ob-ser-va-tions above
  []
 
 \c@theorem11=\count124
 
-Overfull \hbox (18.3511pt too wide) in paragraph at lines 606--607
+Overfull \hbox (18.3511pt too wide) in paragraph at lines 517--518
 []
  []
 
-[7] (./jurnal.bbl [8]
+[6] (./jurnal.bbl
 LaTeX Font Info:    Try loading font information for OT1+txtt on input line 38.
 
 
@@ -416,7 +411,7 @@ Overfull \hbox (48.30508pt too wide) in paragraph at lines 52--55
 om/2010/12/02/peering-
  []
 
-
+[7]
 Overfull \hbox (44.94092pt too wide) in paragraph at lines 85--88
 \OT1/txtt/m/n/8 cisco . com / web / about / ac79 / docs / sp / CDN-[]Federation
  _ Phase-[]2-[]Pilot .
@@ -430,7 +425,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.703 }
+l.614 }
        
 ? 
 
@@ -440,7 +435,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.703 }
+l.614 }
        
 ? 
 
@@ -450,7 +445,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.709 }
+l.620 }
        
 ? 
 
@@ -460,7 +455,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.709 }
+l.620 }
        
 ? 
 
@@ -470,7 +465,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.730 }
+l.641 }
        
 ? 
 
@@ -480,17 +475,17 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.730 }
+l.641 }
        
 ? 
-[9] (./jurnal.aux) ) 
+[8] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
  3552 strings out of 493489
  48686 string characters out of 3141350
- 120154 words of memory out of 3000000
+ 117154 words of memory out of 3000000
  6826 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (9 pages, 69108 bytes).
+Output written on jurnal.dvi (8 pages, 57496 bytes).
