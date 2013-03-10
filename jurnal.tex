@@ -254,7 +254,7 @@ We can derive that minimum CDN proxy capacity to support the system is:
 \end{equation}
 Based on leecher and seeder definition on Sec.\ref{description}, seeder already enjoyed direct streaming from CDN proxy but upload rate of seeder to leecher might not same as streaming bitrate. 
 Same case in leecher mode, where upload rate leecher to other leecher might no same as streaming rate. 
-Moreover, we define $X=\frac{n_l}{n_s}$, we can get:
+Moreover, we define $X=\frac{n_l}{n_s}$ and normalization $r=1$ , we can get:
 \begin{equation}
 	\frac{U_p}{n_s} = (1 + X - min (u_s,X))
 \end{equation}
@@ -280,6 +280,11 @@ P(\text{support min capacity}) &=& P(\frac{U_p}{n_s} = 1+RR-min(u_s,RR))\\
 \end{eqnarray*}
 where $F=\sum_{x=0}^{w} \frac{e^{-\rho} \rho^{x}}{x!}$.
 We know that for large $\rho$ we can approximate the poisson distribution with gaussian distribution with mean $\mu=\rho$ and standard deviation $\sigma = \sqrt{\rho}$.
+We know that cumulative distribution function for standard normal random variable is $F(x) = \Phi(\frac{x-\mu}{\sigma})$ thus we can get:
+\begin{eqnarray*}
+P \left(\frac{(U_p/n_s) - \rho}{\sqrt{\rho}}=\frac{1+RR-min(u_s,RR) - \rho}{\sqrt{\rho}}\right)\\
+=\Phi \left( \frac{1+RR-min(u_s,RR) - \rho}{\sqrt{\rho}} \right) \\
+\end{eqnarray*}
 
 
 \subsection{ISP Strategies: Game Theory Approach}
