@@ -3,47 +3,48 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: jurnal.aux
 The style file: ieicetr.bst
 Database file #1: jurnal.bib
+Warning--to sort, need author or key in dispute
 Warning--to sort, need author or key in figaro
 Warning--can't use both volume and number fields in gametheory
-You've used 21 entries,
+You've used 22 entries,
             2213 wiz_defined-function locations,
-            668 strings with 8344 characters,
-and the built_in function-call counts, 8522 in all, are:
-= -- 872
-> -- 432
+            671 strings with 8460 characters,
+and the built_in function-call counts, 8684 in all, are:
+= -- 889
+> -- 433
 < -- 0
-+ -- 173
++ -- 174
 - -- 150
-* -- 634
-:= -- 1321
-add.period$ -- 24
-call.type$ -- 21
-change.case$ -- 137
+* -- 645
+:= -- 1339
+add.period$ -- 25
+call.type$ -- 22
+change.case$ -- 140
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 329
-empty$ -- 632
+cite$ -- 25
+duplicate$ -- 335
+empty$ -- 654
 format.name$ -- 150
-if$ -- 1902
+if$ -- 1943
 int.to.chr$ -- 0
-int.to.str$ -- 21
+int.to.str$ -- 22
 missing$ -- 19
-newline$ -- 69
+newline$ -- 72
 num.names$ -- 40
-pop$ -- 157
+pop$ -- 164
 preamble$ -- 1
-purify$ -- 117
+purify$ -- 119
 quote$ -- 0
-skip$ -- 298
+skip$ -- 305
 stack$ -- 0
-substring$ -- 497
+substring$ -- 502
 swap$ -- 105
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 80
-warning$ -- 2
+type$ -- 84
+warning$ -- 3
 while$ -- 77
-width$ -- 23
-write$ -- 216
-(There were 2 warnings)
+width$ -- 24
+write$ -- 223
+(There were 3 warnings)

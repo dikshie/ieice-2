@@ -166,8 +166,6 @@ In this paper we study, the economic incentive for ISP who adopt peer assisted C
 %\vspace{-2mm}
 %\end{figure}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%% CDN COMPLEXITY %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CDN Complexity}
 As shown in Fig.\ref{fig:businessrelationship}, how content in Internet delivered to end-users.  
@@ -177,16 +175,16 @@ Depends on peering policies, CDN can reach to customer directly via ISP or via I
 In current modern Internet topology, content provider and service provider can be merged in on entity, for example: Google.
 Labovitz et al.,\cite{Labovitz:2010:IIT:2043164.1851194} mentioned that the hypergiant entities such as Google doing massive peering to IXP in order to be closed to ISP. 
 Although CDN is placed close to ISP network, it does not guarantee end-users can get good quality video stream \cite{Krishnan:2009:MBE:1644893.1644917}.
-Other than technical complexity as mentioned before, CDN also faces economic complexity.
+Other than technical complexity as mentioned before, CDN also faces economic complexity\cite{dispute}.
 Therefore, the future of CDN business is likely to live deeper into ISP networks, more integrated into and interleaved with ISP infrastructures.
 
 
 
 
 %%%%%%%%%%%%%%%% %%%%%% SYSTEM DESCRIPTION %%%%%%%%%%%%%%%%%%%%%%%
-\section{System D escription}\label{description}
+\section{System Description}\label{description}
 
-Fig.\ref{fig:twotier} shows the model of system archictecture.
+Figure \ref{fig:twotier} shows the model of system archictecture.
 That's model offers the opportunity to connect the P2P swarm not directly but through an intermediate later of proxies.
 This function has potential benefit: boosting download performances (by exposing through proxy devices higher upload bandwidth than end users) and increasing privacy (by reducing swarm exposure for end users).
 In Fig.\ref{fig:twotier} two level CDN is defined.
@@ -194,16 +192,23 @@ The first level Level1 consists high capacity servers strategically placed to in
 Level1 is more like current CDN network.
 In Level1, CDN node can communicate each other by using common interconnect interface eventhough the CDN node are owned by different companies or different ISPs \cite{cdni}.
 Level0 consists CDN proxies are owned or to be managed by ISP.
-For big ISP different CDN proxies in level0 can be put on different cities or different geographically areas.
+For big ISP different CDN proxies in level0 can be put at different cities or different geographically areas.
 These nodes are placed closer to end users. 
 CDN proxies can communicate each other to react to the content requests from users.
 Level0 are the natural service points for the users and they can offer the best quality of service if the are able to efficiently cache the requested content.
 The state of the Level0 and Level1 caches is stored in DHT. 
 The DHT is used to keep an updated record for each content in scalable manner. 
 This different caching levels are used to offer an adaptive, flexible, and scalable service to the users.
+We noted that CDN proxy has a limited capacity and it may not be able to satisfy all clients.
+A peer-assisted CDN introduced peer coordination mechanism into CDN system. 
+In this case CDN proxy is responsible to make peer coordination.  
+For any new streaming request, the CDN proxy will have to make two decisions.
+The CDN proxy will make a arrival node as seeder or as leecher based as adaptation strategy.  
+We define a seeder is a node or a peer that receive stream from CDN proxy and a leecher is a node or a peer that receive stream from a seeder or other a leecher.  
+It is very important for ISP to make sure CDN proxy capacity is enough while maintaining minimum capacity requirement. 
 
 Other architecture, CDN federation proposed by Cisco and some ISPs to interconnect the ISP's CDN \cite{federation}.
-The goal this architecture is to interconnect ISPs owned CDN thus reduce Capex and Opex for content delivery. 
+The goal CDN federation architecture is to interconnect ISPs owned CDN thus reduce Capex and Opex for content delivery. 
 This architecture does not involved P2P. 
 Some peering or transit might be needed by ISP to join this architecture. 
  
@@ -215,7 +220,7 @@ Some peering or transit might be needed by ISP to join this architecture.
 The CDN proxy maintained by ISP. ISP also has CDN node. CDN node can exchange contents with other CDN node owned by other CDN companies.P2P nodes are ISP's customers that run P2P software.}
 \label{fig:twotier}
 \vspace{-2mm}
-\end{figure}
+\end{figure} 
   
 \section{System Model}\label{systemmodel}
 We present a model between P2P and CDN using simple a single bitrate for video streaming as shown in Fig.\ref{fig:twotier2}. 
@@ -508,7 +513,7 @@ by subtitution basic user utility in Eq.\ref{eq:basicuserutility}, we can get ge
 \end{equation}
 
 
-%%%%%%%%%%%%%%%%% SECTION ANALYSIS & DISCUSSION %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% %%%% SECTION ANALYSIS & DISCUSSION %%%%%%%%%%%%%%%%%
 \section{Analysis and Discussion}
 
 \subsection{Constrained and Unconstrained System}
