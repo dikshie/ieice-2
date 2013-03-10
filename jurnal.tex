@@ -275,15 +275,15 @@ On the other hand, the number of events in time interval follows poisson distrib
 In order CDN proxy handle the churn, CDN proxy can follow simple admission policy: 1) the system starts admitting new arrivals as seeders until $(n_s.u_s < n_l.r)$. 2) all arrivals after that point are admitted as leechers. 3) when a seeder leaves the system, CDN proxy can calculate $(n_s.u_s < n_l.r)$ again, depends on the result if $(n_s.u_s < n_l.r)$ then one of the leechers is randomly selected to become a seeder.
 Now we can compute the probability of the probability of minimum capacity as following:
 \begin{eqnarray*}
-P(\text{support min capacity}) &=& P(\frac{U_p}{n_s} = 1+RR-min(u_s,RR))\\
-&=&F(1+RR-min(u_s,RR))\\
+P(\text{support min capacity}) &=& P(\frac{U_p}{n_s} = 1+X-min(u_s,X))\\
+&=&F(1+X-min(u_s,X))\\
 \end{eqnarray*}
 where $F=\sum_{x=0}^{w} \frac{e^{-\rho} \rho^{x}}{x!}$.
 We know that for large $\rho$ we can approximate the poisson distribution with gaussian distribution with mean $\mu=\rho$ and standard deviation $\sigma = \sqrt{\rho}$.
 We know that cumulative distribution function for standard normal random variable is $F(x) = \Phi(\frac{x-\mu}{\sigma})$ thus we can get:
 \begin{eqnarray*}
-P \left(\frac{(U_p/n_s) - \rho}{\sqrt{\rho}}=\frac{1+RR-min(u_s,RR) - \rho}{\sqrt{\rho}}\right)\\
-=\Phi \left( \frac{1+RR-min(u_s,RR) - \rho}{\sqrt{\rho}} \right) \\
+P \left(\frac{(U_p/n_s) - \rho}{\sqrt{\rho}}=\frac{1+X-min(u_s,X) - \rho}{\sqrt{\rho}}\right)\\
+=\Phi \left( \frac{1+X-min(u_s,X) - \rho}{\sqrt{\rho}} \right) \\
 \end{eqnarray*}
 
 

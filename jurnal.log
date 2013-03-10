@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  11 MAR 2013 01:42
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  11 MAR 2013 02:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,7 +369,7 @@ File: graphs/two-tier-cdn-topology.eps Graphic file (type eps)
 File: graphs/two-tier-cdn-topology-2.eps Graphic file (type eps)
 
 <graphs/two-tier-cdn-topology-2.eps>
-Overfull \hbox (17.33667pt too wide) in alignment at lines 277--280
+Overfull \hbox (6.49661pt too wide) in alignment at lines 277--280
  [][][] []
  []
 
@@ -495,4 +495,4 @@ Here is how much of TeX's memory you used:
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (8 pages, 60696 bytes).
+Output written on jurnal.dvi (8 pages, 60712 bytes).
