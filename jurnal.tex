@@ -112,7 +112,7 @@ The user home gateway is always on 24 hours therefore this is perfect device to 
 ISP can give discount price to user's who wants their home gateway to be used as peer assisted by ISP and ISP can get benefit from peer assisted running in their customer home gateway to help their CDN.
 With the growing interest to do inter-connect of CDN \cite{cdni,oceanproject} this architecture can give good benefit for ISP.    
 
-In this paper we study, the economic incentive for ISP who adopt peer assisted CDN and shows that the advantages to adopt peer assisted CDN. 
+In this paper we study, the incentive for ISP who adopt peer assisted CDN and shows the advantages to adopt peer assisted CDN. 
 %We use single shot game theory to model of the balance between ISP profit that get from employed peer assisted CDN and traffic saving. 
 
 %\begin{figure}[tb]
@@ -229,10 +229,8 @@ The CDN proxy maintained by ISP. ISP also has CDN node. CDN node can exchange co
 \section{System Model}\label{systemmodel}
 We present a model between P2P and CDN using simple a single bitrate for video streaming as shown in Fig.\ref{fig:twotier2}. 
 The model is a stochastic fluid model similar to \cite{4215694}.
-While the authors in \cite{4215694} focus on probability of degraded service on small and large systems, our work focus on lower bound of peers that can support intended bit rate.
-The knowledge of lower bound is very import for ISP to estimate number of customers that can join to P2P.
-We aim to find out how many peers will be sufficient to provide a stream to a certain number of leechers.
-Throughout the rest of this section we assume that CDN proxy has bit rate $r$  and the total capacity of the CDN proxy is $C_{proxy}$.
+While the authors in \cite{4215694} focus on probability of degraded service on small and large systems, our work focus on minimum capacity or of CDN proxy to support the system.
+Minimum capacity is very important to ISP for capacity planning.
 On next subsection we also present a model of simple game theory between ISP who operate P2P-CDN and users.
 We aim to find out the indifferent utility function between ISP and users.
 
@@ -245,7 +243,23 @@ We aim to find out the indifferent utility function between ISP and users.
 \vspace{-2mm}
  \end{figure}
 
+\subsection{Stable System}
 
+For stable system, denote $n_l$ is the number of leechers, $n_s$ is the number of seeders in the system, and $r$ is link bandwidth or bitrate.
+Number of bitrate that leechers should receive is $n_l.r$. 
+On the other hand seeders should upload to leechers which is $n_s.r$
+We can derive that minimum CDN proxy capacity to support the system is:
+\begin{equation}
+	U_p = n_s.r - n_l.r - min(n_s.u_s, n_l.r)
+\end{equation}
+Based on leecher and seeder definition on Sec.\ref{description}, seeder already enjoyed direct streaming from CDN proxy but upload rate of seeder to leecher might not same as streaming bitrate. 
+Same case in leecher mode, where upload rate leecher to other leecher might no same as streaming rate. 
+Therefore we have constraint that is $n_s.u_s \ge n_l.r$.
+This constraint tell us that seeders supply should be larger than leechers bitrate.  
+This constraint will be user in churn situation by CDN proxy to decide whether new arrival peers should be seeder or leecher.
+
+
+\subsection{Stable System with Churn}
 For churn case, we assume peers join and leave at random times, stay in for a random period, then leave the system.
 Assuming poisson process with rate $\lambda$.
 Peers stay in the system for a period of time that follows a general probability distribution with mean $\frac{1}{\gamma}$.
