@@ -234,7 +234,7 @@ In the next sections we will show how CDN proxy can make such decision in a way 
   
  
 %%%%%%%%%% SYSTEM MODEL %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{System Model}\label{systemmodel}
+\section{System Model and Result Analysis}\label{systemmodel}
 We present a model between P2P and CDN using simple a single bitrate for video streaming as shown in Fig.\ref{fig:twotier2}. 
 The model is a stochastic fluid model similar to \cite{4215694}.
 While the authors in \cite{4215694} focus on probability of degraded service on small and large systems, our work focus on minimum capacity or of CDN proxy to support the system.
@@ -242,7 +242,7 @@ Minimum capacity is very important to ISP for capacity planning.
 On next subsection we also present a model of simple game theory between ISP who operate P2P-CDN and users.
 We aim to find out the indifferent utility function between ISP and users.
 
-\begin{figure}[hb] 
+\begin{figure}[tb] 
 \begin{center}
 \includegraphics[scale=0.35]{graphs/two-tier-cdn-topology-2.eps}
 \end{center}
@@ -266,10 +266,25 @@ Moreover, we define $X=\frac{n_l}{n_s}$ and normalization $r=1$ , we can get:
 \begin{equation}
 	\frac{U_p}{n_s} = (1 + X - min (u_s,X))
 \end{equation}
-Where RR is ratio number of leechers to number of seeders.
-Therefore we have constraint that is $n_s.u_s \ge n_l.r$.
-This constraint tell us that seeders supply should be larger than leechers bitrate.  
-This constraint will be used in churn situation by CDN proxy to decide whether new arrival peers should be seeder or leecher.
+Where $X$ is ratio number of leechers to number of seeders.
+For CDN proxy can fulfill required capacity following inequality must be satisfied: $n_s.u_s \ge n_l.r$.
+This inequality will be used in churn situation by CDN proxy to decide whether new arrival peers should be seeder or leecher.
+
+\begin{figure}[hb] 
+\begin{center}
+\includegraphics[scale=0.5]{graphs/stable-steady-state.eps}
+\end{center}
+\caption{System with steady state.}
+\label{fig:steadystate}
+\vspace{-2mm}
+ \end{figure}
+ 
+Figure \ref{fig:steadystate} shows steady state of the system without churn.
+Lets take an example where $U_s=1.5$. The minimum of capacity CDN proxy to support the system can be achieved if the ratio between leechers to seeders less than 1.5.
+Same with other $U_s$ value, as long as the ratio less than 'turning point' in the graph, that's the minimum of capacity that can be achieved to support the system.  
+If the ratio more than 'turning point', the CDN proxy must add capacity to support the system thus add cost for ISP.
+
+
 
 
 \subsection{Stable System with Churn}\label{sec:stablesystemwithchurn}
@@ -415,14 +430,7 @@ We define the ISP payoff function $\pi_{isp}$ as:
 \end{theorem}
 
 
-\begin{figure}[tb] 
-\begin{center}
-\includegraphics[scale=0.5]{graphs/stable-steady-state.eps}
-\end{center}
-\caption{System with steady state.}
-\label{fig:steadystate}
-\vspace{-2mm}
- \end{figure}
+
 
 
 

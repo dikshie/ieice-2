@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  11 MAR 2013 18:02
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  11 MAR 2013 18:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,41 +369,39 @@ File: graphs/two-tier-cdn-topology.eps Graphic file (type eps)
 File: graphs/two-tier-cdn-topology-2.eps Graphic file (type eps)
 
 <graphs/two-tier-cdn-topology-2.eps>
-Overfull \hbox (6.49661pt too wide) in alignment at lines 285--288
+File: graphs/stable-steady-state.eps Graphic file (type eps)
+ <graphs/stable-steady-state.eps> [3]
+Overfull \hbox (6.49661pt too wide) in alignment at lines 300--303
  [][][] []
  []
 
-[3]
 \c@theorem=\count114
 \c@theorem2=\count115
 File: graphs/game-tree.eps Graphic file (type eps)
- <graphs/game-tree.eps>
+<graphs/game-tree.eps> [4]
 \c@theorem3=\count116
- [4]
 \c@theorem4=\count117
 \c@theorem5=\count118
 \c@theorem6=\count119
 \c@theorem7=\count120
-File: graphs/stable-steady-state.eps Graphic file (type eps)
- <graphs/stable-steady-state.eps>
 File: graphs/U_p_n_1000.eps Graphic file (type eps)
-
-<graphs/U_p_n_1000.eps>
+ <graphs/U_p_n_1000.eps>
 File: graphs/U_p_n_10000.eps Graphic file (type eps)
  <graphs/U_p_n_10000.eps>
 \c@theorem8=\count121
 \c@theorem9=\count122
- [5]
+
+[5]
 \c@theorem10=\count123
 
-Overfull \hbox (14.48111pt too wide) in paragraph at lines 541--542
+Overfull \hbox (14.48111pt too wide) in paragraph at lines 549--550
 []\OT1/txr/m/n/10 Given ob-ser-va-tions above
  []
 
 [6]
 \c@theorem11=\count124
 
-Overfull \hbox (18.3511pt too wide) in paragraph at lines 568--569
+Overfull \hbox (18.3511pt too wide) in paragraph at lines 576--577
 []
  []
 
@@ -433,7 +431,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.664 }
+l.672 }
        
 ? 
 
@@ -443,7 +441,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.664 }
+l.672 }
        
 ? 
 
@@ -453,7 +451,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.670 }
+l.678 }
        
 ? 
 
@@ -463,9 +461,10 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.670 }
+l.678 }
        
 ? 
+[8]
 
 ! LaTeX Error: File `' not found.
 
@@ -473,7 +472,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.691 }
+l.699 }
        
 ? 
 
@@ -483,10 +482,10 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.691 }
+l.699 }
        
 ? 
-[8] [9
+[9
 
 ] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
@@ -498,4 +497,4 @@ Here is how much of TeX's memory you used:
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (9 pages, 61728 bytes).
+Output written on jurnal.dvi (9 pages, 62244 bytes).
