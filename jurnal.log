@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  12 MAR 2013 01:22
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  12 MAR 2013 01:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -374,28 +374,16 @@ File: graphs/stable-steady-state.eps Graphic file (type eps)
 File: graphs/U_p_n_1000.eps Graphic file (type eps)
 
 <graphs/U_p_n_1000.eps>
-! Missing $ inserted.
-<inserted text> 
-                $
-l.291 ...p$ for $n=$1000$ for admission policy 1.}
-                                                  
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.291 ...p$ for $n=$1000$ for admission policy 1.}
-                                                  
-? 
 File: graphs/U_p_n_1000_admi.eps Graphic file (type eps)
-<graphs/U_p_n_1000_admi.eps>
+ <graphs/U_p_n_1000_admi.eps>
 File: graphs/cdf.eps Graphic file (type eps)
  <graphs/cdf.eps> [3]
-Overfull \hbox (6.49661pt too wide) in alignment at lines 320--323
+Overfull \hbox (6.49661pt too wide) in alignment at lines 321--324
  [][][] []
  []
 
-\c@theorem=\count114
 [4]
+\c@theorem=\count114
 \c@theorem2=\count115
 File: graphs/game-tree.eps Graphic file (type eps)
  <graphs/game-tree.eps>
@@ -409,14 +397,14 @@ File: graphs/game-tree.eps Graphic file (type eps)
 \c@theorem9=\count122
 \c@theorem10=\count123
 
-Overfull \hbox (14.48111pt too wide) in paragraph at lines 541--542
+Overfull \hbox (14.48111pt too wide) in paragraph at lines 550--551
 []\OT1/txr/m/n/10 Given ob-ser-va-tions above
  []
 
 [6]
 \c@theorem11=\count124
 
-Overfull \hbox (18.3511pt too wide) in paragraph at lines 568--569
+Overfull \hbox (18.3511pt too wide) in paragraph at lines 577--578
 []
  []
 
@@ -446,7 +434,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.664 }
+l.673 }
        
 ? 
 
@@ -456,7 +444,28 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.664 }
+l.673 }
+       
+? 
+[8]
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.679 }
+       
+? 
+
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.679 }
        
 ? 
 
@@ -466,7 +475,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.670 }
+l.700 }
        
 ? 
 
@@ -476,43 +485,19 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.670 }
+l.700 }
        
 ? 
+[9
 
-! LaTeX Error: File `' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.691 }
-       
-? 
-
-! Package graphics Error: Division by 0.
-
-See the graphics package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.691 }
-       
-? 
-[8] [9
-
-] (./jurnal.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
  3557 strings out of 493489
- 48783 string characters out of 3141350
- 117154 words of memory out of 3000000
+ 48786 string characters out of 3141350
+ 115154 words of memory out of 3000000
  6829 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (9 pages, 61280 bytes).
+Output written on jurnal.dvi (9 pages, 62388 bytes).

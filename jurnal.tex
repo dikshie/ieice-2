@@ -288,15 +288,15 @@ If the ratio more than 'turning point', the CDN proxy must add capacity to suppo
 \begin{minipage}[b]{0.4\linewidth}
 \centering
 \includegraphics[width=2.7in]{graphs/U_p_n_1000.eps}
-\caption{$U_p$ for $n=$1000$ for admission policy 1.}
-\label{fig:U_p_1000}
+\caption{$U_p$ for $n=1000$ for admission policy 1.}
+\label{fig:U_p_1000_1}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[b]{0.5\linewidth}
 \centering
 \includegraphics[width=2.7in]{graphs/U_p_n_1000_admi.eps}
 \caption{$U_p$ for $n=1000$ for admission policy 2.}
-\label{fig:U_p_10000}
+\label{fig:U_p_1000_2}
 \end{minipage}
 \end{figure*}
 
@@ -314,7 +314,8 @@ For churn case, we assume peers join and leave at random times, stay in for a ra
 Assuming poisson process with rate $\lambda$. 
 Peers stay in the system for a period of time that follows a general probability distribution with mean $\frac{1}{\gamma}$.
 Define $N(t)$ as the number of peers in the system at time $t$, $N(t)$ can be represented as the number of peers in a $M/G/\infty$ queue.
-In poisson process, the time that these events occur in a given time interval. The time between each pair of consecutive events has an exponential distribution.
+In poisson process, the time that these events occur in a given time interval. 
+The time between each pair of consecutive events has an exponential distribution.
 On the other hand, the number of events in time interval follows poisson distribution with rate $\rho = \frac{\lambda}{\gamma}$.
 Now we can compute the probability of the probability of minimum capacity as following:
 \begin{eqnarray*}
@@ -330,16 +331,24 @@ P \left(\frac{(U_p/n_s) - \rho}{\sqrt{\rho}}=\frac{1+X-min(u_s,X) - \rho}{\sqrt{
 \end{eqnarray*}
 
 In order CDN proxy handle the churn, we compare two different admission policy. 
-First, the system starts admitting new arrivals as seeders until $(n_s.u_s < n_l.r)$. 
-All arrivals after that point are admitted as leechers.     
+First, the system starts admitting new arrivals as seeders until $(n_s.u_s > n_l.r)$. 
+All arrivals after that point are admitted as leecher.     
 Second, the system starts admitting new arrivals as seeders. 
 Next the CDN proxy does polling mechanism on an interval time.
-On that interval time CDN proxy decide the peers that arrives on that interval time to be seeder or leecher using $(n_s.u_s < n_l.r)$.
+On that interval time CDN proxy decide the peers that arrives on that interval time to be seeder or leecher using $(n_s.u_s > n_l.r)$.
 
-
-
-Figure \ref{fig:cdf} shows CDN of $X$ for $U_s=0.1, U_s=0.5, and U_s=0.8$ for different admission policy. 
+Figure \ref{fig:U_p_1000_1} shows $U_p$ values during simulation with total number of peers $N=1000$ and we use first admission policy in this simulation. 
+We also plot ratio values $X$ on second Y-axis.
+Figure \ref{fig:U_p_1000_2} shows $U_p$ values during simulation with total number of peers $N=1000$ and we use second admission policy in this simulation.  
+From both figures, we can see that first admission can stabilized the ratio $X$ in order to keep the CDN proxy capacity enough to supply the system since first admission try to decide peer role from beginning of peer arrival. 
+In the second admission policy, CDN proxy decide peer role during time interval.
+This make the ratio $X$ value of second admission policy has bigger variance.
+To make it clear, Fig.\ref{fig:cdf} shows CDN of $X$ for $U_s=0.1, U_s=0.5, and U_s=0.8$ for different admission policy. 
 We can see that second admission gives bigger variance, while first admission can keep the ratio ideal.
+Finally, we can see that seeder upload has big contribution for this system. 
+This is become foundation for next section how to incentive peers in this system.
+
+
 
 
 \subsection{ISP Strategies: Game Theory Approach}
