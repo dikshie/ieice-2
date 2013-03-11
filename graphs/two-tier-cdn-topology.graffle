@@ -257,8 +257,8 @@
 			<integer>39</integer>
 			<key>Points</key>
 			<array>
-				<string>{352.21434800069727, 547.37119145611007}</string>
-				<string>{304.78565199930296, 593.62880854388993}</string>
+				<string>{352.21434800069716, 547.37119145611018}</string>
+				<string>{304.78565199930284, 593.62880854388993}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -292,8 +292,8 @@
 			<integer>38</integer>
 			<key>Points</key>
 			<array>
-				<string>{395.71962852375725, 604.01557637809935}</string>
-				<string>{324.2803716364869, 607.98442434717947}</string>
+				<string>{395.71962848796403, 604.01557621609606}</string>
+				<string>{324.28037153021359, 607.98442386617728}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -357,8 +357,8 @@
 			<integer>35</integer>
 			<key>Points</key>
 			<array>
-				<string>{121.68583918829997, 566.10729898373052}</string>
-				<string>{142.31416081567846, 591.89270101547493}</string>
+				<string>{121.68583918734601, 566.10729898392094}</string>
+				<string>{142.31416081328678, 591.89270101595264}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -392,8 +392,8 @@
 			<integer>34</integer>
 			<key>Points</key>
 			<array>
-				<string>{192.49589781581423, 609.27648407417576}</string>
-				<string>{251.50410218420606, 609.72351592515008}</string>
+				<string>{192.49589781580943, 609.27648407433503}</string>
+				<string>{251.5041021841935, 609.72351592556652}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -427,8 +427,8 @@
 			<integer>33</integer>
 			<key>Points</key>
 			<array>
-				<string>{383.93526637598637, 547.83180828886907}</string>
-				<string>{417.06473315220302, 585.1681918157351}</string>
+				<string>{383.93526647703823, 547.83180826646583}</string>
+				<string>{417.06473347740592, 585.16819174363388}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -762,7 +762,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{495.5, 333}, {38, 14}}</string>
+			<string>{{493.5, 333}, {42, 14}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -801,7 +801,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\b\fs24 \cf0 Level0}</string>
+\f0\b\fs24 \cf0 Level-0}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
 			</dict>
@@ -810,7 +810,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{504, 110}, {38, 14}}</string>
+			<string>{{502, 110}, {42, 14}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -849,7 +849,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\b\fs24 \cf0 Level1}</string>
+\f0\b\fs24 \cf0 Level-1}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
 			</dict>
@@ -1313,7 +1313,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2013-03-10 15:53:46 +0000</string>
+	<string>2013-03-11 09:01:12 +0000</string>
 	<key>Modifier</key>
 	<string>ハウジー ムハマドディクシ</string>
 	<key>NotesVisible</key>

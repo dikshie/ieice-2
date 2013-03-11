@@ -113,7 +113,6 @@ ISP can give discount price to user's who wants their home gateway to be used as
 With the growing interest to do inter-connect of CDN \cite{cdni,oceanproject} this architecture can give good benefit for ISP.    
 
 In this paper we study, the incentive for ISP who adopt peer assisted CDN for streaming purpose and shows the advantages to adopt peer assisted CDN. 
-%We use single shot game theory to model of the balance between ISP profit that get from employed peer assisted CDN and traffic saving. 
 
 %\begin{figure}[tb]
 %\begin{center}
@@ -180,27 +179,37 @@ Although CDN is placed close to ISP network, it does not guarantee end-users can
 Other than technical complexity as mentioned before, CDN also faces economic complexity\cite{dispute}.
 Therefore, the future of CDN business is likely to live deeper into ISP networks, more integrated into and interleaved with ISP infrastructures.
 
+\begin{figure}[hb]
+\begin{center}
+\includegraphics[scale=0.35]{graphs/two-tier-cdn-topology.eps}
+\end{center}
+\caption{Two tier CDN-P2P topology.
+The CDN proxy maintained by ISP. ISP also has CDN node. CDN node can exchange contents with other CDN node owned by other CDN companies.P2P nodes are ISP's customers that run P2P software.}
+\label{fig:twotier}
+\vspace{-2mm}
+\end{figure} 
 
 
-
+ 
 %%%%%%%%%%%%%%%% %%%%%% SYSTEM DESCRIPTION %%%%%%%%%%%%%%%%%%%%%%%
 \section{System Description}\label{description}
 
 Figure \ref{fig:twotier} shows the model of system architecture.
 That's model offers the opportunity to connect the P2P swarm not directly but through an intermediate later of proxies.
-This function has potential benefit: boosting download performances (by exposing through proxy devices higher upload bandwidth than end users) and increasing privacy (by reducing swarm exposure for end users).
+This function has potential benefit: boosting download performances (by exposing through proxy devices higher upload bandwidth than end users). 
+It is also increasing privacy by reducing swarm exposure for end users.
 
 In Fig.\ref{fig:twotier} two level CDN is defined.
-The first level Level1 consists high capacity servers strategically placed to increase network backbone capacity.
-Level1 is more like current CDN network.
-In Level1, CDN node can communicate each other by using common interconnect interface eventhough the CDN node are owned by different companies or different ISPs \cite{cdni}.
+The first level Level-1 consists high capacity servers strategically placed to increase network backbone capacity.
+Level-1 is more like current CDN network.
+In Level-1, CDN node can communicate each other by using common interconnect interface even though the CDN node are owned by different companies or different ISPs \cite{cdni}.
 
-Level0 consists CDN proxies are owned or to be managed by ISP.
-For big ISP different CDN proxies in level0 can be put at different cities or different geographically areas.
+Level-0 consists CDN proxies are owned or to be managed by ISP.
+For big ISP different CDN proxies in level-0 can be put at different cities or different geographically areas.
 These nodes are placed closer to end users. 
 CDN proxies can communicate each other to react to the content requests from users.
 Level0 are the natural service points for the users and they can offer the best quality of service if the are able to efficiently cache the requested content.
-The state of the Level0 and Level1 caches is stored in DHT. 
+The state of the Level-0 and Level-1 caches is stored in DHT. 
 The DHT is used to keep an updated record for each content in scalable manner. 
 This different caching levels are used to offer an adaptive, flexible, and scalable service to the users.
 
@@ -209,7 +218,9 @@ A peer-assisted CDN introduced peer coordination mechanism into CDN system.
 In this case CDN proxy is responsible to make peer coordination.  
 For any new streaming request, the CDN proxy will have to make two decisions.
 The CDN proxy will make a arrival node as seeder or as leecher based on adaptation strategy or a capacity constraint.  
-We define a seeder is a node or a peer that receive stream from CDN proxy and a leecher is a node or a peer that receive stream from a seeder or other a leecher.  
+In this system, we define a seeder is a node or a peer that receive stream from CDN proxy and a leecher is a node or a peer that receive stream from a seeder or other a leecher.  
+To maintain low delay and good quality video streaming, seeder only receive stream directly from CDN proxy and leecher only receive from seeders.
+
 It is very important for ISP to make sure CDN proxy capacity is enough while maintaining minimum capacity requirement. 
 Although peer selection strategy is out of scope of this paper, we assume that peers form random mesh networks. 
 In the next sections we will show how CDN proxy can make such decision in a way to optimize system.
@@ -219,15 +230,7 @@ In the next sections we will show how CDN proxy can make such decision in a way 
 %This architecture does not involved P2P. 
 %Some peering or transit might be needed by ISP to join this architecture. 
  
-\begin{figure}[tb]
-\begin{center}
-\includegraphics[scale=0.35]{graphs/two-tier-cdn-topology.eps}
-\end{center}
-\caption{Two tier CDN-P2P topology.
-The CDN proxy maintained by ISP. ISP also has CDN node. CDN node can exchange contents with other CDN node owned by other CDN companies.P2P nodes are ISP's customers that run P2P software.}
-\label{fig:twotier}
-\vspace{-2mm}
-\end{figure} 
+
   
  
 %%%%%%%%%% SYSTEM MODEL %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -239,14 +242,14 @@ Minimum capacity is very important to ISP for capacity planning.
 On next subsection we also present a model of simple game theory between ISP who operate P2P-CDN and users.
 We aim to find out the indifferent utility function between ISP and users.
 
-\begin{figure}[tb] 
+\begin{figure}[hb] 
 \begin{center}
 \includegraphics[scale=0.35]{graphs/two-tier-cdn-topology-2.eps}
 \end{center}
 \caption{System architecture on L0. P2P nodes that run on user home gateway communicates to CDN proxy.}
 \label{fig:twotier2}
 \vspace{-2mm}
- \end{figure}
+\end{figure}
 
 \subsection{Stable System}
 
@@ -255,7 +258,7 @@ Number of bitrate that leechers should receive is $n_l.r$.
 On the other hand seeders should upload to leechers which is $n_s.u_s$
 We can derive that minimum CDN proxy capacity to support the system is:
 \begin{equation}
-	U_p = n_s.r - n_l.r - min(n_s.u_s, n_l.r)
+	U_p = n_s.r + n_l.r - min(n_s.u_s, n_l.r)
 \end{equation}
 Based on leecher and seeder definition on Sec.\ref{description}, seeder already enjoyed direct streaming from CDN proxy but upload rate of seeder to leecher might not same as streaming bitrate. 
 Same case in leecher mode, where upload rate leecher to other leecher might no same as streaming rate. 
