@@ -425,14 +425,14 @@ We define the ISP payoff function $\pi_{isp}$ as:
 \centering
 \includegraphics[width=2.7in]{graphs/U_p_n_1000.eps}
 \caption{$U_p$ for n=1000}
-\label{fig:cons}
+\label{fig:U_p_1000}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[b]{0.5\linewidth}
 \centering
 \includegraphics[width=2.7in]{graphs/U_p_n_10000.eps}
 \caption{$U_p$ for n=10000}
-\label{fig:uncons}
+\label{fig:U_p_10000}
 \end{minipage}
 \end{figure*}
  
@@ -482,12 +482,10 @@ by subtitution basic user utility in Eq.\ref{eq:basicuserutility}, we can get ge
 
 Figure \ref{fig:steadystate} shows steady state of the system .
 
-Figure \ref{fig:cons} shows numerical results of lower bound for seeders againts $\rho$ for constrained system with churn and Fig.\ref{fig:uncons} shows numerical results of lower bound for seeders againts $\rho$ for unconstrained system with churn.  
-Both numerical results have 95\% confidence interval on the number of seeders sufficient to support bitrate $r$.  
-We use $1/\gamma = 0.5$ hour thus we suppose that peers sojourn in the system on average for 30 minutes and we fix the arrival rate of the peers to $\lambda=100$ per hour.
-We increase arrival rate $\lambda$ until $160$ per hour. 
-We can see that the difference in the number of seeder sufficient to support different bitrates is not large.  
-We also see that that lower bound number for seeders is very easy to fulfill by ISP to employ system because ISP's customer number much higher that that lower bound.
+Figure \ref{fig:U_p_1000} shows numerical results of $U_p$ with churn where total number of peers in the system is $N=1000$ and Fig.\ref{fig:U_p_10000} shows numerical results of $U_p$ with churn where total numbers of peers in the system is $N=10000$
+
+
+
 
 \subsection{Analytical Equilibrium Analysis}
 As defined in previous section, both users and ISP are modeled as selfish players that maximize their utility (payoff) defined in the payoff functions.
