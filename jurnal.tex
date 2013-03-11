@@ -112,7 +112,7 @@ The user home gateway is always on 24 hours therefore this is perfect device to 
 ISP can give discount price to user's who wants their home gateway to be used as peer assisted by ISP and ISP can get benefit from peer assisted running in their customer home gateway to help their CDN.
 With the growing interest to do inter-connect of CDN \cite{cdni,oceanproject} this architecture can give good benefit for ISP.    
 
-In this paper we study, the incentive for ISP who adopt peer assisted CDN for streaming purpose and shows the advantages to adopt peer assisted CDN. 
+In this paper, we study the incentive for ISP who adopt peer assisted CDN for streaming purpose and show the advantages to adopt peer assisted CDN. 
 
 %\begin{figure}[tb]
 %\begin{center}
@@ -198,8 +198,8 @@ Figure \ref{fig:twotier} shows the model of system architecture.
 That's model offers the opportunity to connect the P2P swarm not directly but through an intermediate later of proxies.
 This function has potential benefit: boosting download performances (by exposing through proxy devices higher upload bandwidth than end users). 
 It is also increasing privacy by reducing swarm exposure for end users.
+This two level of CDN follows hierarchical model in Maki et al.,\cite{NaoyaMAKI2012} with modification.
 
-In Fig.\ref{fig:twotier} two level CDN is defined.
 The first level Level-1 consists high capacity servers strategically placed to increase network backbone capacity.
 Level-1 is more like current CDN network.
 In Level-1, CDN node can communicate each other by using common interconnect interface even though the CDN node are owned by different companies or different ISPs \cite{cdni}.
@@ -284,9 +284,31 @@ Lets take an example where $U_s=1.5$. The minimum of capacity CDN proxy to suppo
 Same with other $U_s$ value, as long as the ratio less than 'turning point' in the graph, that's the minimum of capacity that can be achieved to support the system.  
 If the ratio more than 'turning point', the CDN proxy must add capacity to support the system thus add cost for ISP.
 
+\begin{figure*}[thb]
+\begin{minipage}[b]{0.4\linewidth}
+\centering
+\includegraphics[width=2.7in]{graphs/U_p_n_1000.eps}
+\caption{$U_p$ for n=1000}
+\label{fig:U_p_1000 for $n=$1000$ for admission policy 1. }
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=2.7in]{graphs/U_p_n_1000_admi.eps}
+\caption{$U_p$ for $n=1000$ for admission policy 2.}
+\label{fig:U_p_10000}
+\end{minipage}
+\end{figure*}
 
-
-
+\begin{figure}[hb] 
+\begin{center}
+\includegraphics[scale=0.5]{graphs/cdf.eps}
+\end{center}
+\caption{CDF of $n_l/n_s$. We can see that admission policy 2 has bigger variance than admission policy 1.}
+\label{fig:cdf}
+\vspace{-2mm}
+ \end{figure}
+ 
 \subsection{Stable System with Churn}\label{sec:stablesystemwithchurn}
 For churn case, we assume peers join and leave at random times, stay in for a random period, then leave the system.
 Assuming poisson process with rate $\lambda$. 
@@ -308,6 +330,7 @@ We know that cumulative distribution function for standard normal random variabl
 P \left(\frac{(U_p/n_s) - \rho}{\sqrt{\rho}}=\frac{1+X-min(u_s,X) - \rho}{\sqrt{\rho}}\right)\\
 =\Phi \left( \frac{1+X-min(u_s,X) - \rho}{\sqrt{\rho}} \right) \\
 \end{eqnarray*}
+
 
 
 \subsection{ISP Strategies: Game Theory Approach}
@@ -429,27 +452,6 @@ We define the ISP payoff function $\pi_{isp}$ as:
 \end{align}
 \end{theorem}
 
-
-
-
-
-
-\begin{figure*}[tb]
-\begin{minipage}[b]{0.4\linewidth}
-\centering
-\includegraphics[width=2.7in]{graphs/U_p_n_1000.eps}
-\caption{$U_p$ for n=1000}
-\label{fig:U_p_1000}
-\end{minipage}
-\hspace{0.5cm}
-\begin{minipage}[b]{0.5\linewidth}
-\centering
-\includegraphics[width=2.7in]{graphs/U_p_n_10000.eps}
-\caption{$U_p$ for n=10000}
-\label{fig:U_p_10000}
-\end{minipage}
-\end{figure*}
- 
 \subsubsection{User Payoff}
 In this subsection, we  analyzed how the utility of user that purchases internet access at a fixed subscription fee $P^{(s)}$ can be described and derived. 
 We assume that all users pay a fixed flat rate subscription fee $P$ for internet access with equal speed or QoS parameters.
@@ -493,25 +495,6 @@ by subtitution basic user utility in Eq.\ref{eq:basicuserutility}, we can get ge
 \section{Analysis and Discussion}
 
 \subsection{Minimum Capacity of CDN Proxy}
-
-Figure \ref{fig:steadystate} shows steady state of the system without churn.
-Lets take an example where $U_s=1.5$. The minimum of capacity CDN proxy to support the system can be achieved if the ratio between leechers to seeders less than 1.5.
-Same with other $U_s$ value, as long as the ratio less than 'turning point' in the graph, that's the minimum of capacity that can be achieved to support the system.  
-If the ratio more than 'turning point', the CDN proxy must add capacity to support the system thus add cost for ISP.
-
-Figure \ref{fig:U_p_1000} shows numerical results of $U_p$ with churn where total number of peers in the system is $N=1000$ and Fig.\ref{fig:U_p_10000} shows numerical results of $U_p$ with churn where total numbers of peers in the system is $N=10000$
-In churn case, the arrival and departure of peers following poisson process. 
-When peers arrive CDN proxy try to stabilized the system using simple admission that we explain in sec.\ref{sec:stablesystemwithchurn}.
-As we can see that the min capacity is increasing as peers arrive. 
-Depends on the seeder upload rate $U_s$, if the seeder upload small then minimum capacity of CDN proxy must be increased. 
-For example $N=1000$ and $U_s=0.1$, in the peak of simulation, the minimum capacity of CDN proxy must be provided $U_p$ around $330$, while in case $U_s=0.8$, the minimum capacity of CDN proxy must be provided $U_p$ around $190$.
- 
-
-
-
-
-
-
 
 \subsection{Analytical Equilibrium Analysis}
 As defined in previous section, both users and ISP are modeled as selfish players that maximize their utility (payoff) defined in the payoff functions.

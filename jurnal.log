@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  11 MAR 2013 18:20
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  12 MAR 2013 01:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -370,38 +370,41 @@ File: graphs/two-tier-cdn-topology-2.eps Graphic file (type eps)
 
 <graphs/two-tier-cdn-topology-2.eps>
 File: graphs/stable-steady-state.eps Graphic file (type eps)
- <graphs/stable-steady-state.eps> [3]
-Overfull \hbox (6.49661pt too wide) in alignment at lines 300--303
+ <graphs/stable-steady-state.eps>
+File: graphs/U_p_n_1000.eps Graphic file (type eps)
+
+<graphs/U_p_n_1000.eps>
+File: graphs/U_p_n_1000_admi.eps Graphic file (type eps)
+ <graphs/U_p_n_1000_admi.eps>
+File: graphs/cdf.eps Graphic file (type eps)
+ <graphs/cdf.eps> [3]
+Overfull \hbox (6.49661pt too wide) in alignment at lines 322--325
  [][][] []
  []
 
 \c@theorem=\count114
+[4]
 \c@theorem2=\count115
 File: graphs/game-tree.eps Graphic file (type eps)
-<graphs/game-tree.eps> [4]
+ <graphs/game-tree.eps>
 \c@theorem3=\count116
 \c@theorem4=\count117
 \c@theorem5=\count118
 \c@theorem6=\count119
 \c@theorem7=\count120
-File: graphs/U_p_n_1000.eps Graphic file (type eps)
- <graphs/U_p_n_1000.eps>
-File: graphs/U_p_n_10000.eps Graphic file (type eps)
- <graphs/U_p_n_10000.eps>
+ [5]
 \c@theorem8=\count121
 \c@theorem9=\count122
-
-[5]
 \c@theorem10=\count123
 
-Overfull \hbox (14.48111pt too wide) in paragraph at lines 549--550
+Overfull \hbox (14.48111pt too wide) in paragraph at lines 532--533
 []\OT1/txr/m/n/10 Given ob-ser-va-tions above
  []
 
 [6]
 \c@theorem11=\count124
 
-Overfull \hbox (18.3511pt too wide) in paragraph at lines 576--577
+Overfull \hbox (18.3511pt too wide) in paragraph at lines 559--560
 []
  []
 
@@ -418,7 +421,7 @@ om/2010/12/02/peering-
  []
 
 
-Overfull \hbox (44.94092pt too wide) in paragraph at lines 75--78
+Overfull \hbox (44.94092pt too wide) in paragraph at lines 81--84
 \OT1/txtt/m/n/8 cisco . com / web / about / ac79 / docs / sp / CDN-[]Federation
  _ Phase-[]2-[]Pilot .
  []
@@ -431,7 +434,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.672 }
+l.655 }
        
 ? 
 
@@ -441,7 +444,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.672 }
+l.655 }
        
 ? 
 
@@ -451,7 +454,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.678 }
+l.661 }
        
 ? 
 
@@ -461,10 +464,9 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.678 }
+l.661 }
        
 ? 
-[8]
 
 ! LaTeX Error: File `' not found.
 
@@ -472,7 +474,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.699 }
+l.682 }
        
 ? 
 
@@ -482,19 +484,19 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.699 }
+l.682 }
        
 ? 
-[9
+[8] [9
 
 ] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
- 3554 strings out of 493489
- 48745 string characters out of 3141350
+ 3557 strings out of 493489
+ 48822 string characters out of 3141350
  116154 words of memory out of 3000000
- 6827 multiletter control sequences out of 15000+200000
+ 6829 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (9 pages, 62244 bytes).
+Output written on jurnal.dvi (9 pages, 60884 bytes).
