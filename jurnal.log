@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  11 MAR 2013 02:08
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  11 MAR 2013 09:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,7 +369,7 @@ File: graphs/two-tier-cdn-topology.eps Graphic file (type eps)
 File: graphs/two-tier-cdn-topology-2.eps Graphic file (type eps)
 
 <graphs/two-tier-cdn-topology-2.eps>
-Overfull \hbox (6.49661pt too wide) in alignment at lines 277--280
+Overfull \hbox (6.49661pt too wide) in alignment at lines 279--282
  [][][] []
  []
 
@@ -396,13 +396,13 @@ File: graphs/U_p_n_10000.eps Graphic file (type eps)
  [5]
 \c@theorem10=\count123
 
-Overfull \hbox (14.48111pt too wide) in paragraph at lines 523--524
+Overfull \hbox (14.48111pt too wide) in paragraph at lines 525--526
 []\OT1/txr/m/n/10 Given ob-ser-va-tions above
  []
 
 \c@theorem11=\count124
 
-Overfull \hbox (18.3511pt too wide) in paragraph at lines 550--551
+Overfull \hbox (18.3511pt too wide) in paragraph at lines 552--553
 []
  []
 
@@ -432,7 +432,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.647 }
+l.649 }
        
 ? 
 
@@ -442,7 +442,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.647 }
+l.649 }
        
 ? 
 
@@ -452,7 +452,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.653 }
+l.655 }
        
 ? 
 
@@ -462,7 +462,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.653 }
+l.655 }
        
 ? 
 
@@ -472,7 +472,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.674 }
+l.676 }
        
 ? 
 
@@ -482,7 +482,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.674 }
+l.676 }
        
 ? 
 [8] (./jurnal.aux) ) 
