@@ -112,7 +112,7 @@ The user home gateway is always on 24 hours therefore this is perfect device to 
 ISP can give discount price to user's who wants their home gateway to be used as peer assisted by ISP and ISP can get benefit from peer assisted running in their customer home gateway to help their CDN.
 With the growing interest to do inter-connect of CDN \cite{cdni,oceanproject} this architecture can give good benefit for ISP.    
 
-In this paper we study, the incentive for ISP who adopt peer assisted CDN and shows the advantages to adopt peer assisted CDN. 
+In this paper we study, the incentive for ISP who adopt peer assisted CDN for streaming purpose and shows the advantages to adopt peer assisted CDN. 
 %We use single shot game theory to model of the balance between ISP profit that get from employed peer assisted CDN and traffic saving. 
 
 %\begin{figure}[tb]
@@ -189,10 +189,12 @@ Therefore, the future of CDN business is likely to live deeper into ISP networks
 Figure \ref{fig:twotier} shows the model of system architecture.
 That's model offers the opportunity to connect the P2P swarm not directly but through an intermediate later of proxies.
 This function has potential benefit: boosting download performances (by exposing through proxy devices higher upload bandwidth than end users) and increasing privacy (by reducing swarm exposure for end users).
+
 In Fig.\ref{fig:twotier} two level CDN is defined.
 The first level Level1 consists high capacity servers strategically placed to increase network backbone capacity.
 Level1 is more like current CDN network.
 In Level1, CDN node can communicate each other by using common interconnect interface eventhough the CDN node are owned by different companies or different ISPs \cite{cdni}.
+
 Level0 consists CDN proxies are owned or to be managed by ISP.
 For big ISP different CDN proxies in level0 can be put at different cities or different geographically areas.
 These nodes are placed closer to end users. 
@@ -201,6 +203,7 @@ Level0 are the natural service points for the users and they can offer the best 
 The state of the Level0 and Level1 caches is stored in DHT. 
 The DHT is used to keep an updated record for each content in scalable manner. 
 This different caching levels are used to offer an adaptive, flexible, and scalable service to the users.
+
 We noted that CDN proxy has a limited capacity and it may not be able to satisfy all clients.
 A peer-assisted CDN introduced peer coordination mechanism into CDN system. 
 In this case CDN proxy is responsible to make peer coordination.  
@@ -247,9 +250,9 @@ We aim to find out the indifferent utility function between ISP and users.
 
 \subsection{Stable System}
 
-For stable system, denote $n_l$ is the number of leechers, $n_s$ is the number of seeders in the system, and $r$ is link bandwidth or bitrate.
+For stable system, denote $n_l$ is the number of leechers, $n_s$ is the number of seeders in the system, and $r$ is bitrate.
 Number of bitrate that leechers should receive is $n_l.r$. 
-On the other hand seeders should upload to leechers which is $n_s.r$
+On the other hand seeders should upload to leechers which is $n_s.u_s$
 We can derive that minimum CDN proxy capacity to support the system is:
 \begin{equation}
 	U_p = n_s.r - n_l.r - min(n_s.u_s, n_l.r)
@@ -266,7 +269,7 @@ This constraint tell us that seeders supply should be larger than leechers bitra
 This constraint will be used in churn situation by CDN proxy to decide whether new arrival peers should be seeder or leecher.
 
 
-\subsection{Stable System with Churn}
+\subsection{Stable System with Churn}\label{sec:stablesystemwithchurn}
 For churn case, we assume peers join and leave at random times, stay in for a random period, then leave the system.
 Assuming poisson process with rate $\lambda$. 
 Peers stay in the system for a period of time that follows a general probability distribution with mean $\frac{1}{\gamma}$.
@@ -281,7 +284,7 @@ P(\text{support min capacity}) &=& P(\frac{U_p}{n_s} = 1+X-min(u_s,X))\\
 &=&F(1+X-min(u_s,X))\\
 \end{eqnarray*}
 where $F=\sum_{x=0}^{w} \frac{e^{-\rho} \rho^{x}}{x!}$.
-We know that for large $\rho$ we can approximate the poisson distribution with gaussian distribution with mean $\mu=\rho$ and standard deviation $\sigma = \sqrt{\rho}$.
+We know that for large $\rho$ we can approximate the poisson distribution with gaussian distribution with mean $\mu=\rho$ and standard deviation $\sigma = \sqrt{\rho}$, $F_{poisson}(x:\rho) \approx F_{normal}(x;\mu=\rho, \sigma^{2}=\rho)$.
 We know that cumulative distribution function for standard normal random variable is $F(x) = \Phi(\frac{x-\mu}{\sigma})$ thus we can get:
 \begin{eqnarray*}
 P \left(\frac{(U_p/n_s) - \rho}{\sqrt{\rho}}=\frac{1+X-min(u_s,X) - \rho}{\sqrt{\rho}}\right)\\
@@ -480,9 +483,21 @@ by subtitution basic user utility in Eq.\ref{eq:basicuserutility}, we can get ge
 
 \subsection{Minimum Capacity of CDN Proxy}
 
-Figure \ref{fig:steadystate} shows steady state of the system .
+Figure \ref{fig:steadystate} shows steady state of the system without churn.
+Lets take an example where $U_s=1.5$. The minimum of capacity CDN proxy to support the system can be achieved if the ratio between leechers to seeders less than 1.5.
+Same with other $U_s$ value, as long as the ratio less than 'turning point' in the graph, that's the minimum of capacity that can be achieved to support the system.  
+If the ratio more than 'turning point', the CDN proxy must add capacity to support the system thus add cost for ISP.
 
 Figure \ref{fig:U_p_1000} shows numerical results of $U_p$ with churn where total number of peers in the system is $N=1000$ and Fig.\ref{fig:U_p_10000} shows numerical results of $U_p$ with churn where total numbers of peers in the system is $N=10000$
+In churn case, the arrival and departure of peers following poisson process. 
+When peers arrive CDN proxy try to stabilized the system using simple admission that we explain in sec.\ref{sec:stablesystemwithchurn}.
+As we can see that the min capacity is increasing as peers arrive. 
+Depends on the seeder upload rate $U_s$, if the seeder upload small then minimum capacity of CDN proxy must be increased. 
+For example $N=1000$ and $U_s=0.1$, in the peak of simulation, the minimum capacity of CDN proxy must be provided $U_p$ around $330$, while in case $U_s=0.8$, the minimum capacity of CDN proxy must be provided $U_p$ around $190$.
+ 
+
+
+
 
 
 
@@ -592,7 +607,6 @@ Content distribution network with peer-assisted have been successfully deployed 
 The Authors of \cite{Huang:2008:UHC:1496046.1496064} from two real world traces conclude that hybrid CDN-P2P can significantly reduce the cost of content distribution and can scale to cope with exponential growth of Internet video content.
 Yin et al., \cite{Yin:2010:LEC:1823746.1823750} described commercial operation of CDN with peer-assisted in China.   
 LiveSky solved several challanges in the system design such as dynamic resources scaling of P2P, low startup latency of P2P, ease of P2P integration with existing CDN infrastructure, and network friendliness and upload fairness in the P2P operation. 
-http://www.edinburghbicycle.com/products/shimano-freewheel-mf-tz20
 Xu et al.,\cite{DBLP:journals/corr/abs-1212-4915} using game theory shows that right cooperative profit distribution of P2P can help ISP to maximize the utility. 
 Their model can easily implemented to current Internet economic settlement.
 Misra et al.,\cite{Misra:2010:IPS:1811099.1811064} also mentioned the important of P2P architecture to support content delivery networks. 
