@@ -400,7 +400,7 @@ We describe that situation as extensive form in Fig.\ref{fig:gametree}.
 \subsubsection{ISP Payoff}
 Next, we describe payoff function for ISP in our model.  
 We assume a profit maximizing ISP that gains higher utility proportionally with increasing profits. 
-A simplified business model that determining ISP payoff are mainly: user generated revenue and traffic cost from inter ISP traffic (transit and peering).
+A simplified business model that determining ISP payoff are mainly: user generated revenue and bandwidth cost to reach the users.
 
 For revenue model, we assume that the ISP collects revenue solely by charging an initial flat rate subscription fee $P^{(s_1)}$ to its $N$ homogeneous users who are purchasing internet access with equal and fixed quality of service.
 ISPs are often price discriminatory towards its customers and thus operates with different price levels for different speed or QoS.
@@ -409,32 +409,22 @@ In our model, we do not include such that revenue.
 In order to keep simple, we found it reasonable only to focus on users that buy the same internet access product. 
 Given above simplifications, the ISP collects a total revenue (when deciding on a strategy $s$) of $R = N P^{(s)}$.
 
-For cost model, we identified that traffic costs including (transit traffic and paid peering) are the most relevant aspect. 
+For cost model, we identified that bandwidth cost to reach users is the most relevant aspect. 
+
 \newtheorem{theorem3}{Definition}
-\begin{theorem}[Transit cost]
+\begin{theorem}[Bandwidth cost]
 we define the transit cost $\tau^{(s)}$ for a given ISP strategy $s$ to be denoted as 
 \begin{equation}\label{eq:transitcost}
 	\tau^{(s)}_t = \alpha^{(s)} \beta T^{(s_1)} p_t
 \end{equation}
 where:
 \begin{itemize}
-	\item $T^{(s_1)}$ represent the average inter-ISP traffic volume in Mbps.
-	\item $\alpha^{(s)}$ represent the expected reduction factor of inter-ISP traffic for strategy $s$ such that: $\alpha^{(s)} \in [0,1]$ for $s \in \{s2\}$;  $\alpha^{(s_1)} = 1$.
-	\item $\beta$ represent the ratio of inter-ISP traffic volume $T^{(s)}$ that traverse transit links such that: $\beta \in [0,1]$.
-	\item $p_t$ represent the price of transit traffic.
+	\item $T^{(s_1)}$ represent the average ISP traffic volume in Mbps to users.
+	\item $\alpha^{(s)}$ represent the expected reduction factor for strategy $s$ such that: $\alpha^{(s)} \in [0,1]$ for $s \in \{s2\}$;  $\alpha^{(s_1)} = 1$.
+	\item $p_t$ represent the price of traffic.
 \end{itemize}
 \end{theorem}
 
-\newtheorem{theorem4}{Definition}
-\begin{theorem}[Paid peering cost]
-We define the paid peering traffic cost $\tau^{(s)}$. 
-Paid peering costs are subject to a peering traffic price $p_p$.
-Futhermore, as $\beta$ is the ratio of the inter-ISP traffic $T^{(s)}$ that traverses transit links, $(1-\beta)$ express the ratio that traverses paid peering links.
-We can denote the paid peering traffic cost as:
-\begin{equation}\label{eq:paidpeeringcost}
-	\tau^{(s)}_p = \alpha^{(s)} (1-\beta) T^{(s_1)} p_p
-\end{equation}
-\end{theorem}
 
 \newtheorem{theorem5}{Definition}
 \begin{theorem}[Total traffic cost]
