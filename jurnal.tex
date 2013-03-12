@@ -369,7 +369,7 @@ We define the pure strategy space $S_{isp}$ to include two strategies combinatio
 Futhermore, we denote the strategies as:
 \begin{itemize}
 	\item $s_1 = (CDN, P^{s_1})$ : the ISP decides to use CDN only and thus keeps charging the initial subscription free $P^{s_1}$.
-	\item $s_2 = (CDN-P2P, P^{s_2})$ : the ISP decides recommends P2P and offers a subscription fee $P^{s_2} \le P^{s_1}$.
+	\item $s_2 = (CDN-P2P, P^{s_2})$ : the ISP decides recommends peer-assited and offers a subscription fee $P^{s_2} \le P^{s_1}$.
 \end{itemize}
 Where the ISP strategy space $S_{isp} = \{s_1,s_2\}$.
 \end{theorem}
@@ -377,7 +377,7 @@ Where the ISP strategy space $S_{isp} = \{s_1,s_2\}$.
 After defined the strategy space of ISP, now we will describe user reaction.
 User reactions can be accept ISP strategy or decline ISP strategy.  
 If ISP decides to use CDN only then user can only accept ISP strategy.  
-If ISP decides to employ P2P-CDN then user can accept ISP strategy or decline ISP strategy.
+If ISP decides to employ peer-assisted CDN then user can accept ISP strategy or decline ISP strategy.
 
 \newtheorem{theorem2}{Definition}
 \begin{theorem}[User Strategies]
@@ -425,22 +425,12 @@ where:
 \end{itemize}
 \end{theorem}
 
-
-\newtheorem{theorem5}{Definition}
-\begin{theorem}[Total traffic cost]
-Given transit cost and paid peering cost in Eq.\ref{eq:transitcost} and Eq.\ref{eq:paidpeeringcost}, we can define total inter-ISP traffic cost $\tau^{(s)}$ as:
-\begin{align}
-	\tau^{(s)} &= \tau^{(s)}_t + \tau^{(s)}_p \\
-	\tau^{(s)} &= \alpha^{(s)} \beta T^{(s_1)} p_t + \alpha^{(s)} (1-\beta) T^{(s_1)} p_p
-\end{align}
-\end{theorem}
-
 In addition to the traffic costs, we also assume that ISP needs investment cost for peer-assisted CDN.
-More specifically refer to Fig.\ref{fig:twotier2} ISP required to setup their L0 or CDN proxy.
+More specifically refer to Fig.\ref{fig:twotier2} ISP required to setup their Level0 or CDN proxy and also provide different home gateway for users.
 
-\newtheorem{theorem6}{Definition}
+\newtheorem{theorem4}{Definition}
 \begin{theorem}[Investment cost]
-We define the investment cost $C^{(s)}_i$ to be a monthly amortization of a larger implementation related cost for the case when the ISP decides to implement P2P. 
+We define the investment cost $C^{(s)}_i$ to be a monthly amortization of a larger implementation related cost for the case when the ISP decides to implement peer-assisted. 
 We denote:
 \begin{align}
 	C^{(s)}_i &\ge 0; \text{ for } s = s_2 \\
@@ -450,12 +440,11 @@ We denote:
 
 Finally after we defined all ISP cost, we can define ISP payoff function that will be used to model ISP utility.  
 
-\newtheorem{theorem7}{Definition}
+\newtheorem{theorem6}{Definition}
 \begin{theorem}[ISP payoff]
 We define the ISP payoff function $\pi_{isp}$ as:
 \begin{align}\label{eq:isppayoff}
 	\pi_{isp}^{(s)} &= N P^{(s)} - \tau^{(s)} - C_i^{(s)} \\
-	 &= N P^{(s)} - \alpha^{(s)} \beta T^{(s_1)} p_t + \alpha^{(s)} (1-\beta) T^{(s_1)} p_p - C_i^{(s)} 
 \end{align}
 \end{theorem}
 
