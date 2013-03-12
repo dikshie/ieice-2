@@ -343,7 +343,7 @@ Fig.\ref{fig:U_p_1000_2} shows $U_p$ values during simulation with total number 
 From both figures, we can see that first admission can stabilized the ratio $X$ in order to keep the CDN proxy capacity enough to supply the system since first admission try to decide peer role from beginning of peer arrival. 
 In the second admission policy, CDN proxy decide peer role during time interval.
 This make the ratio $X$ value of second admission policy has bigger variance.
-To make it clear, Fig.\ref{fig:cdf} shows CDN of $X$ for $U_s=0.1, U_s=0.5, \text{and}  U_s=0.8$ for different admission policy. 
+To make it clear, Fig.\ref{fig:cdf} shows CDN of $X$ for $U_s=0.1, U_s=0.5, \text{and }  U_s=0.8$ for different admission policy. 
 We can see that second admission gives bigger variance, while first admission can keep the ratio ideal.
 Finally, we can see that seeder upload has big contribution for this system. 
 This is become foundation for next section how to incentive peers in this system.
@@ -365,29 +365,28 @@ Moreover in our model, ISP can be modeled as leader who decided to implement pee
 
 \newtheorem{theorem}{Definition}
 \begin{theorem}[ISP Strategies]
-We define the pure strategy space $S_{isp}$ to include two strategies combination choice $s \in \{No, P2P\}$ and corresponding subscription free $P^{s}$.
+We define the pure strategy space $S_{isp}$ to include two strategies combination choice $s \in \{CDN, CDN-P2P\}$ and corresponding subscription free $P^{s}$.
 Futhermore, we denote the strategies as:
 \begin{itemize}
-	\item $s_1 = (No, P^{s_1})$ : the ISP decides to do nothing (use CDN only) and thus keeps charging the initial subscription free $P^{s_1}$.
-	\item $s_2 = (P2P, P^{s_2})$ : the ISP decides recommends P2P and offers a subscription fee $P^{s_2} \le P^{s_1}$.
+	\item $s_1 = (CDN, P^{s_1})$ : the ISP decides to use CDN only and thus keeps charging the initial subscription free $P^{s_1}$.
+	\item $s_2 = (CDN-P2P, P^{s_2})$ : the ISP decides recommends P2P and offers a subscription fee $P^{s_2} \le P^{s_1}$.
 \end{itemize}
 Where the ISP strategy space $S_{isp} = \{s_1,s_2\}$.
 \end{theorem}
 
 After defined the strategy space of ISP, now we will describe user reaction.
-One obvious user action is to accept ISP strategy.
-When user receives offer from ISP whether user want to join peer-assisted strategy or not to join peer-assisted strategy, user can only accept one of that strategy.  
-If user decides to join P2P strategy from ISP then it means user accept $s_2$ of ISP.
-If user decides not to join P2P strategy from ISP then it means user accept $s_1$ of ISP.
-Therefore whatever strategy offered by ISP, the user can only accept one of the ISP strategy.
+User reactions can be accept ISP strategy or decline ISP strategy.  
+If ISP decides to use CDN only then user can only accept ISP strategy.  
+If ISP decides to employ P2P-CDN then user can accept ISP strategy or decline ISP strategy.
 
 \newtheorem{theorem2}{Definition}
 \begin{theorem}[User Strategies]
-Given a ISP strategy decision $s$, we define the user action as $s_a$ where user accepts ISP strategy $s \in S_{isp}$.
+Given a ISP strategy decision $s$, possible user actions:
+\begin{itemize}
+\item $\hat{s_a}$: User accepts ISP strategy $s \in S_{isp}$.
+\item $\hat{s_d}$: User decline ISP strategy $s$ when $s\in{s_2}$.
 \end{theorem}
 We describe that situation as extensive form in Fig.\ref{fig:gametree}.
-
-
 
 \begin{figure}[tb] 
 \begin{center}
