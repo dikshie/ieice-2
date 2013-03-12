@@ -534,10 +534,10 @@ It can be interpreted as a combination of the reduction in ISP total costs and i
 Naturally, the implementation of peer assisted is assumed to reduce traffic cost.  
 Furthermore, we can make observation that $\frac{1}{N} ( \tau^{(s_1)} - \tau^{(s)} -  C^{(s)}_i )$ represents the maximum price reduction that an ISP might give. 
 
-\newtheorem{theorem8}{Definition}\label{la:isppricereduction}
+\newtheorem{theorem8}{Definition}
 \begin{theorem}[ISP price reduction]
 Given observations above we can define the ISP price reduction $\theta^{(s)}$ when choosing strategy $s$ to be:
-\begin{equation}
+\begin{equation}\label{la:isppricereduction}
  \theta^{(s)} = \frac{\gamma}{N} ( \tau^{(s_1)} - \tau^{(s)} -  C^{(s)}_i  )
 \end{equation}
 Where $\gamma \in [0,1]$ is a ratio that express how much of the ISP expected utility increase it wants to share with its users.   
@@ -571,7 +571,7 @@ by simplification using Eq.\ref{la:isppricereduction} we can get:
 \begin{equation}
 C^{(s_2)}_p = \frac{\mu}{N} ( \tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i )
 \end{equation}
-User accepts $(\hat{s_a|s_2}$ if expected penalty less than cost reduction.
+User accepts ${(\hat{s_a}|s_2)}$ if expected penalty less than cost reduction.
 
 
 We analyze ISP level strategy among its strategies.
@@ -591,8 +591,8 @@ Finally if we submitted Eq.\ref{la:PS_2} to Eq.\ref{la:ISPpayoff}, then we can g
 \end{equation}
 The strategy restrictions as follows:
 \begin{itemize}
-	\item Choose strategy $s=s_2$ if $ \tau^{(s_2)}	- C^{(s_2)_i} < \tau^{(s_1)} $
-	\item Choose strategy $s=s_1$ if $ \tau^{(s_2)}	- C^{(s_2)_i} > \tau^{(s_1)} $ 
+	\item Choose strategy $s=s_2$ if $ \tau^{(s_2)}	- C^{(s_2)}{_i} < \tau^{(s_1)} $
+	\item Choose strategy $s=s_1$ if $ \tau^{(s_2)}	- C^{(s_2)}_{i} > \tau^{(s_1)} $ 
 \end{itemize}
 
 
