@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  12 MAR 2013 23:16
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  13 MAR 2013 01:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -399,7 +399,9 @@ Overfull \hbox (9.48111pt too wide) in paragraph at lines 539--540
 []\OT1/txr/m/n/10 Given ob-ser-va-tions above
  []
 
-[6] [7] (./jurnal.bbl
+[6]
+File: graphs/contoh_1.eps Graphic file (type eps)
+ <graphs/contoh_1.eps> [7] (./jurnal.bbl
 LaTeX Font Info:    Try loading font information for OT1+txtt on input line 38.
 
 
@@ -425,7 +427,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.668 }
+l.678 }
        
 ? 
 
@@ -435,7 +437,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.668 }
+l.678 }
        
 ? 
 
@@ -445,7 +447,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.674 }
+l.684 }
        
 ? 
 
@@ -455,9 +457,10 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.674 }
+l.684 }
        
 ? 
+[8]
 
 ! LaTeX Error: File `' not found.
 
@@ -465,7 +468,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.695 }
+l.705 }
        
 ? 
 
@@ -475,19 +478,19 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.695 }
+l.705 }
        
 ? 
-[8] [9
+[9
 
 ] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
- 3539 strings out of 493489
- 48574 string characters out of 3141350
- 116154 words of memory out of 3000000
- 6811 multiletter control sequences out of 15000+200000
+ 3542 strings out of 493489
+ 48619 string characters out of 3141350
+ 115154 words of memory out of 3000000
+ 6813 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (9 pages, 60280 bytes).
+Output written on jurnal.dvi (9 pages, 60512 bytes).
