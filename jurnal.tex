@@ -462,12 +462,12 @@ We define basic utility $U^{(s)}$ a customer receives from buying internet acces
 \begin{equation}
 	U^{(s)} = Q^{(s)} - P^{(s)}
 \end{equation}
-Where $Q^{(s)} > P^{(s)}$. and $Q$ is bandwidth. Later in next we normalize $Q$ to be same metrics with $P$
+Where $Q^{(s)} > P^{(s)}$. and $Q$ is bandwidth. Later in next section we normalize $Q$ to be same metrics with $P$
 \end{theorem}
 
 User tends to accept reduction or discount.   
 In order to keep P2P node on and keep the reward run to loyal users, ISP introduce penalty cost to users.
-User get penalty cost from ISP if user turns off his/her home gateway.
+User get penalty cost from ISP if user turns off his or her home gateway.
 We can define penalty cost as: 
 
 \newtheorem{theorem7}{Definition}
@@ -483,7 +483,7 @@ Finally, General form user payoff function (user accepts ISP strategy $s$):
 \begin{equation}
 	\pi^{(\hat{s_a} | s)}_u = U^{(s)} - C_p
 \end{equation}
-Where $C_p$ is penalty cost if user accept ISP strategy $s_2$ and $C_p=0$ if user accept ISP strategy $s_1$ or user decline ISP strategy $s_2$.
+Where $C^{(s)}_{p}$ is penalty cost if user accept ISP strategy $s_2$ and $C_p=0$ if user accept ISP strategy $s_1$ or user decline ISP strategy $s_2$.
 
 General form user payoff function:
 \begin{itemize}
@@ -493,7 +493,7 @@ General form user payoff function:
 	\end{equation}
 	\item User accepts ISP strategy $s_2$: 
 	\begin{equation}
-		\pi^{(\hat{s_a} | s_2)}_u  = U^{(s)} - C_p
+		\pi^{(\hat{s_a} | s_2)}_u  = U^{(s)} - C^{(s)}_{p}
 	\end{equation}
 \end{itemize}
 
@@ -532,8 +532,7 @@ Above equation can also express that ISP at maximum are willing to reduce its in
 
 It can be interpreted as a combination of the reduction in ISP total costs and investment.
 Naturally, the implementation of peer assisted is assumed to reduce traffic cost.  
-Futhermore, we can make observation that $\frac{1}{N} ( \tau^{(s_1)} - \tau^{(s)} -  C^{(s)}_i )$ represents the maximum price reduction that an ISP might give. 
-We can express how greedy an ISP is by introducing an parameter $\gamma$ that tells us what percentage of the maximum price reduction above an ISP is willing to share.  
+Furthermore, we can make observation that $\frac{1}{N} ( \tau^{(s_1)} - \tau^{(s)} -  C^{(s)}_i )$ represents the maximum price reduction that an ISP might give. 
 
 \newtheorem{theorem8}{Definition}
 \begin{theorem}[ISP price reduction]
@@ -542,7 +541,6 @@ Given observations above we can define the ISP price reduction $\theta^{(s)}$ wh
  \theta^{(s)} = \frac{\gamma}{N} ( \tau^{(s_1)} - \tau^{(s)} -  C^{(s)}_i  )
 \end{equation}
 Where $\gamma \in [0,1]$ is a ratio that express how much of the ISP expected utility increase it wants to share with its users.   
-We can also say that $\gamma$ represents the greediness of the ISP.
 \end{theorem}
 
 We now turn to the users perspective.  
@@ -560,7 +558,7 @@ Futhermore we can get $P^{(s)}_{max}$:
 \begin{equation}\label{eq:usermaxprice2}
 	P^{(s)}_{max} = Q^{(s)} - Q^{(s_1)} + P^{(s_1)} - C^{(s)}_{p}
 \end{equation}
-We found that the maximum value of the subscription free $P^{(s)}$ depends on the perceived performance $Q^{(s)}$.
+We found that the maximum value of the subscription free $P^{(s)}$ depends on the bandwidth received by user $Q^{(s)}$.
 
 
 We analyze ISP level strategy among its strategies.
@@ -572,12 +570,12 @@ which by using ISP payoff function in Eq.\ref{eq:isppayoff} can be written as:
 When we assume that the ISP will provide a lower subscription free when recommending peer-assisted CDN such that $P^{(s_2)} < P^{(s_1)}$, we can use our findings on the ISP price reduction to present $P^{(s_2)}$ as:
 \begin{eqnarray}
 	\nonumber P^{(s_2)} &=& P^{(s_1)} - \theta^{(s_2)} \\
-	P^{(s_2)} &=& P^{(s_1)} - \frac{\gamma}{N} (\tau^{(s_)} - \tau^{(s_1)} - C^{(s_2)}_i )
+	P^{(s_2)} &=& P^{(s_1)} - \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i )
 \end{eqnarray}
 The strategy restrictions as follows:
 \begin{itemize}
-	\item Choose strategy $s=s_2$ if $ P^{(s_2)} + \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i ) > P^{(s_1)}$
-	\item Choose strategy $s=s_1$ if $ P^{(s_1)} > P^{(s_2)} + \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i )$ 
+	\item Choose strategy $s=s_2$ if $ (P^{(s_2)} + \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i ) > P^{(s_1)}$
+	\item Choose strategy $s=s_1$ if $ (P^{(s_1)} > P^{(s_2)} + \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i )$ 
 \end{itemize}
 
 \subsubsection{Numerical Result}
