@@ -562,30 +562,17 @@ Although, we assume that the ISP will offer a reduced subscription free when dec
 We examine the case strategy $s \neq s_1$.
 The maximum limit of $P^{(s)}$ can be expressed by:
 \begin{equation}\label{eq:usermaxprice}
-	\tau^{(s_a|s)}_u = \tau^{(s_a|s_1)}_u
+	\pi^{(s_a|s)}_u = \pi^{(s_a|s_1)}_u
 \end{equation}
 Where $s \in \{s_2\}$. Later Eq.\ref{eq:usermaxprice} can be written as:
 \begin{equation}
-	Q^{(s_1)} ( 1 + d^{(s)} ) - P^{(s)}_{max} = Q^{(s_1)} - P^{(s_1)}
+	Q^{(s_1)} - P^{(s)}_{max} - C^{s}_{p} = Q^{(s_1)} - P^{(s_1)}
 \end{equation}
 Futhermore we can get $P^{(s)}_{max}$:  
 \begin{equation}\label{eq:usermaxprice2}
-	P^{(s)}_{max} = P^{(s_1)} + Q^{(s_1)} d^{(s)}
+	P^{(s)}_{max} = Q^{(s)} - Q^{(s_1)} + P^{(s_1)} - C^{s}_{p}
 \end{equation}
-We found that the maximum value of the subscription free $P^{(s)}$ depends on the perceived performance increase $Q^{(s_1)} d^{(s)}$.
-
-\newtheorem{theorem11}{Definition}
-\begin{theorem}[Minimum-maximum subscription fee interval]
-Next, we define minimum-maximum interval of the subscription fee $P^{(s)}$ as a value space of the subscription free where both ISP and users are expected to have incentives to adopt strategy $s$ as follows:
-\begin{equation}
-	P^{(s)}_{min} < P^{(s)} < P^{(s)}_{max}
-\end{equation}
-later by subtitution Eq.\ref{eq:ispminprice3} and \ref{eq:usermaxprice2} we can get:
-\begin{equation}\label{eq:min-max-interval}
-	P^{(s_1)} - \frac{1}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i  ) < P^{(s)} <  P^{(s_1)} + Q^{(s_1)} d^{(s)} 
-\end{equation}
-\end{theorem}
-
+We found that the maximum value of the subscription free $P^{(s)}$ depends on the perceived performance $Q^{(s)}$.
 
 We analyze ISP level strategy among its strategies.
 The ISP is indifferent between peer-assisted $(s_2)$ and CDN $(s_1)$ when $\pi^{(s_2)}_{isp} = \pi^{(s_1)}_{isp}$
