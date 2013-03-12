@@ -385,6 +385,7 @@ Given a ISP strategy decision $s$, possible user actions:
 \begin{itemize}
 \item $\hat{s_a}$: User accepts ISP strategy $s \in S_{isp}$.
 \item $\hat{s_d}$: User decline ISP strategy $s$ when $s\in{s_2}$.
+\end{itemize}
 \end{theorem}
 We describe that situation as extensive form in Fig.\ref{fig:gametree}.
 
@@ -481,10 +482,10 @@ User tends to accept reduction or discount.
 In order to keep P2P node on and keep the reward run to loyal users, ISP introduce penalty cost to users.
 User get penalty cost from ISP if user turns off his/her home gateway.
 We can define penalty cost as: 
-\newtheorem{theorem7}{Definition}
+\newtheorem{theorem8}{Definition}
 \begin{theorem}[Basic user utility]
 \begin{equation}
-	C_p = \frac{number per hours off}{30}*P^{s}
+	C_p = \frac{\text{number per hours off}}{30}*P^{s}
 \end{equation}
 Where $s\in{s_2}$
 \end{theorem}
@@ -493,21 +494,26 @@ Finally, General form user payoff function (user accepts ISP strategy $s$):
 \begin{equation}
 	\pi^{(s_a | s)}_u = U^{(s)} - C_p
 \end{equation}
-where $C_p$ is penalty cost if user accept ISP strategy $s_2$ and $C_p=0$ if user accept ISP strategy $s_1$.
+Where $C_p$ is penalty cost if user accept ISP strategy $s_2$ and $C_p=0$ if user accept ISP strategy $s_1$ or user decline ISP strategy $s_2$.
 
+General form user payoff function:
+\begin{itemize}
+	\item User accepts ISP strategy $s_1$: 
+	\begin{equation}
+		\pi^{(\hat{s_a} | s_1)}_u  = U^{(s)}
+	\end{equation}
+	\item User accepts ISP strategy $s_2$: 
+	\begin{equation}
+		\pi^{(\hat{s_a} | s_2)}_u  = U^{(s)} - C_p
+	\end{equation}
+\end{itemize}
 
-by substitution basic user utility in Eq.\ref{eq:basicuserutility}, we can get general user payoff function:
-\begin{equation}
-	\pi^{(\hat{s_a} | s)}_u  = Q^{(s_1)} - P^{(s)}	
-\end{equation}
+%by substitution basic user utility in Eq.\ref{eq:basicuserutility}, we can get general user payoff function:
+%\begin{equation}
+%	\pi^{(\hat{s_a} | s)}_u  = Q^{(s_1)} - P^{(s)}	
+%\end{equation}
 
-
-%%%%%%%%%%%%% %%%% SECTION ANALYSIS & DISCUSSION %%%%%%%%%%%%%%%%%
-\section{Analysis and Discussion}
-
-\subsection{Minimum Capacity of CDN Proxy}
-
-\subsection{Analytical Equilibrium Analysis}
+\subsubsection{Analytical Equilibrium Analysis}
 As defined in previous section, both users and ISP are modeled as selfish players that maximize their utility (payoff) defined in the payoff functions.
 As a consequence, an incentivizing strategy for both users and ISPs is a strategy that yields higher payoff then the other available strategies.
 The ISP acting as a leader and initiator of the decision making, decides, on strategy $s$ that includes both a choice of technology as well as price offer $P^{(s)}$ which affect both ISP and user payoff.
