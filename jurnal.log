@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  12 MAR 2013 14:27
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  12 MAR 2013 14:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -400,7 +400,7 @@ File: graphs/game-tree.eps Graphic file (type eps)
 <graphs/game-tree.eps>
 \c@theorem3=\count116
 \c@theorem4=\count117
-\c@theorem6=\count118
+\c@theorem5=\count118
  [5]
 \c@theorem8=\count119
 \c@theorem9=\count120
@@ -509,11 +509,7 @@ l.680 \end{document}
 ? 
 [9
 
-] (./jurnal.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- )
+] (./jurnal.aux) )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 383 (\begingroup)
@@ -527,4 +523,4 @@ Here is how much of TeX's memory you used:
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (9 pages, 60664 bytes).
+Output written on jurnal.dvi (9 pages, 60660 bytes).
