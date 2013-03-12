@@ -426,7 +426,7 @@ where:
 \end{theorem}
 
 In addition to the traffic costs, we also assume that ISP needs investment cost for peer-assisted CDN.
-More specifically refer to Fig.\ref{fig:twotier2} ISP required to setup their Level0 or CDN proxy and also provide different home gateway for users.
+More specifically refer to Fig.\ref{fig:twotier2} ISP required to setup their Level-0 or CDN proxy and also provide different home gateway for users.
 
 \newtheorem{theorem4}{Definition}
 \begin{theorem}[Investment cost]
@@ -456,21 +456,21 @@ We assume one important parameter that describes the quality of an internet acce
 Moreover, the implementation of peer assisted mainly to reveal improvements of download speed as the performance metric that can be observed by customers.
 Consequently, we make assumption that the user perceived quality of internet access increases proportionally with increases in peer assisted implementation. 
 
-\newtheorem{theorem8}{Definition}
+\newtheorem{theorem6}{Definition}
 \begin{theorem}[User perceived quality]
-we define the user perceived quality $Q^{(s)}$ of the internet access given an ISP strategy $s$ to be a function of the experimental derived peer assisted performance improvement $d^{(s)}$ that corresponds to $s$. 
+we define the user perceived quality $Q^{(s)}$ of the internet access given an ISP strategy $s$ to be a function of speed that user received from ISP.
 Moreover it is assume that the user initially perceived quality $Q^{(s_1)}$ is known. 
 We formally denote $Q^{(s)}$ as:
 \begin{equation}\label{eq:basicuserutility}
-	Q^{(s)} = Q^{(s_1)} (1 + d^{(s)})
+	Q^{(s)} = Q^{(s_1)}
 \end{equation}
 \end{theorem}
 
 Therefore, given the assumption of proportional utility contribution from quality and price, we can define basic utility $U^{(s)}$. 
 
-\newtheorem{theorem9}{Definition}
+\newtheorem{theorem7}{Definition}
 \begin{theorem}[Basic user utility]
-We define basic utility $U^{(s)}$ a customer receives from buying internet access, given asn ISP strategy decision $s$ as:
+We define basic utility $U^{(s)}$ a customer receives from buying internet access, given an ISP strategy decision $s$ as:
 \begin{equation}
 	U^{(s)} = Q^{(s)} - P^{(s)}
 \end{equation}
@@ -483,7 +483,7 @@ Finally, General form user payoff function (user accepts ISP strategy $s$):
 \end{equation}
 by subtitution basic user utility in Eq.\ref{eq:basicuserutility}, we can get general user payoff function:
 \begin{equation}
-	\pi^{(s_a | s)}_u  = Q^{(s_1)} ( 1 + d^{(s)}) - P^{(s)}	
+	\pi^{(s_a | s)}_u  = Q^{(s_1)} - P^{(s)}	
 \end{equation}
 
 

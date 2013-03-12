@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  12 MAR 2013 14:31
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  12 MAR 2013 15:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -402,8 +402,8 @@ File: graphs/game-tree.eps Graphic file (type eps)
 \c@theorem4=\count117
 \c@theorem5=\count118
  [5]
-\c@theorem8=\count119
-\c@theorem9=\count120
+\c@theorem6=\count119
+\c@theorem7=\count120
 \c@theorem10=\count121
 
 Overfull \hbox (9.48111pt too wide) in paragraph at lines 528--529
@@ -523,4 +523,4 @@ Here is how much of TeX's memory you used:
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (9 pages, 60660 bytes).
+Output written on jurnal.dvi (9 pages, 60508 bytes).
