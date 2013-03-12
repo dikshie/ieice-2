@@ -369,7 +369,7 @@ We define the pure strategy space $S_{isp}$ to include two strategies combinatio
 Futhermore, we denote the strategies as:
 \begin{itemize}
 	\item $s_1 = (CDN, P^{s_1})$ : the ISP decides to use CDN only and thus keeps charging the initial subscription free $P^{s_1}$.
-	\item $s_2 = (CDN-P2P, P^{s_2})$ : the ISP decides recommends peer-assited and offers a subscription fee $P^{s_2} \le P^{s_1}$.
+	\item $s_2 = (CDN-P2P, P^{s_2})$ : the ISP decides recommends peer-assisted and offers a subscription fee $P^{s_2} \le P^{s_1}$.
 \end{itemize}
 Where the ISP strategy space $S_{isp} = \{s_1,s_2\}$.
 \end{theorem}
@@ -414,14 +414,14 @@ For cost model, we identified that bandwidth cost to reach users is the most rel
 
 \newtheorem{theorem3}{Definition}
 \begin{theorem}[Bandwidth cost]
-we define the transit cost $\tau^{(s)}$ for a given ISP strategy $s$ to be denoted as 
+we define the bandwidth cost $\tau^{(s)}$ for a given ISP strategy $s$ to be denoted as 
 \begin{equation}\label{eq:transitcost}
 	\tau^{(s)}_t = \alpha^{(s)}T^{(s_1)} p_t
 \end{equation}
 where:
 \begin{itemize}
 	\item $T^{(s_1)}$ represent the average ISP traffic volume in Mbps to users.
-	\item $\alpha^{(s)}$ represent the expected reduction factor for strategy $s$ such that: $\alpha^{(s)} \in [0,1]$ for $s \in \{s2\}$;  $\alpha^{(s_1)} = 1$.
+	\item $\alpha^{(s)}$ represent the expected reduction factor for strategy $s$ such that: $\alpha^{(s)} \in [0,1]$ for $s \in \{s_2\}$;  $\alpha^{(s_1)} = 1$.
 	\item $p_t$ represent the price of traffic.
 \end{itemize}
 \end{theorem}
@@ -483,16 +483,17 @@ In order to keep P2P node on and keep the reward run to loyal users, ISP introdu
 User get penalty cost from ISP if user turns off his/her home gateway.
 We can define penalty cost as: 
 \newtheorem{theorem8}{Definition}
-\begin{theorem}[Basic user utility]
+\begin{theorem}[Penalty]
+We define penalty as number of hours user home gateway per month multiply basic subscription fee.
 \begin{equation}
-	C_p = \frac{\text{number per hours off}}{30}*P^{s}
+	C_p = \frac{\text{number per hours off}}{30*24}.P^{(s)}
 \end{equation}
-Where $s\in{s_2}$
+Where $s\in\{s_2\}$
 \end{theorem}
 
 Finally, General form user payoff function (user accepts ISP strategy $s$):
 \begin{equation}
-	\pi^{(s_a | s)}_u = U^{(s)} - C_p
+	\pi^{(\hat{s_a} | s)}_u = U^{(s)} - C_p
 \end{equation}
 Where $C_p$ is penalty cost if user accept ISP strategy $s_2$ and $C_p=0$ if user accept ISP strategy $s_1$ or user decline ISP strategy $s_2$.
 
