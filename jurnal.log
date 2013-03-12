@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  12 MAR 2013 15:05
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  12 MAR 2013 15:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -404,16 +404,28 @@ File: graphs/game-tree.eps Graphic file (type eps)
  [5]
 \c@theorem6=\count119
 \c@theorem7=\count120
+
+
+! LaTeX Error: Command \theorem7 already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.485 \begin
+            {theorem}[Basic user utility]
+? 
 \c@theorem10=\count121
 
-Overfull \hbox (9.48111pt too wide) in paragraph at lines 528--529
+Overfull \hbox (9.48111pt too wide) in paragraph at lines 543--544
 []\OT1/txr/m/n/10 Given ob-ser-va-tions above
  []
 
 [6]
 \c@theorem11=\count122
 
-Overfull \hbox (13.3511pt too wide) in paragraph at lines 555--556
+Overfull \hbox (18.3511pt too wide) in paragraph at lines 570--571
 []
  []
 
@@ -443,7 +455,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.651 }
+l.666 }
        
 ? 
 
@@ -453,7 +465,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.651 }
+l.666 }
        
 ? 
 
@@ -463,7 +475,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.657 }
+l.672 }
        
 ? 
 
@@ -473,30 +485,30 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.657 }
-       
-? 
-
-! LaTeX Error: File `' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.678 }
-       
-? 
-
-! Package graphics Error: Division by 0.
-
-See the graphics package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.678 }
+l.672 }
        
 ? 
 [8]
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.693 }
+       
+? 
+
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.693 }
+       
+? 
 
 ! LaTeX Error: \begin{theorem} on input line 383 ended by \end{document}.
 
@@ -504,7 +516,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.680 \end{document}
+l.695 \end{document}
                     
 ? 
 [9
@@ -523,4 +535,4 @@ Here is how much of TeX's memory you used:
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (9 pages, 60508 bytes).
+Output written on jurnal.dvi (9 pages, 61268 bytes).

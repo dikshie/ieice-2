@@ -415,7 +415,7 @@ For cost model, we identified that bandwidth cost to reach users is the most rel
 \begin{theorem}[Bandwidth cost]
 we define the transit cost $\tau^{(s)}$ for a given ISP strategy $s$ to be denoted as 
 \begin{equation}\label{eq:transitcost}
-	\tau^{(s)}_t = \alpha^{(s)} \beta T^{(s_1)} p_t
+	\tau^{(s)}_t = \alpha^{(s)}T^{(s_1)} p_t
 \end{equation}
 where:
 \begin{itemize}
@@ -477,13 +477,28 @@ We define basic utility $U^{(s)}$ a customer receives from buying internet acces
 Where $Q^{(s)} > P^{(s)}$.
 \end{theorem}
 
+User tends to accept reduction or discount.   
+In order to keep P2P node on and keep the reward run to loyal users, ISP introduce penalty cost to users.
+User get penalty cost from ISP if user turns off his/her home gateway.
+We can define penalty cost as: 
+\newtheorem{theorem7}{Definition}
+\begin{theorem}[Basic user utility]
+\begin{equation}
+	C_p = \frac{number per hours off}{30}*P^{s}
+\end{equation}
+Where $s\in{s_2}$
+\end{theorem}
+
 Finally, General form user payoff function (user accepts ISP strategy $s$):
 \begin{equation}
-	\pi^{(s_a | s)}_u = U^{(s)}
+	\pi^{(s_a | s)}_u = U^{(s)} - C_p
 \end{equation}
-by subtitution basic user utility in Eq.\ref{eq:basicuserutility}, we can get general user payoff function:
+where $C_p$ is penalty cost if user accept ISP strategy $s_2$ and $C_p=0$ if user accept ISP strategy $s_1$.
+
+
+by substitution basic user utility in Eq.\ref{eq:basicuserutility}, we can get general user payoff function:
 \begin{equation}
-	\pi^{(s_a | s)}_u  = Q^{(s_1)} - P^{(s)}	
+	\pi^{(\hat{s_a} | s)}_u  = Q^{(s_1)} - P^{(s)}	
 \end{equation}
 
 
