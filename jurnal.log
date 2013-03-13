@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 00:03
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 00:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -391,30 +391,41 @@ Overfull \hbox (6.49661pt too wide) in alignment at lines 321--324
 
 \c@theorem=\count114
 [4]
-\c@theorem2=\count115
 File: graphs/game-tree-2.eps Graphic file (type eps)
  <graphs/game-tree-2.eps>
-\c@theorem3=\count116
-\c@theorem4=\count117
-\c@theorem5=\count118
- [5]
-\c@theorem6=\count119
-\c@theorem7=\count120
-\c@theorem8=\count121
+! Missing $ inserted.
+<inserted text> 
+                $
+l.423 
+      
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.423 
+      
+? 
+[5]
 
-Overfull \hbox (9.48111pt too wide) in paragraph at lines 540--541
+LaTeX Warning: Reference `eq:isppayoff' on page 6 undefined on input line 451.
+
+\c@theorem8=\count115
+
+Overfull \hbox (9.48111pt too wide) in paragraph at lines 465--466
 []\OT1/txr/m/n/10 Given ob-ser-va-tions above
  []
 
-[6]
+
+LaTeX Warning: Reference `eq:isppayoff' on page 6 undefined on input line 505.
+
 File: graphs/plotpay.eps Graphic file (type eps)
- <graphs/plotpay.eps> [7] (./jurnal.bbl
+<graphs/plotpay.eps> [6] (./jurnal.bbl
 LaTeX Font Info:    Try loading font information for OT1+txtt on input line 38.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/txfonts/ot1txtt.fd
 File: ot1txtt.fd 2000/12/15 v3.1
-)
+) [7]
 Overfull \hbox (48.30508pt too wide) in paragraph at lines 52--55
 []\OT1/txr/m/n/8 ``Comcast and level peer-ing dis-pute.'' http://www.internap.c
 om/2010/12/02/peering-
@@ -434,7 +445,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.680 }
+l.605 }
        
 ? 
 
@@ -444,28 +455,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.680 }
-       
-? 
-[8]
-
-! LaTeX Error: File `' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.686 }
-       
-? 
-
-! Package graphics Error: Division by 0.
-
-See the graphics package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.686 }
+l.605 }
        
 ? 
 
@@ -475,7 +465,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.707 }
+l.611 }
        
 ? 
 
@@ -485,19 +475,41 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.707 }
+l.611 }
        
 ? 
-[9
 
-] (./jurnal.aux) ) 
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.632 }
+       
+? 
+
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.632 }
+       
+? 
+[8] (./jurnal.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3542 strings out of 493489
- 48621 string characters out of 3141350
- 116154 words of memory out of 3000000
- 6813 multiletter control sequences out of 15000+200000
+ 3505 strings out of 493489
+ 48239 string characters out of 3141350
+ 115154 words of memory out of 3000000
+ 6776 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (9 pages, 60728 bytes).
+Output written on jurnal.dvi (8 pages, 55832 bytes).

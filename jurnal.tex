@@ -362,6 +362,7 @@ In our model, ISP has already attempted to implement solution for peer-assisted 
 Moreover, it is reasonable to assume that ISP is naturally initiators.  
 Stackelberg game also known as a leader-follower game is a class of game that concerns with situation where one player, the leader, initiates the decision making and where the second player, the follower, responds to the actions by the leader.  
 Moreover in our model, ISP can be modeled as leader who decided to implement peer-assisted or not according to their expected payoff, while users can be modeled as followers that evaluate the decision of the ISP and responds according to their available actions and payoffs.
+In this section, we will focus on ISP side.  
 
 \newtheorem{theorem}{Definition}
 \begin{theorem}[ISP Strategies]
@@ -374,21 +375,6 @@ Futhermore, we denote the strategies as:
 Where the ISP strategy space $S_{isp} = \{s_1,s_2\}$.
 \end{theorem}
 
-After defined the strategy space of ISP, now we will describe user reaction.
-User reactions can be accept ISP strategy or decline ISP strategy.  
-If ISP decides to use CDN only then user can only accept ISP strategy.  
-If ISP decides to employ peer-assisted CDN then user can accept ISP strategy or decline ISP strategy.
-
-\newtheorem{theorem2}{Definition}
-\begin{theorem}[User Strategies]
-Given a ISP strategy decision $s$, possible user actions:
-\begin{itemize}
-\item $\hat{s_a}$: User accepts ISP strategy $s \in S_{isp}$.
-\item $\hat{s_d}$: User decline ISP strategy $s$ when $s\in{s_2}$.
-\end{itemize}
-\end{theorem}
-We describe that situation as extensive form in Fig.\ref{fig:gametree}.
-
 \begin{figure}[tb] 
 \begin{center}
 \includegraphics[scale=0.5]{graphs/game-tree-2.eps}
@@ -399,7 +385,7 @@ We describe that situation as extensive form in Fig.\ref{fig:gametree}.
 \end{figure}
 
 \subsubsection{ISP Payoff}
-Next, we describe payoff function for ISP in our model.  
+We describe payoff function for ISP in our model.  
 We assume a profit maximizing ISP that gains higher utility proportionally with increasing profits. 
 A simplified business model that determining ISP payoff are mainly: user generated revenue and bandwidth cost to reach the users.
 
@@ -409,99 +395,38 @@ ISPs are also get revenue from other business area such as email hosting, web ho
 In our model, we do not include such that revenue. 
 In order to keep simple, we found it reasonable only to focus on users that buy the same internet access product. 
 Given above simplifications, the ISP collects a total revenue (when deciding on a strategy $s$) of $R = N P^{(s)}$.
-
-For cost model, we identified that bandwidth cost to reach users is the most relevant aspect. 
-
-\newtheorem{theorem3}{Definition}
-\begin{theorem}[Bandwidth cost]
-we define the bandwidth cost $\tau^{(s)}$ for a given ISP strategy $s$ to be denoted as 
-\begin{equation}\label{eq:transitcost}
-	\tau^{(s)}_t = \alpha^{(s)} N T^{(s_1)} p_t
+We noted that payoff is utility or revenue minus cost.  
+Since we only focus on ISP side, we are very interested to see the difference ($\delta$) between payoff of strategy $s_1$ and strategy $s_2$.
+For strategy $S_1$, ISP has payoff: 
+\begin{equation}
+	\pi^{(s_1)}_{(N)} 
 \end{equation}
-where:
-\begin{itemize}
-	\item $T^{(s_1)}$ represent the average ISP traffic volume in Mbps to users.
-	\item $\alpha^{(s)}$ represent the expected reduction factor for strategy $s$ such that: $\alpha^{(s)} \in [0,1]$ for $s \in \{s_2\}$;  $\alpha^{(s_1)} = 1$.
-	\item $p_t$ represent the price of traffic.
-\end{itemize}
-\end{theorem}
-
-In addition to the traffic costs, we also assume that ISP needs investment cost for peer-assisted CDN.
-More specifically refer to Fig.\ref{fig:twotier2} ISP required to setup their Level-0 or CDN proxy and also provide different home gateway for users.
-
-\newtheorem{theorem4}{Definition}
-\begin{theorem}[Investment cost]
-We define the investment cost $C^{(s)}_i$ to be a monthly amortization of a larger implementation related cost for the case when the ISP decides to implement peer-assisted. 
-We denote:
+For strategy $s_2$, ISP has payoff:
+\begin{equation}
+	\pi^{(s_2)}_{(N)} = \pi^{(s_1)}_{(n_l | n_s)} + \pi^{(s_2)}_{(n_s)}
+\end{equation}
+Therefore payoff difference between strategy $s_1$ and $s_2$ is:
 \begin{eqnarray}
-	C^{(s)}_i &\ge 0; \text{ for } s = s_2 \\
-	          &= 0; \text{ for } s \in \{s_1\}
+	\delta &=& \pi^{(s_1)}_{(N)} - \pi^{(s_2)}_{(N)}
 \end{eqnarray}
-\end{theorem}
+We noted that $N=n_l + n_s$ then we can get: 
+\begin{eqnarray}
+	\delta &=& \pi^{(s_1)}_{(n_l|n_s)} - \pi^{(s_2)}_{(n_s)}
+\end{eqnarray}
+Where 
+\begin{eqnarray}
+	\pi^{(s_2)}_{(n_s)} &=& n_s . P^{(s_2)}\\
+	\pi^{(s_1)}_{(n_l|n_s)} &=& n_l . P^{(s_1)} - \text{max}((T.P_t.n_l - n_s . u_s .T .P_t),0)
+\end{eqnarray}
+We noted that:
+$$
 
-Finally after we defined all ISP cost, we can define ISP payoff function that will be used to model ISP utility.  
 
-\newtheorem{theorem5}{Definition}
-\begin{theorem}[ISP payoff]
-We define the ISP payoff function $\pi_{isp}$ as:
-\begin{equation}\label{eq:isppayoff}
-	\pi_{isp}^{(s)} = N P^{(s)} - \tau^{(s)} - C_i^{(s)} + C^{(s)}_{p}
-\end{equation}
-Where $C_p$ is penalty cost for user. 
-\end{theorem}
-In next subsection, we will explain about penalty cost.
 
-\subsubsection{User Payoff}
-In this subsection, we  analyzed how the utility of user that purchases internet access at a fixed subscription fee $P^{(s)}$ can be described and derived. 
-We assume that all users pay a fixed flat rate subscription fee $P$ for internet access with equal speed or QoS parameters.
-Since users are rational player and subject to budget constraint, there must be a set of feature of internet access that valuable to users.
-We assume one important parameter that describes the quality of an internet access product as perceived by customer is the perceived performance of internet applications in this case user want the bandwidth available without fluctuation.  
-Therefore, given the assumption of proportional utility contribution from bandwidth and price, we can define basic utility $U^{(s)}$. 
 
-\newtheorem{theorem6}{Definition}
-\begin{theorem}[Basic user utility]
-We define basic utility $U^{(s)}$ a customer receives from buying internet access, given an ISP strategy decision $s$ as:
-\begin{equation}
-	U^{(s)} = Q^{(s)} - P^{(s)}
-\end{equation}
-Where $Q^{(s)} > P^{(s)}$. and $Q$ is bandwidth. Later in next section we normalize $Q$ to be same metrics with $P$
-\end{theorem}
 
-User tends to accept reduction or discount.   
-In order to keep P2P node on and keep the reward run to loyal users, ISP introduce penalty cost to users.
-User get penalty cost from ISP if user turns off his or her home gateway if user accept ISP strategy $s_2$.
 
-\newtheorem{theorem7}{Definition}
-\begin{theorem}[Penalty]
-We define penalty as number of hours user home gateway per month multiply basic subscription fee.
-\begin{equation}
-	C_p = \frac{\text{number per hours off}}{30*24}.P^{(s)}
-\end{equation}
-Where $s\in\{s_2\}$
-\end{theorem}
 
-Finally, General form user payoff function (user accepts ISP strategy $s$):
-\begin{equation}
-	\pi^{(\hat{s_a} | s)}_u = U^{(s)} - C_p
-\end{equation}
-Where $C^{(s)}_{p}$ is penalty cost if user accept ISP strategy $s_2$ and $C_p=0$ if user accept ISP strategy $s_1$ or user decline ISP strategy $s_2$.
-
-General form user payoff function:
-\begin{itemize}
-	\item User accepts ISP strategy $s_1$: 
-	\begin{equation}
-		\pi^{(\hat{s_a} | s_1)}_u  = U^{(s)}
-	\end{equation}
-	\item User accepts ISP strategy $s_2$: 
-	\begin{equation}
-		\pi^{(\hat{s_a} | s_2)}_u  = U^{(s)} - C^{(s)}_{p}
-	\end{equation}
-\end{itemize}
-
-%by substitution basic user utility in Eq.\ref{eq:basicuserutility}, we can get general user payoff function:
-%\begin{equation}
-%	\pi^{(\hat{s_a} | s)}_u  = Q^{(s_1)} - P^{(s)}	
-%\end{equation}
 
 \subsubsection{Analytical Equilibrium Analysis}
 As defined in previous section, both users and ISP are modeled as selfish players that maximize their utility (payoff) defined in the payoff functions.
