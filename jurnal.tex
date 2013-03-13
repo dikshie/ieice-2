@@ -136,7 +136,7 @@ In this paper, we study the incentive for ISP who adopt peer assisted CDN for st
 
 \begin{figure}[tb]
 \begin{center}
-\includegraphics[scale=0.35]{graphs/business-relationship.eps}
+\includegraphics[scale=0.4]{graphs/business-relationship.eps}
 \end{center}
 \caption{Complex relationship of entities in Internet.The data flow from content producer to content provider. From content provider data can flow to service provider then goes to CDN. Depends on routing and peering policy, data from CDN can flow directly to ISP or flow to ISP via IXP (Internet Exchange) or via transit network. Flow of data noted by straight arrow and flow of money noted by dash arrow line.}
 \label{fig:businessrelationship}
@@ -181,7 +181,7 @@ Therefore, the future of CDN business is likely to live deeper into ISP networks
 
 \begin{figure}[hb]
 \begin{center}
-\includegraphics[scale=0.35]{graphs/two-tier-cdn-topology.eps}
+\includegraphics[scale=0.4]{graphs/two-tier-cdn-topology.eps}
 \end{center}
 \caption{Two tier CDN-P2P topology.
 The CDN proxy maintained by ISP. ISP also has CDN node. CDN node can exchange contents with other CDN node owned by other CDN companies.P2P nodes are ISP's customers that run P2P software.}
@@ -244,7 +244,7 @@ We aim to find out the indifferent utility function between ISP and users.
 
 \begin{figure}[tb] 
 \begin{center}
-\includegraphics[scale=0.35]{graphs/two-tier-cdn-topology-2.eps}
+\includegraphics[scale=0.4]{graphs/two-tier-cdn-topology-2.eps}
 \end{center}
 \caption{System architecture on L0. P2P nodes that run on user home gateway communicates to CDN proxy.}
 \label{fig:twotier2}
@@ -287,14 +287,14 @@ If the ratio more than 'turning point', the CDN proxy must add capacity to suppo
 \begin{figure*}[thb]
 \begin{minipage}[b]{0.4\linewidth}
 \centering
-\includegraphics[width=2.7in]{graphs/U_p_n_1000.eps}
+\includegraphics[width=2.8in]{graphs/U_p_n_1000.eps}
 \caption{$U_p$ for $n=1000$ for admission policy 1.}
 \label{fig:U_p_1000_1}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[b]{0.5\linewidth}
 \centering
-\includegraphics[width=2.7in]{graphs/U_p_n_1000_admi.eps}
+\includegraphics[width=2.8in]{graphs/U_p_n_1000_admi.eps}
 \caption{$U_p$ for $n=1000$ for admission policy 2.}
 \label{fig:U_p_1000_2}
 \end{minipage}
@@ -302,7 +302,7 @@ If the ratio more than 'turning point', the CDN proxy must add capacity to suppo
 
 \begin{figure}[hb] 
 \begin{center}
-\includegraphics[scale=0.5]{graphs/cdf.eps}
+\includegraphics[scale=0.6]{graphs/cdf.eps}
 \end{center}
 \caption{CDF of $n_l/n_s$. We can see that admission policy 2 has bigger variance than admission policy 1.}
 \label{fig:cdf}
@@ -391,9 +391,9 @@ We describe that situation as extensive form in Fig.\ref{fig:gametree}.
 
 \begin{figure}[tb] 
 \begin{center}
-\includegraphics[scale=0.35]{graphs/game-tree.eps}
+\includegraphics[scale=0.5]{graphs/game-tree-2.eps}
 \end{center}
-\caption{Extensive form of game between ISP and users}
+\caption{Extensive form of game between ISP's strategies}
 \label{fig:gametree}
 \vspace{-2mm}
 \end{figure}
@@ -445,9 +445,11 @@ Finally after we defined all ISP cost, we can define ISP payoff function that wi
 \begin{theorem}[ISP payoff]
 We define the ISP payoff function $\pi_{isp}$ as:
 \begin{equation}\label{eq:isppayoff}
-	\pi_{isp}^{(s)} = N P^{(s)} - \tau^{(s)} - C_i^{(s)}
+	\pi_{isp}^{(s)} = N P^{(s)} - \tau^{(s)} - C_i^{(s)} + C^{(s)}_{p}
 \end{equation}
+Where $C_p$ is penalty cost for user. 
 \end{theorem}
+In next subsection, we will explain about penalty cost.
 
 \subsubsection{User Payoff}
 In this subsection, we  analyzed how the utility of user that purchases internet access at a fixed subscription fee $P^{(s)}$ can be described and derived. 
@@ -467,8 +469,7 @@ Where $Q^{(s)} > P^{(s)}$. and $Q$ is bandwidth. Later in next section we normal
 
 User tends to accept reduction or discount.   
 In order to keep P2P node on and keep the reward run to loyal users, ISP introduce penalty cost to users.
-User get penalty cost from ISP if user turns off his or her home gateway.
-We can define penalty cost as: 
+User get penalty cost from ISP if user turns off his or her home gateway if user accept ISP strategy $s_2$.
 
 \newtheorem{theorem7}{Definition}
 \begin{theorem}[Penalty]
@@ -587,7 +588,7 @@ When we assume that the ISP will provide a lower subscription free when recommen
 \end{eqnarray}
 Finally if we submitted Eq.\ref{la:PS_2} to Eq.\ref{la:ISPpayoff}, then we can get:
 \begin{equation}
-  \tau^{(s_2)}	- C^(s_2)_{i} = \tau^{(s_1)}
+  \tau^{(s_2)}	- C^{(s_2)}_{i} = \tau^{(s_1)}
 \end{equation}
 The strategy restrictions as follows:
 \begin{itemize}
@@ -598,9 +599,9 @@ The strategy restrictions as follows:
 
 \begin{figure}[hb] 
 \begin{center}
-\includegraphics[scale=0.5]{graphs/contoh_1.eps}
+\includegraphics[scale=0.65]{graphs/plotpay.eps}
 \end{center}
-\caption{Subscription free reduction}
+\caption{Delta between with $U_s$ variation and $\gamma$ variation.}
 \label{fig:discount}
 \vspace{-2mm}
  \end{figure}
@@ -613,6 +614,7 @@ Simplyfing limitations that we use:
 	\item We assume an ISP with $N=1000$ homogeneous users that pay an equal subscription fee $P^{(s_1)}$.
 	\item We assume that  traffic is generated by video traffic and the traffic.
 	\item We assume that user utilize $100\%$ of their internet connection capacity.  
+	\item We assume users never turn off their home gateway.
 \end{itemize}
 
 Figure \ref{fig:discount} shows subscription fee reduction that ISP can give to users.

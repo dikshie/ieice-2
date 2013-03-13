@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  13 MAR 2013 02:00
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 00:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -364,29 +364,36 @@ LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
 File: graphs/business-relationship.eps Graphic file (type eps)
 
 <graphs/business-relationship.eps>
+Overfull \hbox (16.3297pt too wide) in paragraph at lines 139--140
+ [] 
+ []
+
 File: graphs/two-tier-cdn-topology.eps Graphic file (type eps)
- <graphs/two-tier-cdn-topology.eps> [2]
+<graphs/two-tier-cdn-topology.eps> [2]
 File: graphs/two-tier-cdn-topology-2.eps Graphic file (type eps)
-
-<graphs/two-tier-cdn-topology-2.eps>
+ <graphs/two-tier-cdn-topology-2.eps>
 File: graphs/stable-steady-state.eps Graphic file (type eps)
- <graphs/stable-steady-state.eps>
-File: graphs/U_p_n_1000.eps Graphic file (type eps)
 
-<graphs/U_p_n_1000.eps>
+<graphs/stable-steady-state.eps> [3]
+File: graphs/U_p_n_1000.eps Graphic file (type eps)
+ <graphs/U_p_n_1000.eps>
+Overfull \hbox (2.35927pt too wide) in paragraph at lines 290--291
+ [][] 
+ []
+
 File: graphs/U_p_n_1000_admi.eps Graphic file (type eps)
- <graphs/U_p_n_1000_admi.eps>
+<graphs/U_p_n_1000_admi.eps>
 File: graphs/cdf.eps Graphic file (type eps)
- <graphs/cdf.eps> [3]
+ <graphs/cdf.eps>
 Overfull \hbox (6.49661pt too wide) in alignment at lines 321--324
  [][][] []
  []
 
-[4]
 \c@theorem=\count114
+[4]
 \c@theorem2=\count115
-File: graphs/game-tree.eps Graphic file (type eps)
- <graphs/game-tree.eps>
+File: graphs/game-tree-2.eps Graphic file (type eps)
+ <graphs/game-tree-2.eps>
 \c@theorem3=\count116
 \c@theorem4=\count117
 \c@theorem5=\count118
@@ -395,13 +402,13 @@ File: graphs/game-tree.eps Graphic file (type eps)
 \c@theorem7=\count120
 \c@theorem8=\count121
 
-Overfull \hbox (9.48111pt too wide) in paragraph at lines 539--540
+Overfull \hbox (9.48111pt too wide) in paragraph at lines 540--541
 []\OT1/txr/m/n/10 Given ob-ser-va-tions above
  []
 
 [6]
-File: graphs/contoh_1.eps Graphic file (type eps)
- <graphs/contoh_1.eps> [7] (./jurnal.bbl
+File: graphs/plotpay.eps Graphic file (type eps)
+ <graphs/plotpay.eps> [7] (./jurnal.bbl
 LaTeX Font Info:    Try loading font information for OT1+txtt on input line 38.
 
 
@@ -427,7 +434,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.678 }
+l.680 }
        
 ? 
 
@@ -437,27 +444,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.678 }
-       
-? 
-
-! LaTeX Error: File `' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.684 }
-       
-? 
-
-! Package graphics Error: Division by 0.
-
-See the graphics package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.684 }
+l.680 }
        
 ? 
 [8]
@@ -468,7 +455,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.705 }
+l.686 }
        
 ? 
 
@@ -478,7 +465,27 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.705 }
+l.686 }
+       
+? 
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.707 }
+       
+? 
+
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.707 }
        
 ? 
 [9
@@ -486,11 +493,11 @@ l.705 }
 ] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
  3542 strings out of 493489
- 48619 string characters out of 3141350
- 115154 words of memory out of 3000000
+ 48621 string characters out of 3141350
+ 116154 words of memory out of 3000000
  6813 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (9 pages, 60480 bytes).
+Output written on jurnal.dvi (9 pages, 60728 bytes).
