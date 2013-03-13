@@ -419,108 +419,23 @@ Where
 	\pi^{(s_1)}_{(n_l|n_s)} &=& n_l . P^{(s_1)} - \text{max}((T.P_t.n_l - n_s . u_s .T .P_t),0)
 \end{eqnarray}
 We noted that:
-$$
-
-
-
-
-
-
-
-
-\subsubsection{Analytical Equilibrium Analysis}
-As defined in previous section, both users and ISP are modeled as selfish players that maximize their utility (payoff) defined in the payoff functions.
-As a consequence, an incentivizing strategy for both users and ISPs is a strategy that yields higher payoff then the other available strategies.
-The ISP acting as a leader and initiator of the decision making, decides, on strategy $s$ that includes both a choice of technology as well as price offer $P^{(s)}$ which affect both ISP and user payoff.
-
-From the user payoff function, we can observe that a user receives higher payoff as price decreases and will prefer lower prices.
-The ISP on the other hand will naturally have a minimum limit for the subscription price as it, in our model, represents the only source of revenue.
-
-Moreover we say that the minimum price $P^{(s)}_{min}$ that makes an ISP indifferent between strategy $s \in \{s_2\}$ and strategy $s_1$ can be found by identifying where the payoff of strategy $s$ equal the payoff of strategy $s_1$. 
-That is expressed formally as:
-
-\begin{equation}\label{ispminprice}
-	\pi^{(s)}_{isp} = \pi^{(s_1)}_{isp}
-\end{equation}
-Where $s \in \{s_2\}$. 
-Later Eq.\ref{ispminprice} can be written as: 
-
-\begin{equation}\label{eq:ispminprice2}
-	N P^{(s)}_{min} - \tau^{(s)} - C^{(s)}_i = N P^{(s_1)} - \tau^{(s_1)}  
-\end{equation}
-When subtituting payoffs with Eq.\ref{eq:isppayoff}, by furthermore solving Eq.\ref{eq:ispminprice2} for $P^{(s)}_{min}$ we can get:
-\begin{equation}\label{eq:ispminprice3}
-	P^{(s)}_{min} = P^{(s_1)} - \frac{1}{N} ( \tau^{(s_1)} - \tau^{(s)} -  C^{(s)}_i  )
-\end{equation}
-
-Given the above equations, we have found an expression for $P^{(s)}$ that express the point at which the ISP is indifferent to strategy $s$ over $s_1$ and thus represent the lower boundary for where both the users that ISP might have incentives for strategy $s$. 
-Above equation can also express that ISP at maximum are willing to reduce its initial price $P^{(s_1)}$ by the expression $\frac{1}{N} ( \tau^{(s_1)} - \tau^{(s)} -  C^{(s)}_i  )$.
-
-It can be interpreted as a combination of the reduction in ISP total costs and investment.
-Naturally, the implementation of peer assisted is assumed to reduce traffic cost.  
-Furthermore, we can make observation that $\frac{1}{N} ( \tau^{(s_1)} - \tau^{(s)} -  C^{(s)}_i )$ represents the maximum price reduction that an ISP might give. 
-
-\newtheorem{theorem8}{Definition}
-\begin{theorem}[ISP price reduction]
-Given observations above we can define the ISP price reduction $\theta^{(s)}$ when choosing strategy $s$ to be:
-\begin{equation}\label{la:isppricereduction}
- \theta^{(s)} = \frac{\gamma}{N} ( \tau^{(s_1)} - \tau^{(s)} -  C^{(s)}_i  )
-\end{equation}
-Where $\gamma \in [0,1]$ is a ratio that express how much of the ISP expected utility increase it wants to share with its users.   
-\end{theorem}
-
-We now turn to the users perspective.  
-Although, we assume that the ISP will offer a reduced subscription free when deciding to use peer-assisted, we will examine the more general maximum limit for $P^{(s)}$ from the user perspective.
-We examine the case strategy $s \neq s_1$.
-The maximum limit of $P^{(s)}$ can be expressed by:
-\begin{equation}\label{eq:usermaxprice}
-	\pi^{(\hat{s_a}|s)}_u = \pi^{(s_a|s_1)}_u
-\end{equation}
-Where $s \in \{s_2\}$. Later Eq.\ref{eq:usermaxprice} can be written as:
-\begin{equation}
-	Q^{(s_1)} - P^{(s)}_{max} - C^{(s)}_{p} = Q^{(s_1)} - P^{(s_1)}
-\end{equation}
-Futhermore we can get $P^{(s)}_{max}$:  
-\begin{equation}\label{eq:usermaxprice2}
-	P^{(s)}_{max} = Q^{(s)} - Q^{(s_1)} + P^{(s_1)} - C^{(s)}_{p}
-\end{equation}
-We found that the maximum value of the subscription free $P^{(s)}$ depends on the bandwidth received by user $Q^{(s)}$.
-
-Now we look at user level strategy for ISP strategy $s_1$.  
-Since there is only one user strategy for ISP strategy $s_1$ we can not compare to other.  
-Next, we analyze the case user strategy when ISP offer strategy $s_2$. 
-In this case: 
-\begin{equation}
- \pi^{(\hat{s_a}|s_2)}_{u} = \pi^{(\hat{s_d}|s_2)}_{u}
-\end{equation}
-by simplification using Eq.\ref{la:isppricereduction} we can get:
-\begin{equation}
-C^{(s_2)}_p = \frac{\mu}{N} ( \tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i )
-\end{equation}
-User accepts ${(\hat{s_a}|s_2)}$ if expected penalty less than cost reduction.
-
-
-We analyze ISP level strategy among its strategies.
-The ISP is indifferent between peer-assisted CDN $(s_2)$ and CDN $(s_1)$ when $\pi^{(s_2)}_{isp} = \pi^{(s_1)}_{isp}$
-which by using ISP payoff function in Eq.\ref{eq:isppayoff} can be written as: 
-\begin{equation}\label{la:ISPpayoff}
-	N P^{(s_2)} - \tau^{(s_2)} - C^{(s)}_{i} = N P^{(s_1)} - \tau^{(s_1)}
-\end{equation}
-When we assume that the ISP will provide a lower subscription free when recommending peer-assisted CDN such that $P^{(s_2)} < P^{(s_1)}$, we can use our findings on the ISP price reduction to present $P^{(s_2)}$ as:
-\begin{eqnarray}\label{la:PS_2}
-	\nonumber P^{(s_2)} &=& P^{(s_1)} - \theta^{(s_2)} \\
-	P^{(s_2)} &=& P^{(s_1)} - \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i )
+$n_l . P^{s_1}$ is revenue and $\text{max}((T.P_t.n_l - n_s . u_s .T .P_t),0)$ traffic cost $\tau^{s_1}$.
+The traffic of $\pi^{(s_1)}_{(n_l|n_s)}$ is depends on threshold value $n_l/n_s$ that we discussed in Sec.\ref{sec:stablesystemwithchurn}.
+If $n_s . u_s > n_l$ then bandwidth cost is minimum because ISP does not need to add seeders, instead leecher can be added to the system.  
+If $n_s . u_s < n_l$ then the bandwidth cost is maximum because ISP need to add seeders.  
+The difference between these value is the cost of ISP traffic.
+We also noted that $P^{(s_2)}$ is price that ISP give in strategy $s_2$. 
+$P^{(s_2)}$ is discount price because users accept strategy $s_2$.  
+We can get discount price by indifference payoff between strategy $s_1$ and $s_2$ with total peer $N$:
+\begin{eqnarray}  
+	\pi^{(s_1)}_{(N)} &=& \pi^{(s_2)}_{(N)}\\
+	N.P^{(s_1)} - \tau^{(s_1)} &=& N.P^{(s_2)} - \tau^{(s_2)}\\
+	P^{(s_2)} &=& P^{(s_1)} - \frac{1}{N} (\tau^{(s_1)} -  \tau^{(s_2)} )
 \end{eqnarray}
-Finally if we submitted Eq.\ref{la:PS_2} to Eq.\ref{la:ISPpayoff}, then we can get:
-\begin{equation}
-  \tau^{(s_2)}	- C^{(s_2)}_{i} = \tau^{(s_1)}
-\end{equation}
-The strategy restrictions as follows:
-\begin{itemize}
-	\item Choose strategy $s=s_2$ if $ \tau^{(s_2)}	- C^{(s_2)}_{i} < \tau^{(s_1)} $
-	\item Choose strategy $s=s_1$ if $ \tau^{(s_2)}	- C^{(s_2)}_{i} > \tau^{(s_1)} $ 
-\end{itemize}
-
+Factor $\frac{1}{N} (\tau^{(s_1)} -  \tau^{(s_2)} )$ is discount factor.
+We can define discount factor as $\frac{\gamma}{N} (\tau^{(s_1)} -  \tau^{(s_2)} )$.
+Maximum discount that ISP can give to user when $\gamma=1$ and minimum discount that ISP can give to user when $\gamma=0$.
+We can also say that $\gamma$ is a ratio that express how much of the ISP expected utility increase it wants to share with its users. 
 
 \begin{figure}[hb] 
 \begin{center}
