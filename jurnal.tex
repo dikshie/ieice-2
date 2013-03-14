@@ -229,29 +229,47 @@ The CDN proxy maintained by ISP. ISP also has CDN node. CDN node can exchange co
 
 Figure \ref{fig:twotier} shows our system architecture model, consisting of a two-level CDN (Level-1 and Level-0), and a P2P network.
 This two-level CDN follows the hierarchical model in  Mathieu et al., \cite{6249305}, with some modifications.
-
 The Level-1 CDN consists of high capacity servers strategically placed to increase network backbone capacity.
-The Level-1 CDN is similar to the current CDN networks, where CDN nodes can communicate each other by using common interconnect interface even though the CDN nodes are owned by different companies or different ISPs \cite{cdni}.
+The Level-1 CDN is similar to current CDN networks, where CDN nodes can communicate with each other by using a common interconnect interface even though the CDN nodes are owned by different companies or different ISPs \cite{cdni}.
 The Level-0 CDN consists of CDN proxies owned or managed by an ISP and placed close to end users.
 The CDN proxies join the P2P network along with other nodes owned by the end users.
 
-The proxies communicate to each other to serve content requests from the users, serving the contents from their caches if the content is available 
-or retrieving the content from the Level-1 CDN servers otherwise.
-Some end user nodes assist the proxies to serve content requests by uploading the contents in their caches to other end user nodes, and a user node may receive the contents exclusively from the proxies or from the proxies and other user nodes, hence creating a P2P swarm.
-The user nodes are configured not communicate with nodes outside the ISP network, thus the P2P swarm is limited to a single ISP (or an administrative domain).
+The proxies communicate with each other to serve content requests from the users, serving the contents from their caches if the content is available 
+or retrieving it from the Level-1 CDN servers otherwise.
+Some end user nodes assist the proxies to serve content requests by
+uploading the contents in their caches to other end user nodes, and a
+user node may either receive content exclusively from the proxies or
+from both the proxies and other user nodes, hence creating a P2P swarm.
+The user nodes are configured to not communicate with nodes outside
+the ISP's network, limiting the P2P swarm to a single ISP (or an administrative domain).
 
-In this P2P network, the proxies can be considered as super nodes, or super seeders, which serve all contents that cannot be served by other nodes.
-The proxies also coordinate the user nodes, whether they act as seeders or leechers.
-The proxies should satisfy all users while minimizing their resource usage, e.g., bandwidth and cache capacity, by optimizing the utilization of seeders in the P2P swarm.
-In the case of file sharing, the proxies may not need to serve contents to the seeders if the upload rate from the user nodes in the P2P swarm is enough to satisfy all users.
-While in the case of streaming contents, the proxies serve the contents in the full streaming rate to the seeders;
-and the leechers would not receive the full rate from the proxies as they also receive contents from the seeders.
-Also in this case, even though the upload rate from the user nodes in the P2P swarm is enough, relying only to user nodes may make some nodes experiencing high latency,
-hence the proxies should have a good coordination strategy to satisfy the latency requirements.
+In this P2P network, the proxies can be considered to be super nodes,
+or super seeders, which serve all contents that cannot be served by
+other nodes.  The proxies also coordinate the user nodes, whether they
+act as seeders or leechers.  The proxies should satisfy all users
+while minimizing their resource usage, e.g., bandwidth and cache
+capacity, by optimizing the utilization of seeders in the P2P swarm.
+In the case of file sharing, the proxies may not need to serve
+contents to the seeders if the upload rate from the user nodes in the
+P2P swarm is enough to satisfy all users.  In the case of streaming
+content, the proxies serve the contents at the full streaming rate to
+the seeders; the leechers do not need to receive the full rate from
+the proxies as they also receive some content from the seeders.  Also
+in this case, even though the upload rate from the user nodes in the
+P2P swarm is enough, relying only on user nodes may cause some nodes
+to experience high latency, hence the proxies should have a good
+coordination strategy to satisfy the latency requirements.
 
-Cost reduction in the ISP side is an aim of the introduction of this system, thus the ISP may offer incentives, e.g., a subscription fee discount, to its users in order to get them participating in the P2P swarm.
-It should also devise a strategy or strategies of its offers in order to achieve its commercial objectives, including customer satisfaction.
-The next section presents the analysis of this system and the strategies of an ISP in introducing this system.
+The aim in introducing this system is cost reduction for the ISP, by
+reducing its core network needs and data volume with its own upstream
+provider, and its costs when providing its own CDN.  Thus, the ISP may
+offer incentives, e.g., a subscription fee discount, to its users in
+order to get them to participate in the P2P swarm.  It should also
+devise a strategy for its offers in order to achieve its commercial
+objectives, including customer satisfaction.  The next section
+analyzes this system and the strategies of an ISP in introducing this
+system.
+
 
   
  
