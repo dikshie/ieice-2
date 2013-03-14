@@ -143,30 +143,6 @@ In this paper, we study the incentive for ISP who adopt peer assisted CDN for st
 \vspace{-2mm}
 \end{figure} 
 
-
-%\begin{figure}[tb]
-%\begin{center}
-%\includegraphics[scale=0.35]{graphs/llnw-tata-comcast.eps}
-%\end{center}
-%\caption{Akamai purchased paid peering from Comcast and enjoy low latency and high capacity access to Comcast's customers.
-%Limelight use Tata to deliver contents to Comcast's customers (arrow line). 
-%Due to high congestion on the link between Comcast and Tata, Netflix began to complain to Limelight because Netflix paid Limelight to deliver contents. 
-%Finally Limelight purchased paid peering from Comcast (dash line).}
-%\label{fig:llnw}
-%\vspace{-2mm}
-%\end{figure}
-
-%\begin{figure}[tb]
-%\begin{center}
-%\includegraphics[scale=0.35]{graphs/comcast-level3.eps}
-%\end{center}
-%\caption{Level3 and Comcast has settlement free peering. Comcast is also use Level3 as transit network. 
-%Netflix change its contents delivery network from Akamai to Level3 (arrow dash line).
-%Level3 traffic to Comcast became out of ratio therefore Comcast asked Level3 to buy paid peering.}
-%\label{fig:comcast}
-%\vspace{-2mm}
-%\end{figure}
-
 %%%%%%%%%%%%%%%%%%%%%% CDN COMPLEXITY %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CDN Complexity}
 As shown in Fig.\ref{fig:businessrelationship}, how content in Internet delivered to end-users.  
@@ -312,13 +288,13 @@ We now compare two admission policies:
 1. the system starts admitting new arrivals as seeders until $(n_s.u_s > n_l.r)$, then each arrival is admitted as a seeder or a leecher according to the equation.     
 2. the system admit arrivals every $d$ time interval. If $(n_s.u_s > n_l.r)$ at the beginning of a time interval, all arrivals within the time interval are admitted as leecher, otherwise as seeders.
 
-Figure \ref{fig:U_p_1000_1} shows $U_p$ values during simulation with total number of peers $N=1000$ and we use first admission policy in this simulation. 
+Figure \ref{fig:U_p_1000_1} shows $U_p$ values during simulation with total number of peers $N=1000, \lambda=2$ and we use first admission policy in this simulation. 
 We also plot ratio values $X$ on second Y-axis.
-Fig.\ref{fig:U_p_1000_2} shows $U_p$ values during simulation with total number of peers $N=1000$ and we use second admission policy in this simulation.  
+Fig.\ref{fig:U_p_1000_2} shows $U_p$ values during simulation with total number of peers $N=1000, \lambda=2$ and we use second admission policy in this simulation.  
 From both figures, we can see that first admission can stabilized the ratio $X$ in order to keep the CDN proxy capacity enough to supply the system since first admission try to decide peer role from beginning of peer arrival. 
 In the second admission policy, CDN proxy decide peer role during time interval.
 This make the ratio $X$ value of second admission policy has bigger variance.
-To make it clear, Fig.\ref{fig:cdf} shows CDN of $X$ for $U_s=0.1, U_s=0.5, \text{and}  U_s=0.8$ for different admission policy. 
+To make it clear, Fig.\ref{fig:cdf} shows CDN of $X$ for $U_s=0.1, U_s=0.5, \text{and }  U_s=0.8$ for different admission policy. 
 We can see that second admission gives bigger variance, while first admission can keep the ratio ideal.
 Finally, we can see that seeder upload has big contribution for this system. 
 This is become foundation for next section how to incentive peers in this system.

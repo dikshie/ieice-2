@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 13:58
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 14:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -377,7 +377,7 @@ File: graphs/stable-steady-state.eps Graphic file (type eps)
 <graphs/stable-steady-state.eps> [3]
 File: graphs/U_p_n_1000.eps Graphic file (type eps)
  <graphs/U_p_n_1000.eps>
-Overfull \hbox (2.35927pt too wide) in paragraph at lines 288--289
+Overfull \hbox (2.35927pt too wide) in paragraph at lines 264--265
  [][] 
  []
 
@@ -416,7 +416,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.547 }
+l.523 }
        
 ? 
 
@@ -426,7 +426,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.547 }
+l.523 }
        
 ? 
 
@@ -436,7 +436,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.553 }
+l.529 }
        
 ? 
 
@@ -446,7 +446,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.553 }
+l.529 }
        
 ? 
 
@@ -456,7 +456,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.574 }
+l.550 }
        
 ? 
 
@@ -466,7 +466,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.574 }
+l.550 }
        
 ? 
 [7] (./jurnal.aux) ) 
@@ -479,4 +479,4 @@ Here is how much of TeX's memory you used:
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (7 pages, 51196 bytes).
+Output written on jurnal.dvi (7 pages, 51244 bytes).
