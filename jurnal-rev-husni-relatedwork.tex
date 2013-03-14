@@ -199,7 +199,7 @@ In the next sections we will show how CDN proxy can make such decision in a way 
   
  
 %%%%%%%%%% SYSTEM MODEL %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{System Model and Analysis}\label{systemmodel}
+\section{System Model and Result Analysis}\label{systemmodel}
 We present a model between P2P and CDN using simple a single bitrate for video streaming as shown in Fig.\ref{fig:twotier2}. 
 The model is a stochastic fluid model similar to \cite{4215694}.
 While the authors in \cite{4215694} focus on probability of degraded service on small and large systems, our work focus on minimum capacity or of CDN proxy to support the system.
@@ -220,9 +220,9 @@ We aim to find out the indifferent utility function between ISP and users.
 
 Let the number of leechers and the number of seeders in the P2P swarm, not including the CDN proxy, as $n_l$ and $n_s$, and the bitrate as $r$.
 In order to satisfy the users for a streaming content, the minimum total upload bitrate to the P2P swarm is $(n_s + n_l)r$.
-Let the upload capacity of each seeder as $u_s$, $0 \leq u_s \leq 1$, therefore the minimum CDN proxy capacity to support the system is:
+Let the upload capacity of each seeder as $u_s$, $u_s \leq r$, therefore the minimum CDN proxy capacity to support the system is:
 \begin{equation}
-        U_p = n_s.r + n_l.r - min(n_s.u_s.r, n_l.r).
+        U_p = n_s.r + n_l.r - min(n_s.u_s, n_l.r).
 \end{equation}
 Note that if $n_l.r$ is less than the upload capacity of the seeders, the proxy does not need to serve the leechers.
 Also note that if the system is for file sharing, then the CDN proxy does not need to serve the seeders.
@@ -236,7 +236,7 @@ which means that the upload capacity requirement of CDN proxy relative to the nu
 \begin{center}
 \includegraphics[scale=0.5]{graphs/stable-steady-state.eps}
 \end{center}
-\caption{System in stationary state.}
+\caption{System in Stationary State.}
 \label{fig:steadystate}
 \vspace{-2mm}
 \end{figure}
@@ -274,24 +274,25 @@ Let $N(t)$ be the number of peers in the system at time $t$, i.e., the number of
 where $N(t) = n_s(t) + n_l(t)$, and $n_s(t)$ is determined by the system's admission policy.
 
 We now compare two admission policies:
-1. the system starts admitting new arrivals as seeders until $(n_s.u_s > n_l)$, then each arrival is admitted as a seeder or a leecher according to the equation.     
-2. the system admit arrivals every $d$ time interval. If $(n_s.u_s > n_l)$ at the beginning of a time interval, all arrivals within the time interval are admitted as leecher, otherwise as seeders.
+1. the system starts admitting new arrivals as seeders until $(n_s.u_s > n_l.r)$, then each arrival is admitted as a seeder or a leecher according to the equation.     
+2. the system admit arrivals every $d$ time interval. If $(n_s.u_s > n_l.r)$ at the beginning of a time interval, all arrivals within the time interval are admitted as leecher, otherwise as seeders.
 
-Figure \ref{fig:U_p_1000_1} shows the $U_p$ values during simulation with $N=1000, \lambda=2, \mu=2, u_s=\{0.1, 0.5, 0.8\}$, and we use the first admission policy in this simulation. 
-We also plot ratio values $X$ on the second Y-axis.
-Figure \ref{fig:U_p_1000_2} shows the $U_p$ values during simulation using the second admission policy with $delta_t=1.0$ and other parameters are kept unchanged.  
-From both figures, we can see that the first admission policy can stabilize the value $X$ in order to keep the CDN proxy capacity enough to supply the system. 
-In the second admission policy, CDN proxy decides the same role for peers arriving in a time interval.
-Figure \ref{fig:cdf} shows the CDF of $X$ for $U_s=0.1, U_s=0.5, \text{and }  U_s=0.8$ for both admission policies. 
-We can see that second admission policy gives a higher variance, while first admission can keep the ratio ideal.
-Finally, we can see that seeder upload has a good contribution to this system. 
-The next section discusses how to give incentives to the peers in this system.
+Figure \ref{fig:U_p_1000_1} shows $U_p$ values during simulation with total number of peers $N=1000, \lambda=2, u_s=\{0.1, 0.5, 0.8\}$ and we use first admission policy in this simulation. 
+We also plot ratio values $X$ on second Y-axis.
+Fig.\ref{fig:U_p_1000_2} shows $U_p$ values during simulation with total number of peers $N=1000, \lambda=2,  u_s=\{0.1, 0.5, 0.8\}$ and we use second admission policy in this simulation.  
+From both figures, we can see that first admission can stabilized the ratio $X$ in order to keep the CDN proxy capacity enough to supply the system since first admission try to decide peer role from beginning of peer arrival. 
+In the second admission policy, CDN proxy decide peer role during time interval.
+This make the ratio $X$ value of second admission policy has bigger variance.
+To make it clear, Fig.\ref{fig:cdf} shows CDN of $X$ for $U_s=0.1, U_s=0.5, \text{and }  U_s=0.8$ for different admission policy. 
+We can see that second admission gives bigger variance, while first admission can keep the ratio ideal.
+Finally, we can see that seeder upload has big contribution for this system. 
+This is become foundation for next section how to incentive peers in this system.
 
 \begin{figure}[hb] 
 \begin{center}
 \includegraphics[scale=0.6]{graphs/cdf.eps}
 \end{center}
-\caption{CDF of $n_l/n_s$. We can see that the variance is higher for admission policy 2 compared to the admission policy 1.}
+\caption{CDF of $n_l/n_s$. We can see that admission policy 2 has bigger variance than admission policy 1.}
 \label{fig:cdf}
 \vspace{-2mm}
 \end{figure}
@@ -351,7 +352,7 @@ note that in strategy $s_1$ we assume all peers get stream from CDN thus all pee
 For strategy $s_2$, ISP has payoff:
 \begin{eqnarray}
 	\pi^{(s_2)}_{(N)} &=& \pi^{(s_2)}_{(n_l)} + \pi^{(s_2)}_{(n_s)}\\
-	\nonumber &=&n_l p^{(s_1)} - n_lTP_t + max (n_s u_s,n_l)T P_t\\
+	&=&n_l p^{(s_1)} - n_lTP_t + max (n_s u_s,n_l)T P_t\\
 	&+&n_s P^{(s_2)} - n_s T P_t
 \end{eqnarray}
 note that in $n_l p^{(s_1)}$ we use $p^{(s_1)}$ because leechers are not join to peer-assisted mode offer by ISP thus the price is without discount.
@@ -476,6 +477,7 @@ The idea to utilize user's computation power to support ISP operation is not new
 The Figaro project \cite{figaro} proposed residential gateway as an integrator of different networks and services and become Internet-wide distributed content management for future Internet architecture \cite{figaro}. 
 Cha, et al.,\cite{Cha:2008:NTP:1855641.1855646} performed trace analysis and found that IPTV architecture powered by P2P can handle much larger number of channels with limited demand for infrastructure compare to IP multicast. 
 Jiang et al., \cite{Jiang:2012:OMD:2413176.2413193} proposed scalable and adaptive for content replication and request routing for CDN servers that located in users home gateway. 
+%%Our work close to Maki et al.,\cite{NaoyaMAKI2012} work.  
 Maki et al.,\cite{NaoyaMAKI2012} propose traffic engineering for peer-assisted CDN to control the behavior of clients and presents a solution for optimizing the selection of content files.
 Our work is same in system model architecture which uses different level of topologies  (Level-0 and Level-1), where in Maki et al., \cite{NaoyaMAKI2012} the authors use different names, which are local domain and global domain. 
 While our work focus on fluid limit for the number of peers needed to support video stream bitrate in single bitrate system and modeling simple economic incentive for ISP, Maki et al., \cite{NaoyaMAKI2012} focuses on traffic engineering algorithm for optimizing the selection of content files and controlling the behavior of clients.
@@ -483,17 +485,17 @@ While our work focus on fluid limit for the number of peers needed to support vi
 %%%%%%%%%%%%%%%%% CONCLUSION %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion and Future Work}\label{conclude}
 This paper presents scheme for peer-assisted ISP managed CDN model that estimate lower bound of peers based on stochastic fluid model and estimate the economic incentive for ISP based on game theory.  
-We found that upload rate seeder has big influence to the system.  
-This is same observation as \cite{DBLP:journals/corr/abs-1212-4915}
 Our numerical result shows that peer-assisted CDN managed by ISP or telco is feasible to deploy and does not harm to ISP business. 
 Our future work will include energy efficient trade off this peer-assisted ISP managed CDN. 
 We are very interested to know how much energy saving by ISP and how much increase of energy at users home gateway side in this architecture. 
 
 
 
+
+
 %%%%%%%%%%%%%%%%% ACKNOWLEDGEMENT %%%%%%%%%%%%%%%%%%%%%
-%\section*{Acknowledgements}
-%We thank Joe Touch for suggestions.
+\section*{Acknowledgements}
+We thank Joe Touch for suggestions.
 
 
 \bibliographystyle{ieicetr}% bib style
