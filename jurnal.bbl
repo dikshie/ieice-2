@@ -53,11 +53,10 @@ R.~Krishnan, H.V. Madhyastha, S.~Srinivasan, S.~Jain, A.~Krishnamurthy,
   http://www.internap.com/2010/12/02/peering-disputes-comcast-level-3-and-you/,
   12\ 2010.
 
-\bibitem{NaoyaMAKI2012}
-N.~MAKI, T.~NISHIO, R.~SHINKUMA, T.~MORI, N.~KAMIYAMA, R.~KAWAHARA, and
-  T.~TAKAHASHI, ``Traffic engineering of peer-assisted content delivery network
-  with content-oriented incentive mechanism,'' IEICE Transactions on
-  Information and Systems, vol.E95.D, no.12, pp.2860--2869, December\ 2012.
+\bibitem{6249305}
+B.~Mathieu and Y.~Levene, ``Impact of ftth deployment on live streaming
+  delivery systems,'' Computers and Communications (ISCC), 2012 IEEE Symposium
+  on, pp.000259 --000264, july\ 2012.
 
 \bibitem{4215694}
 R.~Kumar, Y.~Liu, and K.~Ross, ``Stochastic fluid theory for p2p streaming
@@ -100,9 +99,10 @@ W.~Jiang, S.~Ioannidis, L.~Massouli{\'e}, and F.~Picconi, ``Orchestrating
   on Emerging networking experiments and technologies, CoNEXT '12, New York,
   NY, USA, pp.133--144, ACM, 2012.
 
-\bibitem{6249305}
-B.~Mathieu and Y.~Levene, ``Impact of ftth deployment on live streaming
-  delivery systems,'' Computers and Communications (ISCC), 2012 IEEE Symposium
-  on, pp.000259 --000264, july\ 2012.
+\bibitem{NaoyaMAKI2012}
+N.~MAKI, T.~NISHIO, R.~SHINKUMA, T.~MORI, N.~KAMIYAMA, R.~KAWAHARA, and
+  T.~TAKAHASHI, ``Traffic engineering of peer-assisted content delivery network
+  with content-oriented incentive mechanism,'' IEICE Transactions on
+  Information and Systems, vol.E95.D, no.12, pp.2860--2869, December\ 2012.
 
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 22:07
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 22:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -377,13 +377,13 @@ File: graphs/stable-steady-state.eps Graphic file (type eps)
 <graphs/stable-steady-state.eps>
 File: graphs/U_p_n_1000.eps Graphic file (type eps)
  <graphs/U_p_n_1000.eps>
-Overfull \hbox (52.94804pt too wide) in paragraph at lines 329--330
+Overfull \hbox (52.94804pt too wide) in paragraph at lines 337--338
  [][] 
  []
 
 File: graphs/U_p_n_1000_admi.eps Graphic file (type eps)
 <graphs/U_p_n_1000_admi.eps>
-Overfull \hbox (57.25966pt too wide) in paragraph at lines 327--340
+Overfull \hbox (57.25966pt too wide) in paragraph at lines 335--348
 [][]   [] 
  []
 
@@ -408,7 +408,7 @@ om/2010/12/02/peering-
  []
 
 
-Overfull \hbox (44.94092pt too wide) in paragraph at lines 81--84
+Overfull \hbox (44.94092pt too wide) in paragraph at lines 80--83
 \OT1/txtt/m/n/8 cisco . com / web / about / ac79 / docs / sp / CDN-[]Federation
  _ Phase-[]2-[]Pilot .
  []
@@ -421,7 +421,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.611 }
+l.619 }
        
 ? 
 
@@ -431,27 +431,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.611 }
-       
-? 
-
-! LaTeX Error: File `' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.617 }
-       
-? 
-
-! Package graphics Error: Division by 0.
-
-See the graphics package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.617 }
+l.619 }
        
 ? 
 [7]
@@ -462,7 +442,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.638 }
+l.625 }
        
 ? 
 
@@ -472,7 +452,27 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.638 }
+l.625 }
+       
+? 
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.646 }
+       
+? 
+
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.646 }
        
 ? 
 [8
@@ -487,4 +487,4 @@ Here is how much of TeX's memory you used:
  957 hyphenation exceptions out of 8191
  36i,13n,38p,423b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (8 pages, 54308 bytes).
+Output written on jurnal.dvi (8 pages, 54436 bytes).
