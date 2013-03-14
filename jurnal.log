@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 19:05
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 21:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -262,17 +262,14 @@ Package caption Info: float package is loaded.
 )
 \@toksi=\toks23
 \@toksii=\toks24
- (./jurnal.aux
-
-LaTeX Warning: Label `description' multiply defined.
-
-)
+ (./jurnal.aux)
 \openout1 = `jurnal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 53.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 53.
 
- (/usr/local/texlive/2012/texmf-dist/tex/latex/txfonts/omltxmi.fd
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 53.
@@ -367,7 +364,7 @@ LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
 File: graphs/business-relationship.eps Graphic file (type eps)
 
 <graphs/business-relationship.eps>
-Overfull \hbox (16.3297pt too wide) in paragraph at lines 130--131
+Overfull \hbox (16.3297pt too wide) in paragraph at lines 129--130
  [] 
  []
 
@@ -380,24 +377,27 @@ File: graphs/stable-steady-state.eps Graphic file (type eps)
 <graphs/stable-steady-state.eps> [3]
 File: graphs/U_p_n_1000.eps Graphic file (type eps)
  <graphs/U_p_n_1000.eps>
-Overfull \hbox (2.35927pt too wide) in paragraph at lines 243--244
+Overfull \hbox (52.94804pt too wide) in paragraph at lines 241--242
  [][] 
  []
 
 File: graphs/U_p_n_1000_admi.eps Graphic file (type eps)
 <graphs/U_p_n_1000_admi.eps>
+Overfull \hbox (57.25966pt too wide) in paragraph at lines 239--252
+[][]   [] 
+ []
+
 File: graphs/cdf.eps Graphic file (type eps)
- <graphs/cdf.eps>
+<graphs/cdf.eps>
 \c@theorem=\count114
 File: graphs/game-tree-2.eps Graphic file (type eps)
  <graphs/game-tree-2.eps> [4]
 File: graphs/plotpay.eps Graphic file (type eps)
-
-<graphs/plotpay.eps> [5] [6] (./jurnal.bbl
+ <graphs/plotpay.eps> [5] [6]
+(./jurnal.bbl
 LaTeX Font Info:    Try loading font information for OT1+txtt on input line 38.
 
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/txfonts/ot1txtt.fd
+ (/usr/local/texlive/2012/texmf-dist/tex/latex/txfonts/ot1txtt.fd
 File: ot1txtt.fd 2000/12/15 v3.1
 )
 Overfull \hbox (48.30508pt too wide) in paragraph at lines 52--55
@@ -419,7 +419,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.500 }
+l.523 }
        
 ? 
 
@@ -429,7 +429,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.500 }
+l.523 }
        
 ? 
 
@@ -439,7 +439,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.506 }
+l.529 }
        
 ? 
 
@@ -449,9 +449,10 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.506 }
+l.529 }
        
 ? 
+[7]
 
 ! LaTeX Error: File `' not found.
 
@@ -459,7 +460,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.527 }
+l.550 }
        
 ? 
 
@@ -469,21 +470,19 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.527 }
+l.550 }
        
 ? 
-[7] (./jurnal.aux)
+[8
 
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
- 3493 strings out of 493489
- 48074 string characters out of 3141350
+ 3495 strings out of 493489
+ 48092 string characters out of 3141350
  116154 words of memory out of 3000000
- 6764 multiletter control sequences out of 15000+200000
+ 6766 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 36i,13n,38p,363b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,13n,38p,423b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (7 pages, 52596 bytes).
+Output written on jurnal.dvi (8 pages, 53804 bytes).

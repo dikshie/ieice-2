@@ -6,45 +6,45 @@ Database file #1: jurnal.bib
 Warning--to sort, need author or key in dispute
 Warning--to sort, need author or key in figaro
 Warning--can't use both volume and number fields in gametheory
-You've used 20 entries,
+You've used 21 entries,
             2213 wiz_defined-function locations,
-            658 strings with 8098 characters,
-and the built_in function-call counts, 7812 in all, are:
-= -- 792
-> -- 407
+            664 strings with 8268 characters,
+and the built_in function-call counts, 8379 in all, are:
+= -- 855
+> -- 420
 < -- 0
-+ -- 164
-- -- 142
-* -- 589
-:= -- 1218
-add.period$ -- 23
-call.type$ -- 20
-change.case$ -- 130
++ -- 169
+- -- 146
+* -- 621
+:= -- 1287
+add.period$ -- 24
+call.type$ -- 21
+change.case$ -- 135
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 293
-empty$ -- 582
-format.name$ -- 142
-if$ -- 1735
+cite$ -- 24
+duplicate$ -- 323
+empty$ -- 632
+format.name$ -- 146
+if$ -- 1876
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 17
-newline$ -- 66
-num.names$ -- 36
-pop$ -- 152
+int.to.str$ -- 21
+missing$ -- 18
+newline$ -- 69
+num.names$ -- 38
+pop$ -- 161
 preamble$ -- 1
-purify$ -- 111
+purify$ -- 115
 quote$ -- 0
-skip$ -- 263
+skip$ -- 295
 stack$ -- 0
-substring$ -- 427
-swap$ -- 87
+substring$ -- 489
+swap$ -- 103
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
+type$ -- 80
 warning$ -- 3
-while$ -- 68
-width$ -- 22
-write$ -- 203
+while$ -- 72
+width$ -- 23
+write$ -- 212
 (There were 3 warnings)
