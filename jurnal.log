@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 18:55
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 19:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -262,14 +262,17 @@ Package caption Info: float package is loaded.
 )
 \@toksi=\toks23
 \@toksii=\toks24
- (./jurnal.aux)
+ (./jurnal.aux
+
+LaTeX Warning: Label `description' multiply defined.
+
+)
 \openout1 = `jurnal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 53.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 53.
 
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/txfonts/omltxmi.fd
+ (/usr/local/texlive/2012/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 53.
@@ -374,21 +377,20 @@ File: graphs/two-tier-cdn-topology-2.eps Graphic file (type eps)
  <graphs/two-tier-cdn-topology-2.eps>
 File: graphs/stable-steady-state.eps Graphic file (type eps)
 
-<graphs/stable-steady-state.eps>
+<graphs/stable-steady-state.eps> [3]
 File: graphs/U_p_n_1000.eps Graphic file (type eps)
  <graphs/U_p_n_1000.eps>
-Overfull \hbox (2.35927pt too wide) in paragraph at lines 253--254
+Overfull \hbox (2.35927pt too wide) in paragraph at lines 243--244
  [][] 
  []
 
 File: graphs/U_p_n_1000_admi.eps Graphic file (type eps)
-<graphs/U_p_n_1000_admi.eps> [3]
+<graphs/U_p_n_1000_admi.eps>
 File: graphs/cdf.eps Graphic file (type eps)
  <graphs/cdf.eps>
 \c@theorem=\count114
- [4]
 File: graphs/game-tree-2.eps Graphic file (type eps)
- <graphs/game-tree-2.eps>
+ <graphs/game-tree-2.eps> [4]
 File: graphs/plotpay.eps Graphic file (type eps)
 
 <graphs/plotpay.eps> [5] [6] (./jurnal.bbl
@@ -417,7 +419,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.510 }
+l.500 }
        
 ? 
 
@@ -427,7 +429,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.510 }
+l.500 }
        
 ? 
 
@@ -437,7 +439,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.516 }
+l.506 }
        
 ? 
 
@@ -447,7 +449,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.516 }
+l.506 }
        
 ? 
 
@@ -457,7 +459,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.537 }
+l.527 }
        
 ? 
 
@@ -467,17 +469,21 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.537 }
+l.527 }
        
 ? 
-[7] (./jurnal.aux) ) 
+[7] (./jurnal.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
  3493 strings out of 493489
  48074 string characters out of 3141350
- 117154 words of memory out of 3000000
+ 116154 words of memory out of 3000000
  6764 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,13n,38p,363b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (7 pages, 52148 bytes).
+Output written on jurnal.dvi (7 pages, 52596 bytes).

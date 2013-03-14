@@ -159,42 +159,32 @@ The CDN proxy maintained by ISP. ISP also has CDN node. CDN node can exchange co
 %%%%%%%%%%%%%%%% %%%%%% SYSTEM DESCRIPTION %%%%%%%%%%%%%%%%%%%%%%%
 \section{System Description}\label{description}
 
-Figure \ref{fig:twotier} shows the model of system architecture.
-That's model offers the opportunity to connect the P2P swarm not directly but through an intermediate later of proxies.
-This function has potential benefit: boosting download performances (by exposing through proxy devices higher upload bandwidth than end users). 
-It is also increasing privacy by reducing swarm exposure for end users.
+\section{System Description}\label{description}
+
+Figure \ref{fig:twotier} shows the model of system architecture, consisted of two-level CDN (Level-1 and Level-0), and a P2P network.
 This two level of CDN follows hierarchical model in Maki et al.,\cite{NaoyaMAKI2012} with modification.
+The Level-1 CDN consists of high capacity servers strategically placed to increase network backbone capacity.
+The Level-1 CDN is similar to the current CDN networks, where CDN nodes can communicate each other by using common interconnect interface even though the CDN nodes are owned by different companies or different ISPs \cite{cdni}.
+The Level-0 CDN consists of CDN proxies owned or managed by an ISP and placed close to end users.
+The CDN proxies join the P2P network along with other nodes owned by the end users.
 
-The first level Level-1 consists high capacity servers strategically placed to increase network backbone capacity.
-Level-1 is more like current CDN network.
-In Level-1, CDN node can communicate each other by using common interconnect interface even though the CDN node are owned by different companies or different ISPs \cite{cdni}.
+The proxies communicate to each other to serve content requests from the users, serving the contents from their caches if the content is available 
+or retrieving the content from the Level-1 CDN servers otherwise.
+Some end user nodes assist the proxies to serve content requests by uploading the contents in their caches to other end user nodes, and a user node may receive the contents exclusively from the proxies or from the proxies and other user nodes, hence creating a P2P swarm.
+The user nodes are configured not communicate with nodes outside the ISP network, thus the P2P swarm is limited to a single ISP (or an administrative domain).
 
-Level-0 consists CDN proxies are owned or to be managed by ISP.
-For big ISP different CDN proxies in level-0 can be put at different cities or different geographically areas.
-These nodes are placed closer to end users. 
-CDN proxies can communicate each other to react to the content requests from users.
-Level-0 are the natural service points for the users and they can offer the best quality of service if the are able to efficiently cache the requested content.
-The state of the Level-0 and Level-1 caches is stored in DHT. 
-The DHT is used to keep an updated record for each content in scalable manner. 
-This different caching levels are used to offer an adaptive, flexible, and scalable service to the users.
+In this P2P network, the proxies can be considered as super nodes, or super seeders, which serve all contents that cannot be served by other nodes.
+The proxies also coordinate the user nodes, whether they act as seeders or leechers.
+The proxies should satisfy all users while minimizing their resource usage, e.g., bandwidth and cache capacity, by optimizing the utilization of seeders in the P2P swarm.
+In the case of file sharing, the proxies may not need to serve contents to the seeders if the upload rate from the user nodes in the P2P swarm is enough to satisfy all users.
+While in the case of streaming contents, the proxies serve the contents in the full streaming rate to the seeders;
+and the leechers would not receive the full rate from the proxies as they also receive contents from the seeders.
+Also in this case, even though the upload rate from the user nodes in the P2P swarm is enough, relying only to user nodes may make some nodes experiencing high latency,
+hence the proxies should have a good coordination strategy to satisfy the latency requirements.
 
-We noted that CDN proxy has a limited capacity and it may not be able to satisfy all clients.
-A peer-assisted CDN introduced peer coordination mechanism into CDN system. 
-In this case CDN proxy is responsible to make peer coordination.  
-For any new streaming request, the CDN proxy will have to make two decisions.
-The CDN proxy will make a arrival node as seeder or as leecher based on adaptation strategy or a capacity constraint.  
-In this system, we define a seeder is a node or a peer that receive stream from CDN proxy and a leecher is a node or a peer that receive stream from a seeder.  
-To maintain low delay and good quality video streaming, seeder only receive stream directly from CDN proxy and leecher only receive from seeders.
-
-It is very important for ISP to make sure CDN proxy capacity is enough while maintaining minimum capacity requirement. 
-Although peer selection strategy is out of scope of this paper, we assume that peers form random mesh networks. 
-In the next sections we will show how CDN proxy can make such decision in a way to optimize system.
-
-%Other architecture, CDN federation proposed by Cisco and some ISPs to interconnect the ISP's CDN \cite{federation}.
-%The goal CDN federation architecture is to interconnect ISPs owned CDN thus reduce Capex and Opex for content delivery. 
-%This architecture does not involved P2P. 
-%Some peering or transit might be needed by ISP to join this architecture. 
- 
+Cost reduction in the ISP side is an aim of the introduction of this system, thus the ISP may offer incentives, e.g., a subscription fee discount, to its users in order to get them participating in the P2P swarm.
+It should also devise a strategy or strategies of its offers in order to achieve its commercial objectives, including customer satisfaction.
+The next section presents the analysis of this system and the strategies of an ISP in introducing this system.
 
   
  
