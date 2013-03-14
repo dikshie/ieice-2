@@ -298,9 +298,9 @@ We now compare two admission policies:
 1. the system starts admitting new arrivals as seeders until $(n_s.u_s > n_l.r)$, then each arrival is admitted as a seeder or a leecher according to the equation.     
 2. the system admit arrivals every $d$ time interval. If $(n_s.u_s > n_l.r)$ at the beginning of a time interval, all arrivals within the time interval are admitted as leecher, otherwise as seeders.
 
-Figure \ref{fig:U_p_1000_1} shows $U_p$ values during simulation with total number of peers $N=1000, \lambda=2$ and we use first admission policy in this simulation. 
+Figure \ref{fig:U_p_1000_1} shows $U_p$ values during simulation with total number of peers $N=1000, \lambda=2, u_s={0.1, 0.5, 0.8}$ and we use first admission policy in this simulation. 
 We also plot ratio values $X$ on second Y-axis.
-Fig.\ref{fig:U_p_1000_2} shows $U_p$ values during simulation with total number of peers $N=1000, \lambda=2$ and we use second admission policy in this simulation.  
+Fig.\ref{fig:U_p_1000_2} shows $U_p$ values during simulation with total number of peers $N=1000, \lambda=2,  u_s={0.1, 0.5, 0.8}$ and we use second admission policy in this simulation.  
 From both figures, we can see that first admission can stabilized the ratio $X$ in order to keep the CDN proxy capacity enough to supply the system since first admission try to decide peer role from beginning of peer arrival. 
 In the second admission policy, CDN proxy decide peer role during time interval.
 This make the ratio $X$ value of second admission policy has bigger variance.
