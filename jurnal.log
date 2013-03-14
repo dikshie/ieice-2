@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 13:38
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 13:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -374,27 +374,23 @@ File: graphs/two-tier-cdn-topology-2.eps Graphic file (type eps)
  <graphs/two-tier-cdn-topology-2.eps>
 File: graphs/stable-steady-state.eps Graphic file (type eps)
 
-<graphs/stable-steady-state.eps>
+<graphs/stable-steady-state.eps> [3]
 File: graphs/U_p_n_1000.eps Graphic file (type eps)
  <graphs/U_p_n_1000.eps>
-Overfull \hbox (2.35927pt too wide) in paragraph at lines 286--287
+Overfull \hbox (2.35927pt too wide) in paragraph at lines 288--289
  [][] 
  []
 
 File: graphs/U_p_n_1000_admi.eps Graphic file (type eps)
-<graphs/U_p_n_1000_admi.eps> [3]
+<graphs/U_p_n_1000_admi.eps>
 File: graphs/cdf.eps Graphic file (type eps)
  <graphs/cdf.eps>
-Overfull \hbox (6.49661pt too wide) in alignment at lines 322--325
- [][][] []
- []
-
-[4]
 \c@theorem=\count114
 File: graphs/game-tree-2.eps Graphic file (type eps)
- <graphs/game-tree-2.eps> [5]
+ <graphs/game-tree-2.eps> [4]
 File: graphs/plotpay.eps Graphic file (type eps)
- <graphs/plotpay.eps> [6] (./jurnal.bbl
+
+<graphs/plotpay.eps> [5] [6] (./jurnal.bbl
 LaTeX Font Info:    Try loading font information for OT1+txtt on input line 38.
 
 
@@ -420,7 +416,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.567 }
+l.547 }
        
 ? 
 
@@ -430,7 +426,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.567 }
+l.547 }
        
 ? 
 
@@ -440,7 +436,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.573 }
+l.553 }
        
 ? 
 
@@ -450,10 +446,9 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.573 }
+l.553 }
        
 ? 
-[7]
 
 ! LaTeX Error: File `' not found.
 
@@ -461,7 +456,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.594 }
+l.574 }
        
 ? 
 
@@ -471,12 +466,10 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.594 }
+l.574 }
        
 ? 
-[8
-
-] (./jurnal.aux) ) 
+[7] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
  3494 strings out of 493489
  48090 string characters out of 3141350
@@ -486,4 +479,4 @@ Here is how much of TeX's memory you used:
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (8 pages, 53196 bytes).
+Output written on jurnal.dvi (7 pages, 51196 bytes).
