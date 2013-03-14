@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 15:35
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -262,17 +262,14 @@ Package caption Info: float package is loaded.
 )
 \@toksi=\toks23
 \@toksii=\toks24
- (./jurnal.aux
-
-LaTeX Warning: Label `eq:pi^s1_nl_nl' multiply defined.
-
-)
+ (./jurnal.aux)
 \openout1 = `jurnal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 53.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 53.
 
- (/usr/local/texlive/2012/texmf-dist/tex/latex/txfonts/omltxmi.fd
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 53.
@@ -352,14 +349,14 @@ LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
 (Font)              scaled to size 8.54997pt on input line 54.
 LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
 (Font)              scaled to size 8.54997pt on input line 54.
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 112.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 111.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 112.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 111.
  [1
 
 
@@ -367,7 +364,7 @@ LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
 File: graphs/business-relationship.eps Graphic file (type eps)
 
 <graphs/business-relationship.eps>
-Overfull \hbox (16.3297pt too wide) in paragraph at lines 151--152
+Overfull \hbox (16.3297pt too wide) in paragraph at lines 130--131
  [] 
  []
 
@@ -380,7 +377,7 @@ File: graphs/stable-steady-state.eps Graphic file (type eps)
 <graphs/stable-steady-state.eps>
 File: graphs/U_p_n_1000.eps Graphic file (type eps)
  <graphs/U_p_n_1000.eps>
-Overfull \hbox (2.35927pt too wide) in paragraph at lines 274--275
+Overfull \hbox (2.35927pt too wide) in paragraph at lines 253--254
  [][] 
  []
 
@@ -392,9 +389,9 @@ File: graphs/cdf.eps Graphic file (type eps)
  [4]
 File: graphs/game-tree-2.eps Graphic file (type eps)
  <graphs/game-tree-2.eps>
-[5]
 File: graphs/plotpay.eps Graphic file (type eps)
- <graphs/plotpay.eps> [6] (./jurnal.bbl
+
+<graphs/plotpay.eps> [5] [6] (./jurnal.bbl
 LaTeX Font Info:    Try loading font information for OT1+txtt on input line 38.
 
 
@@ -420,7 +417,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.575 }
+l.512 }
        
 ? 
 
@@ -430,28 +427,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.575 }
-       
-? 
-[7]
-
-! LaTeX Error: File `' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.581 }
-       
-? 
-
-! Package graphics Error: Division by 0.
-
-See the graphics package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.581 }
+l.512 }
        
 ? 
 
@@ -461,7 +437,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.602 }
+l.518 }
        
 ? 
 
@@ -471,23 +447,37 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.602 }
+l.518 }
        
 ? 
-[8
 
-] (./jurnal.aux)
+! LaTeX Error: File `' not found.
 
-LaTeX Warning: There were multiply-defined labels.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.539 }
+       
+? 
 
- ) 
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.539 }
+       
+? 
+[7] (./jurnal.aux) ) 
 Here is how much of TeX's memory you used:
- 3494 strings out of 493489
- 48090 string characters out of 3141350
+ 3493 strings out of 493489
+ 48074 string characters out of 3141350
  117154 words of memory out of 3000000
- 6765 multiletter control sequences out of 15000+200000
+ 6764 multiletter control sequences out of 15000+200000
  30020 words of font info for 85 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 36i,13n,38p,361b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,13n,38p,363b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (8 pages, 55324 bytes).
+Output written on jurnal.dvi (7 pages, 52296 bytes).
