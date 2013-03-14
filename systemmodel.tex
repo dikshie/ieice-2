@@ -136,7 +136,7 @@ In this paper, we study the incentive for ISP who adopt peer assisted CDN for st
 
 \begin{figure}[tb]
 \begin{center}
-\includegraphics[scale=0.4]{graphs/business-relationship.eps}
+\includegraphics[scale=0.35]{graphs/business-relationship.eps}
 \end{center}
 \caption{Complex relationship of entities in Internet.The data flow from content producer to content provider. From content provider data can flow to service provider then goes to CDN. Depends on routing and peering policy, data from CDN can flow directly to ISP or flow to ISP via IXP (Internet Exchange) or via transit network. Flow of data noted by straight arrow and flow of money noted by dash arrow line.}
 \label{fig:businessrelationship}
@@ -181,7 +181,7 @@ Therefore, the future of CDN business is likely to live deeper into ISP networks
 
 \begin{figure}[hb]
 \begin{center}
-\includegraphics[scale=0.4]{graphs/two-tier-cdn-topology.eps}
+\includegraphics[scale=0.35]{graphs/two-tier-cdn-topology.eps}
 \end{center}
 \caption{Two tier CDN-P2P topology.
 The CDN proxy maintained by ISP. ISP also has CDN node. CDN node can exchange contents with other CDN node owned by other CDN companies.P2P nodes are ISP's customers that run P2P software.}
@@ -194,149 +194,119 @@ The CDN proxy maintained by ISP. ISP also has CDN node. CDN node can exchange co
 %%%%%%%%%%%%%%%% %%%%%% SYSTEM DESCRIPTION %%%%%%%%%%%%%%%%%%%%%%%
 \section{System Description}\label{description}
 
-Figure \ref{fig:twotier} shows the model of system architecture.
-That's model offers the opportunity to connect the P2P swarm not directly but through an intermediate later of proxies.
-This function has potential benefit: boosting download performances (by exposing through proxy devices higher upload bandwidth than end users). 
-It is also increasing privacy by reducing swarm exposure for end users.
+Figure \ref{fig:twotier} shows the model of system architecture, consisted of two-level CDN (Level-1 and Level-0), and a P2P network.
 This two level of CDN follows hierarchical model in Maki et al.,\cite{NaoyaMAKI2012} with modification.
+The Level-1 CDN consists of high capacity servers strategically placed to increase network backbone capacity.
+The Level-1 CDN is similar to the current CDN networks, where CDN nodes can communicate each other by using common interconnect interface even though the CDN nodes are owned by different companies or different ISPs \cite{cdni}.
+The Level-0 CDN consists of CDN proxies owned or managed by an ISP and placed close to end users.
+The CDN proxies join the P2P network along with other nodes owned by the end users.
 
-The first level Level-1 consists high capacity servers strategically placed to increase network backbone capacity.
-Level-1 is more like current CDN network.
-In Level-1, CDN node can communicate each other by using common interconnect interface even though the CDN node are owned by different companies or different ISPs \cite{cdni}.
+The proxies communicate to each other to serve content requests from the users, serving the contents from their caches if the content is available 
+or retrieving the content from the Level-1 CDN servers otherwise.
+Some end user nodes assist the proxies to serve content requests by uploading the contents in their caches to other end user nodes, and a user node may receive the contents exclusively from the proxies or from the proxies and other user nodes, hence creating a P2P swarm.
+The user nodes are configured not communicate with nodes outside the ISP network, thus the P2P swarm is limited to a single ISP (or an administrative domain).
 
-Level-0 consists CDN proxies are owned or to be managed by ISP.
-For big ISP different CDN proxies in level-0 can be put at different cities or different geographically areas.
-These nodes are placed closer to end users. 
-CDN proxies can communicate each other to react to the content requests from users.
-Level-0 are the natural service points for the users and they can offer the best quality of service if the are able to efficiently cache the requested content.
-The state of the Level-0 and Level-1 caches is stored in DHT. 
-The DHT is used to keep an updated record for each content in scalable manner. 
-This different caching levels are used to offer an adaptive, flexible, and scalable service to the users.
+In this P2P network, the proxies can be considered as super nodes, or super seeders, which serve all contents that cannot be served by other nodes.
+The proxies also coordinate the user nodes, whether they act as seeders or leechers.
+The proxies should satisfy all users while minimizing their resource usage, e.g., bandwidth and cache capacity, by optimizing the utilization of seeders in the P2P swarm.
+In the case of file sharing, the proxies may not need to serve contents to the seeders if the upload rate from the user nodes in the P2P swarm is enough to satisfy all users.
+While in the case of streaming contents, the proxies serve the contents in the full streaming rate to the seeders;
+and the leechers would not receive the full rate from the proxies as they also receive contents from the seeders.
+Also in this case, even though the upload rate from the user nodes in the P2P swarm is enough, relying only to user nodes may make some nodes experiencing high latency,
+hence the proxies should have a good coordination strategy to satisfy the latency requirements.
 
-We noted that CDN proxy has a limited capacity and it may not be able to satisfy all clients.
-A peer-assisted CDN introduced peer coordination mechanism into CDN system. 
-In this case CDN proxy is responsible to make peer coordination.  
-For any new streaming request, the CDN proxy will have to make two decisions.
-The CDN proxy will make a arrival node as seeder or as leecher based on adaptation strategy or a capacity constraint.  
-In this system, we define a seeder is a node or a peer that receive stream from CDN proxy and a leecher is a node or a peer that receive stream from a seeder.  
-To maintain low delay and good quality video streaming, seeder only receive stream directly from CDN proxy and leecher only receive from seeders.
-
-It is very important for ISP to make sure CDN proxy capacity is enough while maintaining minimum capacity requirement. 
-Although peer selection strategy is out of scope of this paper, we assume that peers form random mesh networks. 
-In the next sections we will show how CDN proxy can make such decision in a way to optimize system.
-
-%Other architecture, CDN federation proposed by Cisco and some ISPs to interconnect the ISP's CDN \cite{federation}.
-%The goal CDN federation architecture is to interconnect ISPs owned CDN thus reduce Capex and Opex for content delivery. 
-%This architecture does not involved P2P. 
-%Some peering or transit might be needed by ISP to join this architecture. 
- 
-
+Cost reduction in the ISP side is an aim of the introduction of this system, thus the ISP may offer incentives, e.g., a subscription fee discount, to its users in order to get them participating in the P2P swarm.
+It should also devise a strategy or strategies of its offers in order to achieve its commercial objectives, including customer satisfaction.
+The next section presents the analysis of this system and the strategies of an ISP in introducing this system.
   
  
 %%%%%%%%%% SYSTEM MODEL %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{System Model and Result Analysis}\label{systemmodel}
-We present a model between P2P and CDN using simple a single bitrate for video streaming as shown in Fig.\ref{fig:twotier2}. 
-The model is a stochastic fluid model similar to \cite{4215694}.
-While the authors in \cite{4215694} focus on probability of degraded service on small and large systems, our work focus on minimum capacity or of CDN proxy to support the system.
-Minimum capacity is very important to ISP for capacity planning.
-On next subsection we also present a model of simple game theory between ISP who operate P2P-CDN and users.
-We aim to find out the indifferent utility function between ISP and users.
+\section{System Model and Analysis}\label{systemmodel}
+We model this system as a P2P-CDN shown in Fig.\ref{fig:twotier2} for a single bitrate streaming, with a stochastic fluid model similar to \cite{4215694}.
+While the authors in \cite{4215694} focus on probability of degraded service on small and large systems, our work focus on the minimum capacity of CDN proxy to support the system, as it is very important to ISP for capacity planning.
+On next subsection we also present a model of simple game theory between ISP who operate P2P-CDN and users to find out the indifferent utility function between ISP and users.
 
 \begin{figure}[tb] 
 \begin{center}
-\includegraphics[scale=0.4]{graphs/two-tier-cdn-topology-2.eps}
+\includegraphics[scale=0.35]{graphs/two-tier-cdn-topology-2.eps}
 \end{center}
-\caption{System architecture on L0. P2P nodes that run on user home gateway communicates to CDN proxy.}
+\caption{A P2P-CDN model for streaming with a single CDN proxy and several seeders and leechers. Leechers do not upload traffic to the P2P network to minimize the streaming latency.}
 \label{fig:twotier2}
 \vspace{-2mm}
 \end{figure}
 
-\subsection{Stable System}
+\subsection{System in Stationary State}
 
-For stable system, denote $n_l$ is the number of leechers, $n_s$ is the number of seeders in the system, and $r$ is bitrate.
-Number of bitrate that leechers should receive is $n_l.r$. 
-On the other hand seeders should upload to leechers which is $n_s.u_s$
-We can derive that minimum CDN proxy capacity to support the system is:
+Let the number of leechers and the number of seeders in the P2P swarm, not including the CDN proxy, as $n_l$ and $n_s$, and the bitrate as $r$.
+In order to satisfy the users for a streaming content, the minimum total upload bitrate to the P2P swarm is $(n_s + n_l)r$.
+Let the upload capacity of each seeder as $u_s$, $u_s \leq r$, therefore the minimum CDN proxy capacity to support the system is:
 \begin{equation}
-	U_p = n_s.r + n_l.r - min(n_s.u_s, n_l.r)
+	U_p = n_s.r + n_l.r - min(n_s.u_s, n_l.r).
 \end{equation}
-Based on leecher and seeder definition on Sec.\ref{description}, seeder already enjoyed direct streaming from CDN proxy with bitrate $r$ but upload rate of seeder to leecher might not same as streaming bitrate. 
-That's the reason leecher may get source of video streaming from other seeders.  
-Moreover, we define $X=\frac{n_l}{n_s}$ and normalization $r=1$ , we can get:
+Note that if $n_l.r$ is less than the upload capacity of the seeders, the proxy does not need to serve the leechers.
+Also note that if the system is for file sharing, then the CDN proxy does not need to serve the seeders.
+From the above equation, we define $X=\frac{n_l}{n_s}$, which is the ratio of the number of leechers to the number of seeders, and we normalize $r=1$, hence:
 \begin{equation}
-	\frac{U_p}{n_s} = (1 + X - min (u_s,X))
+	\frac{U_p}{n_s} = (1 + X - min (u_s,X)),
 \end{equation}
-Where $X$ is ratio number of leechers to number of seeders.
-For CDN proxy can fulfill required capacity following inequality must be satisfied: $n_s.u_s \ge n_l.r$.
-This inequality will be used in churn situation by CDN proxy to decide whether new arrival peers should be seeder or leecher.
+which means that the upload capacity requirement of CDN proxy relative to the number of seeders will be higher as $X$ increases beyond $X = u_s$.
+%For CDN proxy can fulfill required capacity following inequality must be satisfied: $n_s.u_s \geq n_l.r$.
+
+%This inequality will be used in churn situation by CDN proxy to decide whether new arrival peers should be seeder or leecher.
 
 \begin{figure}[hb] 
 \begin{center}
 \includegraphics[scale=0.5]{graphs/stable-steady-state.eps}
 \end{center}
-\caption{System with steady state.}
+\caption{System in stationary state. Each line has an inflexion point related to $u_s$, $u_s > 0$\.}
 \label{fig:steadystate}
 \vspace{-2mm}
-\end{figure}
+ \end{figure}
+ 
+Figure \ref{fig:steadystate} shows the system in stationary state.
+For $u_s=1.5$, the minimum required capacity CDN proxy relative to the number of seeders to support the system can be achieved if the ratio of leechers to seeders is less than $1.5$.
+We see that the CDN proxy prefers a higher $u_s$ in the system.
+A special case is $u_s = 0$, which is equivalent to no P2P swarm.
+It is also clear that as $X$ increases, the CDN proxy must add its capacity, thus adding the cost for the ISP.
 
 
 \begin{figure*}[thb]
 \begin{minipage}[b]{0.4\linewidth}
 \centering
-\includegraphics[width=2.8in]{graphs/U_p_n_1000.eps}
-\caption{$U_p$ for $N=1000$ for admission policy 1.}
+\includegraphics[width=2.7in]{graphs/U_p_n_1000.eps}
+\caption{$U_p$ for $n=1000$ for admission policy 1.}
 \label{fig:U_p_1000_1}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[b]{0.5\linewidth}
 \centering
-\includegraphics[width=2.8in]{graphs/U_p_n_1000_admi.eps}
-\caption{$U_p$ for $N=1000$ for admission policy 2.}
+\includegraphics[width=2.7in]{graphs/U_p_n_1000_admi.eps}
+\caption{$U_p$ for $n=1000$ for admission policy 2.}
 \label{fig:U_p_1000_2}
 \end{minipage}
 \end{figure*}
- 
-Figure \ref{fig:steadystate} shows steady state of the system without churn.
-Lets take an example where $U_s=1.5$. The minimum of capacity CDN proxy to support the system can be achieved if the ratio between leechers to seeders less than 1.5.
-Same with other $U_s$ value, as long as the ratio less than 'turning point' in the graph, that's the minimum of capacity that can be achieved to support the system.  
-If the ratio more than 'turning point', the CDN proxy must add capacity to support the system thus add cost for ISP.
 
 \begin{figure}[hb] 
 \begin{center}
-\includegraphics[scale=0.6]{graphs/cdf.eps}
+\includegraphics[scale=0.5]{graphs/cdf.eps}
 \end{center}
 \caption{CDF of $n_l/n_s$. We can see that admission policy 2 has bigger variance than admission policy 1.}
 \label{fig:cdf}
 \vspace{-2mm}
  \end{figure}
  
-\subsection{Stable System with Churn}\label{sec:stablesystemwithchurn}
-For churn case, we assume peers join and leave at random times, stay in for a random period, then leave the system.
-Assuming poisson process with rate $\lambda$. 
-Peers stay in the system for a period of time that follows a general probability distribution with mean $\frac{1}{\gamma}$.
-Define $N(t)$ as the number of peers in the system at time $t$, $N(t)$ can be represented as the number of peers in a $M/G/\infty$ queue.
-In poisson process, the time that these events occur in a given time interval. 
-The time between each pair of consecutive events has an exponential distribution.
-On the other hand, the number of events in time interval follows poisson distribution with rate $\rho = \frac{\lambda}{\gamma}$.
-Now we can compute the probability of the probability of minimum capacity as following:
-\begin{eqnarray*}
-P(\text{support min capacity}) &=& P(\frac{U_p}{n_s} = 1+X-min(u_s,X))\\
-&=&F(1+X-min(u_s,X))\\
-\end{eqnarray*}
-where $F=\sum_{x=0}^{w} \frac{e^{-\rho} \rho^{x}}{x!}$.
-We know that for large $\rho$ we can approximate the poisson distribution with gaussian distribution with mean $\mu=\rho$ and standard deviation $\sigma = \sqrt{\rho}$, $F_{poisson}(x:\rho) \approx F_{normal}(x;\mu=\rho, \sigma^{2}=\rho)$.
-We know that cumulative distribution function for standard normal random variable is $F(x) = \Phi(\frac{x-\mu}{\sigma})$ thus we can get:
-\begin{eqnarray*}
-P \left(\frac{(U_p/n_s) - \rho}{\sqrt{\rho}}=\frac{1+X-min(u_s,X) - \rho}{\sqrt{\rho}}\right)\\
-=\Phi \left( \frac{1+X-min(u_s,X) - \rho}{\sqrt{\rho}} \right) \\
-\end{eqnarray*}
+\subsection{System with Churn}\label{sec:stablesystemwithchurn}
+In this analysis, we assume peers (user nodes) join at random times, stay in the system for random period of time, then leave.
+We assume the peer arrivals follow a poisson process with rate $\lambda$, and peers stay in the system follow a general probability distribution with mean $\frac{1}{\gamma}$.
+Let $N(t)$ be the number of peers in the system at time $t$, i.e., the number of nodes in a $M/G/\infty$ queue, thus we can denote $U_p$ as a function of time $t$
+\begin{equation}
+	U_p(t) = N(t)r - min(n_s(t)u_s, (N(t)-n_s(t))r),
+\end{equation}
+where $N(t) = n_s(t) + n_l(t)$, and $n_s(t)$ is determined by the system's admission policy.
 
-In order CDN proxy handle the churn, we compare two different admission policy. 
-First, the system starts admitting new arrivals as seeders until $(n_s.u_s > n_l.r)$. 
-All arrivals after that point are admitted as leecher.     
-Second, the system starts admitting new arrivals as seeders. 
-Next the CDN proxy does polling mechanism on an interval time.
-On that interval time CDN proxy decide the peers that arrives on that interval time to be seeder or leecher using $(n_s.u_s > n_l.r)$.
+We now compare two admission policies:
+1. the system starts admitting new arrivals as seeders until $(n_s.u_s > n_l.r)$, then each arrival is admitted as a seeder or a leecher according to the equation.     
+2. the system admit arrivals every $d$ time interval. If $(n_s.u_s > n_l.r)$ at the beginning of a time interval, all arrivals within the time interval are admitted as leecher, otherwise as seeders.
 
 Figure \ref{fig:U_p_1000_1} shows $U_p$ values during simulation with total number of peers $N=1000$ and we use first admission policy in this simulation. 
 We also plot ratio values $X$ on second Y-axis.
@@ -344,7 +314,7 @@ Fig.\ref{fig:U_p_1000_2} shows $U_p$ values during simulation with total number 
 From both figures, we can see that first admission can stabilized the ratio $X$ in order to keep the CDN proxy capacity enough to supply the system since first admission try to decide peer role from beginning of peer arrival. 
 In the second admission policy, CDN proxy decide peer role during time interval.
 This make the ratio $X$ value of second admission policy has bigger variance.
-To make it clear, Fig.\ref{fig:cdf} shows CDN of $X$ for $U_s=0.1, U_s=0.5, \text{and }  U_s=0.8$ for different admission policy. 
+To make it clear, Fig.\ref{fig:cdf} shows CDN of $X$ for $U_s=0.1, U_s=0.5, \text{and}  U_s=0.8$ for different admission policy. 
 We can see that second admission gives bigger variance, while first admission can keep the ratio ideal.
 Finally, we can see that seeder upload has big contribution for this system. 
 This is become foundation for next section how to incentive peers in this system.
@@ -363,32 +333,46 @@ In our model, ISP has already attempted to implement solution for peer-assisted 
 Moreover, it is reasonable to assume that ISP is naturally initiators.  
 Stackelberg game also known as a leader-follower game is a class of game that concerns with situation where one player, the leader, initiates the decision making and where the second player, the follower, responds to the actions by the leader.  
 Moreover in our model, ISP can be modeled as leader who decided to implement peer-assisted or not according to their expected payoff, while users can be modeled as followers that evaluate the decision of the ISP and responds according to their available actions and payoffs.
-In this section, we will focus on ISP side.  
 
 \newtheorem{theorem}{Definition}
 \begin{theorem}[ISP Strategies]
-We define the pure strategy space $S_{isp}$ to include two strategies combination choice $s \in \{CDN, CDN-P2P\}$ and corresponding subscription free $P^{s}$.
+We define the pure strategy space $S_{isp}$ to include two strategies combination choice $s \in \{No, P2P\}$ and corresponding subscription free $P^{s}$.
 Futhermore, we denote the strategies as:
 \begin{itemize}
-	\item $s_1 = (CDN, P^{s_1})$ : the ISP decides to use CDN only and thus keeps charging the initial subscription free $P^{s_1}$.
-	\item $s_2 = (CDN-P2P, P^{s_2})$ : the ISP decides recommends peer-assisted and offers a subscription fee $P^{s_2} \le P^{s_1}$.
+	\item $s_1 = (No, P^{s_1})$ : the ISP decides to do nothing (use CDN only) and thus keeps charging the initial subscription free $P^{s_1}$.
+	\item $s_2 = (P2P, P^{s_2})$ : the ISP decides recommends P2P and offers a subscription fee $P^{s_2} \le P^{s_1}$.
 \end{itemize}
 Where the ISP strategy space $S_{isp} = \{s_1,s_2\}$.
 \end{theorem}
 
+After defined the strategy space of ISP, now we will describe user reaction.
+One obvious user action is to accept ISP strategy.
+When user receives offer from ISP whether user want to join peer-assisted strategy or not to join peer-assisted strategy, user can only accept one of that strategy.  
+If user decides to join P2P strategy from ISP then it means user accept $s_2$ of ISP.
+If user decides not to join P2P strategy from ISP then it means user accept $s_1$ of ISP.
+Therefore whatever strategy offered by ISP, the user can only accept one of the ISP strategy.
+
+\newtheorem{theorem2}{Definition}
+\begin{theorem}[User Strategies]
+Given a ISP strategy decision $s$, we define the user action as $s_a$ where user accepts ISP strategy $s \in S_{isp}$.
+\end{theorem}
+We describe that situation as extensive form in Fig.\ref{fig:gametree}.
+
+
+
 \begin{figure}[tb] 
 \begin{center}
-\includegraphics[scale=0.5]{graphs/game-tree-2.eps}
+\includegraphics[scale=0.35]{graphs/game-tree.eps}
 \end{center}
-\caption{Extensive form of game between ISP's strategies}
+\caption{Extensive form of game between ISP and users}
 \label{fig:gametree}
 \vspace{-2mm}
 \end{figure}
 
 \subsubsection{ISP Payoff}
-We describe payoff function for ISP in our model.  
+Next, we describe payoff function for ISP in our model.  
 We assume a profit maximizing ISP that gains higher utility proportionally with increasing profits. 
-A simplified business model that determining ISP payoff are mainly: user generated revenue and bandwidth cost to reach the users.
+A simplified business model that determining ISP payoff are mainly: user generated revenue and traffic cost from inter ISP traffic (transit and peering).
 
 For revenue model, we assume that the ISP collects revenue solely by charging an initial flat rate subscription fee $P^{(s_1)}$ to its $N$ homogeneous users who are purchasing internet access with equal and fixed quality of service.
 ISPs are often price discriminatory towards its customers and thus operates with different price levels for different speed or QoS.
@@ -396,115 +380,208 @@ ISPs are also get revenue from other business area such as email hosting, web ho
 In our model, we do not include such that revenue. 
 In order to keep simple, we found it reasonable only to focus on users that buy the same internet access product. 
 Given above simplifications, the ISP collects a total revenue (when deciding on a strategy $s$) of $R = N P^{(s)}$.
-We noted that payoff is utility or revenue minus cost.  
-Since we only focus on ISP side, we are very interested to see the difference ($\delta$) between payoff of strategy $s_1$ and strategy $s_2$.
-For strategy $s_1$, ISP has payoff: 
-\begin{equation}
-	\pi^{(s_1)}_{(N)} 
+
+For cost model, we identified that traffic costs including (transit traffic and paid peering) are the most relevant aspect. 
+\newtheorem{theorem3}{Definition}
+\begin{theorem}[Transit cost]
+we define the transit cost $\tau^{(s)}$ for a given ISP strategy $s$ to be denoted as 
+\begin{equation}\label{eq:transitcost}
+	\tau^{(s)}_t = \alpha^{(s)} \beta T^{(s_1)} p_t
 \end{equation}
-For strategy $s_2$, ISP has payoff:
-\begin{equation}
-	\pi^{(s_2)}_{(N)} = \pi^{(s_1)}_{(n_l | n_s)} + \pi^{(s_2)}_{(n_s)}
-\end{equation}
-Therefore payoff difference between strategy $s_1$ and $s_2$ is:
-\begin{eqnarray}
-	\delta &=& \pi^{(s_1)}_{(N)} - \pi^{(s_2)}_{(N)}
-\end{eqnarray}
-We noted that $N=n_l + n_s$ then we can get: 
-\begin{eqnarray}
-	\delta &=& \pi^{(s_1)}_{(n_l|n_s)} - \pi^{(s_2)}_{(n_s)}
-\end{eqnarray}
-Where 
-\begin{eqnarray}
-	\pi^{(s_2)}_{(n_s)} &=& n_s . P^{(s_2)} - \tau^{(s_2)}\\
-	\pi^{(s_1)}_{(n_l|n_s)} &=& n_l . P^{(s_1)} - \text{max}((T.P_t.n_l - n_s . u_s .T .P_t),0) \label{eq:pi^s1_nl_nl}
-\end{eqnarray}
-Description of notation as follows:
+where:
 \begin{itemize}
-	\item $n_s$ is number of seeders.
-	\item $n_l$ is number of leechers.
-	\item $P^{(s_1)}$ is subscription fee for strategy $s_1$
-	\item $P^{(s_2)}$ is subscription fee for strategy $s_2$ where it is discount price.
-	\item $T$ is video traffic bitrate. 
-	\item $P_t$ is transport cost. 
-	\item $U_s$ is upload rate of seeders.
-	\item $\tau^{s_1}$ is traffic cost for strategy $s^{(s_1)}$.
-	\item $\tau^{s_2}$ is traffic cost for strategy $s^{(s_2)}$.
+	\item $T^{(s_1)}$ represent the average inter-ISP traffic volume in Mbps.
+	\item $\alpha^{(s)}$ represent the expected reduction factor of inter-ISP traffic for strategy $s$ such that: $\alpha^{(s)} \in [0,1]$ for $s \in \{s2\}$;  $\alpha^{(s_1)} = 1$.
+	\item $\beta$ represent the ratio of inter-ISP traffic volume $T^{(s)}$ that traverse transit links such that: $\beta \in [0,1]$.
+	\item $p_t$ represent the price of transit traffic.
 \end{itemize}
-Explanation of notation as follows:
-$n_l . P^{s_1}$ is ISP revenue and $\text{max}((T.P_t.n_l - n_s . u_s .T .P_t),0)$ is ISP traffic cost.
+\end{theorem}
 
-The traffic cost $\pi^{(s_1)}_{(n_l|n_s)}$ is depends on threshold value $n_l/n_s$ that we discussed in Sec.\ref{sec:stablesystemwithchurn}.
-If $n_s . u_s > n_l$ then bandwidth cost is minimum because ISP does not need to add seeders, instead leecher can be added to the system.  
-If $n_s . u_s < n_l$ then the bandwidth cost is maximum because ISP need to add seeders.  
-The maximum of difference between these value and 0 is the cost of ISP traffic.
-We also noted that $P^{(s_2)}$ is price that ISP give in strategy $s_2$. 
-$P^{(s_2)}$ is discount price because users accept strategy $s_2$ to join peer-assisted CDN.  
-We can get discount price by indifference payoff between strategy $s_1$ and $s_2$ with total peer $N$:
-\begin{eqnarray}  
-	\pi^{(s_1)}_{(N)} &=& \pi^{(s_2)}_{(N)}\\
-	N.P^{(s_1)} - \tau^{(s_1)} &=& N.P^{(s_2)} - \tau^{(s_2)}\\
-	P^{(s_2)} &=& P^{(s_1)} - \frac{1}{N} (\tau^{(s_1)} -  \tau^{(s_2)} ) 
+\newtheorem{theorem4}{Definition}
+\begin{theorem}[Paid peering cost]
+We define the paid peering traffic cost $\tau^{(s)}$. 
+Paid peering costs are subject to a peering traffic price $p_p$.
+Futhermore, as $\beta$ is the ratio of the inter-ISP traffic $T^{(s)}$ that traverses transit links, $(1-\beta)$ express the ratio that traverses paid peering links.
+We can denote the paid peering traffic cost as:
+\begin{equation}\label{eq:paidpeeringcost}
+	\tau^{(s)}_p = \alpha^{(s)} (1-\beta) T^{(s_1)} p_p
+\end{equation}
+\end{theorem}
+
+\newtheorem{theorem5}{Definition}
+\begin{theorem}[Total traffic cost]
+Given transit cost and paid peering cost in Eq.\ref{eq:transitcost} and Eq.\ref{eq:paidpeeringcost}, we can define total inter-ISP traffic cost $\tau^{(s)}$ as:
+\begin{align}
+	\tau^{(s)} &= \tau^{(s)}_t + \tau^{(s)}_p \\
+	\tau^{(s)} &= \alpha^{(s)} \beta T^{(s_1)} p_t + \alpha^{(s)} (1-\beta) T^{(s_1)} p_p
+\end{align}
+\end{theorem}
+
+In addition to the traffic costs, we also assume that ISP needs investment cost for peer-assisted CDN.
+More specifically refer to Fig.\ref{fig:twotier2} ISP required to setup their L0 or CDN proxy.
+
+\newtheorem{theorem6}{Definition}
+\begin{theorem}[Investment cost]
+We define the investment cost $C^{(s)}_i$ to be a monthly amortization of a larger implementation related cost for the case when the ISP decides to implement P2P. 
+We denote:
+\begin{align}
+	C^{(s)}_i &\ge 0; \text{ for } s = s_2 \\
+	          &= 0; \text{ for } s \in \{s_1\}
+\end{align}
+\end{theorem}
+
+Finally after we defined all ISP cost, we can define ISP payoff function that will be used to model ISP utility.  
+
+\newtheorem{theorem7}{Definition}
+\begin{theorem}[ISP payoff]
+We define the ISP payoff function $\pi_{isp}$ as:
+\begin{align}\label{eq:isppayoff}
+	\pi_{isp}^{(s)} &= N P^{(s)} - \tau^{(s)} - C_i^{(s)} \\
+	 &= N P^{(s)} - \alpha^{(s)} \beta T^{(s_1)} p_t + \alpha^{(s)} (1-\beta) T^{(s_1)} p_p - C_i^{(s)} 
+\end{align}
+\end{theorem}
+
+\subsubsection{User Payoff}
+In this subsection, we  analyzed how the utility of user that purchases internet access at a fixed subscription fee $P^{(s)}$ can be described and derived. 
+We assume that all users pay a fixed flat rate subscription fee $P$ for internet access with equal speed or QoS parameters.
+Since users are rational player and subject to budget constraint, there must be a set of feature of internet access that valuable to users.
+We assume one important parameter that describes the quality of an internet access product as perceived by customer is the perceived performance of internet applications.  
+Moreover, the implementation of peer assisted mainly to reveal improvements of download speed as the performance metric that can be observed by customers.
+Consequently, we make assumption that the user perceived quality of internet access increases proportionally with increases in peer assisted implementation. 
+
+\newtheorem{theorem8}{Definition}
+\begin{theorem}[User perceived quality]
+we define the user perceived quality $Q^{(s)}$ of the internet access given an ISP strategy $s$ to be a function of the experimental derived peer assisted performance improvement $d^{(s)}$ that corresponds to $s$. 
+Moreover it is assume that the user initially perceived quality $Q^{(s_1)}$ is known. 
+We formally denote $Q^{(s)}$ as:
+\begin{equation}\label{eq:basicuserutility}
+	Q^{(s)} = Q^{(s_1)} (1 + d^{(s)})
+\end{equation}
+\end{theorem}
+
+Therefore, given the assumption of proportional utility contribution from quality and price, we can define basic utility $U^{(s)}$. 
+
+\newtheorem{theorem9}{Definition}
+\begin{theorem}[Basic user utility]
+We define basic utility $U^{(s)}$ a customer receives from buying internet access, given asn ISP strategy decision $s$ as:
+\begin{equation}
+	U^{(s)} = Q^{(s)} - P^{(s)}
+\end{equation}
+Where $Q^{(s)} > P^{(s)}$.
+\end{theorem}
+
+Finally, General form user payoff function (user accepts ISP strategy $s$):
+\begin{equation}
+	\pi^{(s_a | s)}_u = U^{(s)}
+\end{equation}
+by subtitution basic user utility in Eq.\ref{eq:basicuserutility}, we can get general user payoff function:
+\begin{equation}
+	\pi^{(s_a | s)}_u  = Q^{(s_1)} ( 1 + d^{(s)}) - P^{(s)}	
+\end{equation}
+
+
+%%%%%%%%%%%%% %%%% SECTION ANALYSIS & DISCUSSION %%%%%%%%%%%%%%%%%
+\section{Analysis and Discussion}
+
+\subsection{Minimum Capacity of CDN Proxy}
+
+\subsection{Analytical Equilibrium Analysis}
+As defined in previous section, both users and ISP are modeled as selfish players that maximize their utility (payoff) defined in the payoff functions.
+As a consequence, an incentivizing strategy for both users and ISPs is a strategy that yields higher payoff then the other available strategies.
+The ISP acting as a leader and initiator of the decision making, decides, on strategy $s$ that includes both a choice of technology as well as price offer $P^{(s)}$ which affect both ISP and user payoff.
+
+From the user payoff function, we observe that a user receives higher payoff as price decreases and will prefer lower prices.
+The ISP on the other hand will naturally have a minimum limit for the subscription price as it, in our model, represents the only source of revenue.
+Moreover we say that the minimum price $P^{(s)}_{min}$ that makes an ISP indifferent between strategy $s \in \{s2\}$ and strategy $s_1$ can be found by identifying where the payoff of strategy $s$ equal the payoff of strategy $s_1$. 
+That is expressed formally as:
+\begin{equation}\label{ispminprice}
+	\pi^{(s)}_{isp} = \pi^{(s_1)}_{isp}
+\end{equation}
+Where $s \in \{s2\}$. 
+Later Eq.\ref{ispminprice} can be written as: 
+
+\begin{equation}\label{eq:ispminprice2}
+	N P^{(s)}_{min} - \tau^{(s)} - C^{(s)}_i = N P^{(s_1)} - \tau^{(s1)}  
+\end{equation}
+When subtituting payoffs with Eq.\ref{eq:isppayoff}, by furthermore solving Eq.\ref{eq:ispminprice2} for $P^{(s)}_{min}$ we can get:
+\begin{equation}\label{eq:ispminprice3}
+	P^{(s)}_{min} = P^{(s_1)} - \frac{1}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i  )
+\end{equation}
+Given the above equations, we have found an expression for $P^{(s)}$ that express the point at which the ISP is indifferent to strategy $s$ over $s_1$ and thus represent the lower boundary for where both the users that ISP might have incentives for strategy $s$. 
+Above equation also express that ISP at maximum are willing to reduce its initial price $P^{(s_1)}$ by the expression $\frac{1}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i  )$.
+Moreover it can be interpreted as a combination of the reduction in ISP total costs and investment.
+Naturally, the implementation of peer assisted is assumed to reduce traffic cost.  
+Futhermore, we can make following observations:
+\begin{itemize}
+	\item If the investment cost for strategy $s$ approach the expected reduction in traffic cost, $C^{(s)}_i \to (\tau^{(s1)} - \tau^{(s)})$.
+	\item As $\frac{1}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i )$ represents the maximum price reduction that an ISP might give, we can futhermore express how greedy an ISP is by introducing an parameter $\gamma$ that tells us what percentage of the maximum price reduction above an ISP is willing to share.  
+\end{itemize}
+\newtheorem{theorem10}{Definition}
+\begin{theorem}[ISP price reduction]
+Given observations above we can define the ISP price reduction $\theta^{(s)}$ when choosing strategy $s$ to be:
+\begin{equation}
+ \theta^{(s)} = \frac{\gamma}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i  )
+\end{equation}
+Where $\gamma \in [0,1]$ is a ratio that express how much of the ISP expected utility increase it wants to share with its users.   
+We can also say that $\gamma$ represents the greediness of the ISP.
+\end{theorem}
+
+We have expressed a lower boundary for the price $P^{(s)}$ on behalf of the ISP, we now turn to the users perspective.  
+Although, we assume that the ISP will offer a reduced subscription free when deciding to use peer-assisted, we will examine the more general maximum limit for $P^{(s)}$ from the user perspective.
+We examine the case strategy $s \neq s_1$.
+The maximum limit of $P^{(s)}$ can be expressed by:
+\begin{equation}\label{eq:usermaxprice}
+	\tau^{(s_a|s)}_u = \tau^{(s_a|s_1)}_u
+\end{equation}
+Where $s \in \{s_2\}$. Later Eq.\ref{eq:usermaxprice} can be written as:
+\begin{equation}
+	Q^{(s_1)} ( 1 + d^{(s)} ) - P^{(s)}_{max} = Q^{(s_1)} - P^{(s_1)}
+\end{equation}
+Futhermore we can get $P^{(s)}_{max}$:  
+\begin{equation}\label{eq:usermaxprice2}
+	P^{(s)}_{max} = P^{(s_1)} + Q^{(s_1)} d^{(s)}
+\end{equation}
+We found that the maximum value of the subscription free $P^{(s)}$ depends on the perceived performance increase $Q^{(s_1)} d^{(s)}$.
+
+\newtheorem{theorem11}{Definition}
+\begin{theorem}[Minimum-maximum subscription fee interval]
+Next, we define minimum-maximum interval of the subscription fee $P^{(s)}$ as a value space of the subscription free where both ISP and users are expected to have incentives to adopt strategy $s$ as follows:
+\begin{equation}
+	P^{(s)}_{min} < P^{(s)} < P^{(s)}_{max}
+\end{equation}
+later by subtitution Eq.\ref{eq:ispminprice3} and \ref{eq:usermaxprice2} we can get:
+\begin{equation}\label{eq:min-max-interval}
+	P^{(s_1)} - \frac{1}{N} ( \tau^{(s1)} - \tau^{(s)} -  C^{(s)}_i  ) < P^{(s)} <  P^{(s_1)} + Q^{(s_1)} d^{(s)} 
+\end{equation}
+\end{theorem}
+
+
+We analyze ISP level strategy among its strategies.
+The ISP is indifferent between peer-assisted $(s_2)$ and CDN $(s_1)$ when $\pi^{(s_2)}_{isp} = \pi^{(s_1)}_{isp}$
+which by using ISP payoff function in Eq.\ref{eq:isppayoff} can be written as: 
+\begin{equation}
+	N P^{(s_2)} - \tau^{(s_2)} = N P^{(s_1)} - \tau^{(s_1)}
+\end{equation}
+When we assume that the ISP will provide a lower subscription free when recommending peer-assisted such that $P^{(s_2)} < P^{(s_1)}$, we can use our findings on the ISP price reduction to present $P^{(s_2)}$ as:
+\begin{eqnarray}
+	\nonumber P^{(s_2)} &=& P^{(s_1)} - \theta^{(s_2)} \\
+	P^{(s_2)} &=& P^{(s_1)} - \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i )
 \end{eqnarray}
-Where $\tau^{(s_2)}=n_s.T.P_t$ is traffic cost for strategy $s_2$.
-Factor $\frac{1}{N} (\tau^{(s_1)} -  \tau^{(s_2)} )$ is discount factor.
-We can define discount factor as $\frac{\gamma}{N} (\tau^{(s_1)} -  \tau^{(s_2)} )$.
-Maximum discount that ISP can give to user when $\gamma=1$ and minimum discount that ISP can give to user when $\gamma=0$.
-We can also say that $\gamma$ is a ratio that express how much of the ISP expected utility increase it wants to share with its users. 
+The strategy restrictions as follows:
+\begin{itemize}
+	\item Choose strategy $s=s_2$ if $ P^{(s_2)} + \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i ) > P^{(s_1)}$
+	\item Choose strategy $s=s_1$ if $ P^{(s_1)} > P^{(s_2)} + \frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} - C^{(s_2)}_i )$ 
+\end{itemize}
 
-\begin{figure}[thb] 
-\begin{center}
-\includegraphics[scale=0.65]{graphs/plotpay.eps}
-\end{center}
-\caption{$\delta$ between strategy $s_1$ and $s_2$ with $U_s$ variation and $\gamma$ variation.The intersection of lines with x-axis = 0 is the point where ISP has minimum payoff with maximum number of seeders. }
-\label{fig:delta}
-\vspace{-2mm}
- \end{figure}
- 
 \subsubsection{Numerical Result}
-In this subsection we do numerical evaluation the ISP strategy.
-The assumptions that we use for this numerical simulation:
+In this subsection we do numerical evaluation the game theoretic model. 
+The difficulty of doing numerical simulation is to assign right parameter values.
+Simplyfing limitations that we use: 
 \begin{itemize}
-	\item We assume that  traffic is generated by video traffic and the traffic.
+	\item We assume an ISP with $N=1000,10000,100000$ homogeneous users that pay an equal subscription fee $P^{(s_1)}$.
+	\item We assume that inter ISP traffic is generated by video traffic and the traffic is distribution between one transit provider and one paid peering provider.
 	\item We assume that user utilize $100\%$ of their internet connection capacity.  
-	\item We assume users never turn off their home gateway so ISP do not need to give penalty to users.
-	\item We assume there is no investment cost though ISP may need to give different firmware software to run peer-assisted application inside users home gateway. We assume that cost is very small thus we assume investment cost is zero.
 \end{itemize}
-Parameters value that we use in this numerical simulation as follows:
-\begin{table}[hb]%[tb]
-\caption{Parameters values for simulation}
-\label{table:1}
-\begin{center}
-\begin{tabular}{c|c}
-\hline
-$u_s$ & $\{0.1, 0.5, 0.8\}$ \\
-\hline
-$N$ & $1000$\\
-\hline
-$T$ & $1$Mbps \\
-\hline
-$P_t$ & $10$USD \\
-\hline
-$P^{(s_1)}$ & $50$USD\\
-\hline
-$\gamma$ & $\{0.1,1.0\}$ \\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
-
-Figure \ref{fig:delta} shows difference payoff between strategy $s_1$ and $s_2$.
-The intersection between lines and x-axis=0 is the point where ISP has minimum payoff with maximum number of seeders.
-for $u_s=0.1, \gamma=0.1$ maximum number of seeders is 449.  
-for $u_s=0.1, \gamma=1$ maximum number of seeders is 450. 
-for $u_s=0.5, \gamma=0.1$ maximum number of seeders is 469.  
-for $u_s=0.5, \gamma=1$ maximum number of seeders is 471. 
-for $u_s=0.8, \gamma=0.1$ maximum number of seeders is 484.  
-for $u_s=0.8, \gamma=1$ maximum number of seeders is 488.
- if we compare same $\gamma$ for different $u_s$ the different minimum seeders is large.  
-if we compare same $u_s$ for different $\gamma$ the different minimum seeders is small.   
-Therefore, we can see that $u_s$ factor is dominance over $\gamma$ factor. 
-
 
 
 %%%%%%%%%%%%%%%%% RELATED WORK %%%%%%%%%%%%%%%%%%%%%%%%
@@ -532,10 +609,10 @@ The idea to utilize users computation power to support ISP operation is not new.
 European via Figaro project \cite{figaro} proposed residential gateway as integrator of different networks and services and become Internet-wide distributed content management for future Internet architecture \cite{figaro}. 
 Cha, et al.,\cite{Cha:2008:NTP:1855641.1855646} did trace analysis and found that IPTV architecture powered by P2P can handle much larger number of channels with limited demand for infrastructure compare to IP multicast. 
 Jiang et al., \cite{Jiang:2012:OMD:2413176.2413193} proposed scalable and adaptive for content replication and request routing for CDN servers that located in users home gateway. 
-%%Our work close to Maki et al.,\cite{NaoyaMAKI2012} work.  
+Our work close to Maki et al.,\cite{NaoyaMAKI2012} work.  
 Maki et al.,\cite{NaoyaMAKI2012} propose traffic engineering for peer-assisted CDN to control the behavior of clients and presents a solution for optimizing the selection of content files.
-Our work is same in system model architecture which uses different level of topologies which L0 and L1 where is Maki et al., \cite{NaoyaMAKI2012} the authors uses different name which is local domain and global domain. 
-While our work focus on fluid limit for number of peers needed to support video stream bitrate in single bitrate system and modeling simple economic incentive for ISP, Maki et al., \cite{NaoyaMAKI2012} work focus on algorithm of traffic engineering for optimizing selection of content files and controlling behavior of clients.
+Our work is a little bit same in system model architecture which uses different level of topologies which L0 and L1 where is Maki et al., \cite{NaoyaMAKI2012} the authors uses different name which is local domain and global domain. 
+While our work focus on fluid limit for number of peers needed to support intended bit rate in single bit rate system and modeling simple economic incentive for ISP, Maki et al., \cite{NaoyaMAKI2012} work focus on algorithm of traffic engineering for optimizing selection of content files and controlling behavior of clients.
 
 %%%%%%%%%%%%%%%%% CONCLUSION %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion and Future Work}\label{conclude}
