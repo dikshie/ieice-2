@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 09:00
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 12:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -374,23 +374,23 @@ File: graphs/two-tier-cdn-topology-2.eps Graphic file (type eps)
  <graphs/two-tier-cdn-topology-2.eps>
 File: graphs/stable-steady-state.eps Graphic file (type eps)
 
-<graphs/stable-steady-state.eps> [3]
+<graphs/stable-steady-state.eps>
 File: graphs/U_p_n_1000.eps Graphic file (type eps)
  <graphs/U_p_n_1000.eps>
-Overfull \hbox (2.35927pt too wide) in paragraph at lines 290--291
+Overfull \hbox (2.35927pt too wide) in paragraph at lines 286--287
  [][] 
  []
 
 File: graphs/U_p_n_1000_admi.eps Graphic file (type eps)
-<graphs/U_p_n_1000_admi.eps>
+<graphs/U_p_n_1000_admi.eps> [3]
 File: graphs/cdf.eps Graphic file (type eps)
  <graphs/cdf.eps>
-Overfull \hbox (6.49661pt too wide) in alignment at lines 321--324
+Overfull \hbox (6.49661pt too wide) in alignment at lines 322--325
  [][][] []
  []
 
-\c@theorem=\count114
 [4]
+\c@theorem=\count114
 File: graphs/game-tree-2.eps Graphic file (type eps)
  <graphs/game-tree-2.eps> [5]
 File: graphs/plotpay.eps Graphic file (type eps)
@@ -420,7 +420,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.566 }
+l.567 }
        
 ? 
 
@@ -430,7 +430,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.566 }
+l.567 }
        
 ? 
 
@@ -440,7 +440,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.572 }
+l.573 }
        
 ? 
 
@@ -450,7 +450,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.572 }
+l.573 }
        
 ? 
 [7]
@@ -461,7 +461,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.593 }
+l.594 }
        
 ? 
 
@@ -471,7 +471,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.593 }
+l.594 }
        
 ? 
 [8
@@ -486,4 +486,4 @@ Here is how much of TeX's memory you used:
  957 hyphenation exceptions out of 8191
  36i,13n,38p,453b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (8 pages, 53220 bytes).
+Output written on jurnal.dvi (8 pages, 53188 bytes).

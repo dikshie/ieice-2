@@ -277,28 +277,29 @@ This inequality will be used in churn situation by CDN proxy to decide whether n
 \caption{System with steady state.}
 \label{fig:steadystate}
 \vspace{-2mm}
- \end{figure}
- 
-Figure \ref{fig:steadystate} shows steady state of the system without churn.
-Lets take an example where $U_s=1.5$. The minimum of capacity CDN proxy to support the system can be achieved if the ratio between leechers to seeders less than 1.5.
-Same with other $U_s$ value, as long as the ratio less than 'turning point' in the graph, that's the minimum of capacity that can be achieved to support the system.  
-If the ratio more than 'turning point', the CDN proxy must add capacity to support the system thus add cost for ISP.
+\end{figure}
+
 
 \begin{figure*}[thb]
 \begin{minipage}[b]{0.4\linewidth}
 \centering
 \includegraphics[width=2.8in]{graphs/U_p_n_1000.eps}
-\caption{$U_p$ for $n=1000$ for admission policy 1.}
+\caption{$U_p$ for $N=1000$ for admission policy 1.}
 \label{fig:U_p_1000_1}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[b]{0.5\linewidth}
 \centering
 \includegraphics[width=2.8in]{graphs/U_p_n_1000_admi.eps}
-\caption{$U_p$ for $n=1000$ for admission policy 2.}
+\caption{$U_p$ for $N=1000$ for admission policy 2.}
 \label{fig:U_p_1000_2}
 \end{minipage}
 \end{figure*}
+ 
+Figure \ref{fig:steadystate} shows steady state of the system without churn.
+Lets take an example where $U_s=1.5$. The minimum of capacity CDN proxy to support the system can be achieved if the ratio between leechers to seeders less than 1.5.
+Same with other $U_s$ value, as long as the ratio less than 'turning point' in the graph, that's the minimum of capacity that can be achieved to support the system.  
+If the ratio more than 'turning point', the CDN proxy must add capacity to support the system thus add cost for ISP.
 
 \begin{figure}[hb] 
 \begin{center}
