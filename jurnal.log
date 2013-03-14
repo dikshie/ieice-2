@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 22:18
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.2.3)  14 MAR 2013 22:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -421,7 +421,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.619 }
+l.620 }
        
 ? 
 
@@ -431,7 +431,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.619 }
+l.620 }
        
 ? 
 [7]
@@ -442,7 +442,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.625 }
+l.626 }
        
 ? 
 
@@ -452,7 +452,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.625 }
+l.626 }
        
 ? 
 
@@ -462,7 +462,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.646 }
+l.647 }
        
 ? 
 
@@ -472,7 +472,7 @@ See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.646 }
+l.647 }
        
 ? 
 [8
@@ -487,4 +487,4 @@ Here is how much of TeX's memory you used:
  957 hyphenation exceptions out of 8191
  36i,13n,38p,423b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on jurnal.dvi (8 pages, 54436 bytes).
+Output written on jurnal.dvi (8 pages, 54424 bytes).

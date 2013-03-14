@@ -359,7 +359,7 @@ Let $N(t)$ be the number of peers in the system at time $t$, i.e., the number of
 where $N(t) = n_s(t) + n_l(t)$, and $n_s(t)$ is determined by the system's admission policy.
 
 We now compare two admission policies:
-1. The system starts admitting new arrivals as seeders until $(n_su_s > n_l)$, then each arrival is admitted as a seeder or a leecher according to the equation.     
+1. The system starts admitting new arrivals as seeders until $(n_su_s > n_l)$, then each arrival is admitted as a seeder or a leecher according to the condition.     
 2. The system admits arrivals every $d$ time interval. If $(n_su_s > n_l)$ at the beginning of a time interval, all arrivals within the time interval are admitted as leechers, otherwise as seeders.
 
 Figure \ref{fig:U_p_1000_1} shows the $U_p$ values during simulation with $N=1000, \lambda=2, \mu=2, u_s=\{0.1, 0.5, 0.8\}$, and we use the first admission policy in this simulation.  
@@ -381,21 +381,22 @@ The next section discusses how to give incentives to the peers in this system.
 \end{figure}
  
 \subsection{ISP Strategies: Game Theory Approach}
-In this section, we present simple game theory approach for analysis of ISP strategies.
-Game theory as described in \cite{gametheory} is a mathematical framework to study and analysis of situation where decisions made by a set of two or more rational players.
-Basic element of game are: rational players, strategies, and payoff or utility.  
-Rational players choose a strategy for maximizing its payoff or utility. 
-Extensive-form game is representation of corresponding decision nodes in a directed tree.
-Later, we will use extensive-form game to represent our game.
-In our model, ISP has already attempted to implement solution for peer-assisted CDN.
-Moreover, it is reasonable to assume that ISP is naturally initiators.  
-Stackelberg game also known as a leader-follower game is a class of game that concerns with situation where one player, the leader, initiates the decision making and where the second player, the follower, responds to the actions by the leader.  
-Moreover in our model, ISP can be modeled as leader who decided to implement peer-assisted or not according to their expected payoff, while users can be modeled as followers that evaluate the decision of the ISP and responds according to their available actions and payoffs.
-In this section, we will focus on ISP side.  
+
+In this section, we present a simple game theory approach for analysis of ISP strategies.  
+Game theory is a mathematical framework for analyzing situations where decisions are made by a set of two or more rational players~ \cite{gametheory}.  
+The basic elements of a game are: rational players, strategies, and a payoff or utility function. 
+Rational players choose a strategy for maximizing their payoff.  
+An extensive-form game is a representation of the corresponding decision nodes in a directed tree.  
+Later, we will use an extensive-form game to represent our game.  
+In our model, the ISP has already attempted to implement a solution for peer-assisted CDN.  
+Moreover, it is reasonable to assume that the ISP is naturally an initiator.  
+A Stackelberg game, also known as a leader-follower game, is a class of game where one player, the leader, initiates the decision making and where the second player, the follower, responds to the actions by the leader.  
+In our model, the ISP can be modeled as a leader who decides to implement peer-assisted or not according to its expected payoff, while users can be modeled as followers that evaluate the decision of the ISP and respond according to their available actions and payoffs.
+In this section, we will focus on the ISP side.
 
 \newtheorem{theorem}{Definition}
 \begin{theorem}[ISP Strategies]
-We define the pure strategy space $S_{isp}$ to include two strategies combination choice $s \in \{CDN, CDN-P2P\}$ and corresponding subscription free $P^{s}$.
+We define the pure strategy space $S_{isp}$ to include two strategies, $s \in \{CDN, CDN-P2P\}$ and corresponding subscription fees $P^{s}$.
 Futhermore, we denote the strategies as:
 \begin{itemize}
 	\item $s_1 = (CDN, P^{s_1})$ : the ISP decides to use CDN only and thus keeps charging the initial subscription free $P^{s_1}$.
@@ -415,22 +416,23 @@ Where the ISP strategy space $S_{isp} = \{s_1,s_2\}$.
 
 \subsubsection{ISP Payoff}
 
-We now describe the payoff function for ISP in our model.  
+We now describe the payoff function for the ISP in our model. 
 We assume a profit maximizing ISP that gains higher utility in proportion to the increasing profit, which is only determined by the revenue from users and the bandwidth cost to reach the users.
 
-For the revenue model, we assume that the ISP collects revenue solely by charging an initial flat rate subscription fee $P^{(s_1)}$ to its $N$ number of users who purchase internet access with equal and fixed quality of service.
-ISPs are often price discriminatory towards its customers and thus operate with different price levels for different bandwidth or QoS.
-ISPs are often get revenue from other businesses such as email hosting, web hosting, etc. 
-In our model, we do not include such revenue, and we found it reasonable only to focus on users that buy the same internet access product. 
-Given the above simplifications, the ISP collects a total revenue (when deciding on a strategy $s$) of $R = N P^{(s)}$.
-The analysis focuses on the ISP side only, and we are very interested to see the difference ($\delta$) between payoff of strategy $s_1$ and strategy $s_2$.
-For strategy $s_1$, the payoff for the ISP is: 
+For the revenue model, we assume that the ISP collects revenue solely by charging an initial flat rate subscription fee $P^{(s_1)}$ to its $N$ number of users who purchase Internet access with equal and fixed quality of service.  
+ISPs are often price discriminatory towards their customers and thus operate with different price levels for different bandwidth or QoS.  
+The also often get revenue from other businesses such as email hosting, web hosting, etc.  
+In our model, we do not include such revenue, and we found it reasonable only to focus on users that buy the same Internet access product.  
+Given the above simplifications, the ISP collects a total revenue (when deciding on a
+strategy $s$) of $R = N P^{(s)}$.  
+The analysis focuses on the ISP side only, and we are very interested to see the difference ($\delta$) between payoff of strategy $s_1$ and strategy $s_2$.  
+For strategy $s_1$, the payoff for the ISP is:
 
 \begin{eqnarray}
 	\pi^{(s_1)}_{(N)}&=& N P^{(s_1)} - N T P_t\\
 \end{eqnarray}
 
-For strategy $s_2$, ISP has payoff:
+For strategy $s_2$, the ISP has payoff:
 \begin{eqnarray}
 	\pi^{(s_2)}_{(N)} &=& \pi^{(s_2)}_{(n_l)} + \pi^{(s_2)}_{(n_s)}\\
 	\nonumber &=&n_l p^{(s_1)} - n_l T P_t + min (n_s u_s,n_l)T P_t\\
@@ -445,9 +447,7 @@ Therefore payoff difference between strategy $s_2$ and $s_1$ is:
 	&=& n_s (P^{(s_2)} - P^{(s_1)}) + min(n_s u_s , N-n_s) T P_t
 \end{eqnarray}
 
-
-
-Description of notation as follows:
+Our notation is as follows:
 \begin{itemize}
 	\item $n_s$ is number of seeders.
 	\item $n_l$ is number of leechers.
@@ -472,7 +472,14 @@ We can get discount price by indifference payoff between strategy $s_1$ and $s_2
 	N.P^{(s_1)} - \tau^{(s_1)} &=& N.P^{(s_2)} - \tau^{(s_2)}\\
 	P^{(s_2)} &=& P^{(s_1)} - \frac{1}{N} (\tau^{(s_1)} -  \tau^{(s_2)} ) 
 \end{eqnarray}
-Where $\tau^{(s_2)}$ is traffic cost for strategy $s_2$ and $\tau^{(s_2)}$ is traffic cost for strategy $s_1$.
+where $\tau^{(s_2)}$ is traffic cost for strategy $s_2$ and $\tau^{(s_2)}$ is traffic cost for strategy $s_1$.
+
+The factor $\frac{1}{N} (\tau^{(s_1)} - \tau^{(s_2)} )$ is the discount.  
+We can define the discount factor as $\frac{\gamma}{N} (\tau^{(s_1)} - \tau^{(s_2)} )$.  
+Maximum discount that ISP can give to user when $\gamma=1$ and minimum discount that ISP can give to user when $\gamma=0$.  
+We can also say that $\gamma$ is a ratio that express how much of the ISP expected utility increase it wants to share with its users.
+
+
 Factor $\frac{1}{N} (\tau^{(s_1)} -  \tau^{(s_2)} )$ is discount factor.
 We can define discount factor as $\frac{\gamma}{N} (\tau^{(s_1)} -  \tau^{(s_2)} )$.
 Maximum discount that ISP can give to user when $\gamma=1$ and minimum discount that ISP can give to user when $\gamma=0$.
@@ -495,12 +502,13 @@ The right side before peak is the region where ISP can not add seeder because th
 In this subsection we do numerical evaluation the ISP strategy.
 The assumptions that we use for this numerical simulation:
 \begin{itemize}
-	\item We assume that  traffic is generated by video traffic and the traffic.
-	\item We assume that user utilize $100\%$ of their internet connection capacity.  
-	\item We assume users never turn off their home gateway so ISP do not need to give penalty to users.
-	\item We assume there is no investment cost though ISP may need to give different firmware software to run peer-assisted application inside users home gateway. We assume that cost is very small thus we assume investment cost is zero.
+	\item We assume that all traffic is video traffic.
+	\item We assume that user utilizes $100\%$ of his/her Internet connection capacity.  
+	\item We assume that users never turn off their gateways, so the ISP do not need to penalize users.
+	\item We assume there is no investment cost, though the ISP may need to give different firmware software to run peer-assisted application inside users home gateway. We assume that cost is very small, thus we assume investment cost is zero.
 \end{itemize}
-Parameters value that we use in this numerical simulation as follows:
+
+The parameter values that we use in this numerical simulation are as follows:
 \begin{table}[thb]%[tb]
 \caption{Parameters values for simulation}
 \label{table:1}
@@ -526,6 +534,7 @@ $\gamma$ & $\{0.1,1.0\}$ \\
 Figure \ref{fig:delta} shows difference payoff between strategy $s_1$ and $s_2$.
 It shows clearly the inflection point where ISP get maximum payoff with maximum seeders. 
 Thus the left side of line is the region where ISP still can add more seeders and the right side of line is the region where ISP can not add more seeders because the payoff is decreasing.
+
 We summarize the numerical results in table \ref{table:2}.
 \begin{table}[hb]%[tb]
 \caption{Numerical Simulation Result}
@@ -550,43 +559,40 @@ $0.8$ & $1$ & $556$ \\
 \end{tabular}
 \end{center}
 \end{table}
-It is clear that contribution of $\gamma$ to ISP is very small.
-On the other side, contribution of seeder upload rate $u_s$ to ISP payoff is big.
 
+Table \ref{table:2} shows the difference payoff between strategy $s_1$ and $s_2$.
+We can see that the $u_s$ factor is dominant over the $\gamma$ factor. 
 
 
 %%%%%%%%%%%%%%%%% RELATED WORK %%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related Work} 
-Content Distribution Networks with peer-assisted have been successfully deployed on the Internet, such as Akamai \cite{Huang:2008:UHC:1496046.1496064} and LiveSky \cite{Yin:2010:LEC:1823746.1823750}.
-The Authors of \cite{Huang:2008:UHC:1496046.1496064} conclude from two real world traces  that hybrid CDN-P2P can significantly reduce the cost of content distribution and can scale to cope with exponential growth of Internet video content.
-Yin et al., \cite{Yin:2010:LEC:1823746.1823750} described commercial operation of CDN with peer-assisted in China.   
-LiveSky solved several challenges in the system design such as dynamic resource scaling of P2P, low startup latency, ease of P2P integration with the existing CDN infrastructure, and network friendliness and upload fairness in the P2P operation. 
-Xu et al.,\cite{DBLP:journals/corr/abs-1212-4915} using game theory shows that right cooperative profit distribution of P2P can help ISP to maximize the utility. 
-Their model can easily implemented to current Internet economic settlement.
-Misra et al.,\cite{Misra:2010:IPS:1811099.1811064} also mentioned the importance of P2P architecture to support content delivery networks. 
-The author uses cooperative game theory to formulate simple compensation rules for users who run P2P to support content delivery networks.  
 
-The idea of telco or ISP managed CDN has been proposed in recent years.  
-The complexity of CDN business makes telco and ISP want to managed their own CDN.
+Content Distribution Networks with peer assist have been successfully deployed on the Internet, such as Akamai \cite{Huang:2008:UHC:1496046.1496064} and LiveSky \cite{Yin:2010:LEC:1823746.1823750}.  
+The authors of \cite{Huang:2008:UHC:1496046.1496064} conclude from two real world traces that hybrid CDN-P2P can significantly reduce the cost of content distribution and can scale to cope with the exponential growth of Internet video content.  
+Yin et al. \cite{Yin:2010:LEC:1823746.1823750} described commercial operation of a peer-assisted CDN in China.  
+LiveSky solved several challenges in the system design, such as dynamic resource scaling of P2P, low startup latency, ease of P2P integration with the existing CDN infrastructure, and network friendliness and upload fairness in the P2P operation.  
+Xu et al.\cite{DBLP:journals/corr/abs-1212-4915} using game theory, showed that the right cooperative profit distribution of P2P can help the ISP to maximize the utility.  
+Their model can easily be implemented in the context of current Internet economic settlements.  
+Misra et al.\cite{Misra:2010:IPS:1811099.1811064} also mentioned the importance of P2P architecture to support content delivery networks.
+The authors use cooperative game theory to formulate simple compensation rules for users who run P2P to support content delivery networks.
+
+The idea of telco- or ISP-managed CDN has been proposed in recent years.  
+The complexity of the CDN business encourage telcos and ISPs to manage their own CDN, rather than allow others to run CDNs on their networks.  
 It has been shown that it is cost effective \cite{federation}\cite{norton2011internet}. 
-Kamiyama et al., \cite{NoriakiKAMIYAMA2013} proposed optimally ISP operated CDN. 
-Kamiyama et al., mentioned that to deliver large and rich Internet content to users, ISP needs to put their CDN in data center.
-The locations are limited while the storage is large, makes this solution become effective, using optimum placement algorithm based on real ISP network topologies.
-The authors found that inserting CDN to ISP's ladder-type networks is effective to reduce the hops length thus reduce total link cost. 
-On the other hand, an effort for telco or ISP managed CDN to be connected each other has been also initiated by Cisco to form CDN federation \cite{federation} using open standard \cite{cdni}.
-They argue that the current CDN architecture is not close enough to the users and ISP can fill this position.   
+Kamiyama et al. \cite{NoriakiKAMIYAMA2013} proposed optimally ISP operated CDN.
+Kamiyama et al. mentioned that, in order to deliver large and rich Internet content to users, ISPs need to put their CDNs in data centers.  
+The locations are limited while the storage is large, making this solution effective, using optimum placement algorithm based on real ISP network topologies.  
+The authors found that inserting a CDN into an ISP's ladder-type network is effective in reducing the hop count, thus reduce total link cost.  
+Cisco has initiated an effort to connect telco- or ISP-managed CDNs to each other, to form a CDN federation \cite{federation} using open standards \cite{cdni}.  
+They argue that the current CDN architecture is not close enough to the users and ISPs can fill this position.
 
-The idea to utilize user's computation power to support ISP operation is not new.  
-The Figaro project \cite{figaro} proposed residential gateway as an integrator of different networks and services and become Internet-wide distributed content management for future Internet architecture \cite{figaro}. 
-Cha, et al.,\cite{Cha:2008:NTP:1855641.1855646} performed trace analysis and found that IPTV architecture powered by P2P can handle much larger number of channels with limited demand for infrastructure compare to IP multicast. 
-Jiang et al., \cite{Jiang:2012:OMD:2413176.2413193} proposed scalable and adaptive for content replication and request routing for CDN servers that located in users home gateway. 
-Maki et al.,\cite{NaoyaMAKI2012} propose traffic engineering for peer-assisted CDN to control the behavior of clients and presents a solution for optimizing the selection of content files.
-Mathieu et al., \cite{6249305} mentioned that in France telecom network, peer assisted delivery give great benefit. 
-$5\%$ population of FTTH with $60\%$ upload rate can serve all networks for 600Kbps video stream.
-A work by Mathieu et al., \cite{6249305} is the most relevant with our works.
+The idea of utilizing the user's computation power to support ISP operation is not new.  The Figaro project \cite{figaro} proposed residential gateway as an integrator of different networks and services, becoming an Internet-wide distributed content management for a proposed future Internet architecture \cite{figaro}.  
+Cha e al.,\cite{Cha:2008:NTP:1855641.1855646} performed trace analysis and found that an IPTV architecture powered by P2P can handle a much larger number of channels, with limited demand for infrastructure compare to IP multicast.  
+Jiang et al. \cite{Jiang:2012:OMD:2413176.2413193} proposed scalable and adaptive content replication and request routing for CDN servers located in users' home gateways.  
+Maki et al.\cite{NaoyaMAKI2012} propose traffic engineering for peer-assisted CDN to control the behavior of clients, and present a solution for optimizing the selection of content files.
 Our work is same in system model architecture which uses different level of topologies  (Level-0 and Level-1), where in Mathieu et al., \cite{6249305} the authors use different names, which are regional and national. 
 We emphasize that compare to  Mathieu et al., \cite{6249305} our work provides completely different approach.
-Mathieu et al., \cite{6249305} mostly based on empirical data from France telecom company thus the authors can directly calculate network load caused by video traffic and calculate network load saving if peer-assisted CDN is employed,  while our study focus on mathematical model of different admission policies for peers to join peer-assisted CDN and ISP payoff can get from employing peer-assisted CDN.
+Mathieu et al., \cite{6249305} work mostly based on empirical data from France telecom company thus the authors can directly calculate network load caused by video traffic and calculate network load saving if peer-assisted CDN is employed on customer side,  while our study focus on mathematical model of different admission policies for peers to join peer-assisted CDN and ISP payoff can get from employing peer-assisted CDN.
 
 %%%%%%%%%%%%%%%%% CONCLUSION %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion and Future Work}\label{conclude}
